@@ -1,0 +1,92 @@
+[ammo_12.7x99_ap]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn			= "weapons\ammo\ammo_50_bmg" ; option for Level Editor
+class			= AMMO
+cform                   = skeleton
+visual                  = weapons\ammo\50_bmg.ogf
+description		= desc_ammo_50bmg
+$prefetch 		= 64
+
+cost			= 1350
+
+box_size		= 10
+
+inv_name		= enc_50BMG
+inv_name_short		= enc_50BMG_s
+inv_weight		= 1.163
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 11
+inv_grid_y		= 24
+
+k_dist			= 1
+k_disp			= 1.84
+k_hit			= 10.9
+k_impulse		= 1
+k_pierce		= 1.5
+impair			= 1.05
+buck_shot		= 1
+tracer			= on
+wm_size         = 0.127
+
+[mag_5_12.7x99_ap]:ammo_12.7x99_ap
+box_size	= 1
+mag_size	= 5
+script_binding  = ammo_manager.init
+wm_section	= wm_bmga5
+inv_name		= mag_5_12.7x99
+description		= desc_load_12.7x99_ap
+inv_name_short	= mag_5_12.7x99_ap_s
+inv_weight		= 0.1163
+belt = true
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 39
+inv_grid_y			= 12
+visual	= weapons\magazines\mag_5_1270x99.ogf
+cost = 200
+
+[mag_10_12.7x99_ap]:ammo_12.7x99_ap
+box_size	= 1
+mag_size	= 10
+script_binding  = ammo_manager.init
+wm_section	= wm_bmga10
+inv_name		= mag_10_12.7x99
+description		= desc_load_12.7x99_ap
+inv_name_short	= mag_10_12.7x99_ap_s
+inv_weight		= 0.1163
+belt = true
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 39
+inv_grid_y			= 13
+visual	= weapons\magazines\mag_10_1270x99.ogf
+cost = 270
+
+;--------------------------------------------------;
+
+[12.7x99_reloadable]:identity_immunities
+class				= II_ANTIR
+
+eat_health			= 0
+eat_satiety			= 0
+eat_power			= 0
+eat_radiation		= 0
+eat_alcohol			= 0
+wounds_heal_perc	= 0
+eat_portions_num	= 1
+animation_slot		= 4
+
+;--------------------------------------------------;
+
+[mag_5_12.7x99_ap_e]:mag_5_12.7x99_ap,12.7x99_reloadable
+description		= desc_mag_e
+inv_weight = 0.22
+
+;--------------------------------------------------;
+
+[mag_10_12.7x99_ap_e]:mag_10_12.7x99_ap,12.7x99_reloadable
+description		= desc_mag_e
+inv_weight = 0.28

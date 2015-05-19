@@ -1,0 +1,138 @@
+; buckshot
+
+[ammo_12x70_buck]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	=
+$spawn					= "weapons\ammo\ammo_12x70_buck" ; option for Level Editor
+class					= AMMO
+cform					= skeleton
+visual					= weapons\ammo\ammo_12x70_buck.ogf
+description				= enc_weapons1_ammo_ammo-12x70-buck
+$prefetch				= 64
+
+cost					= 10
+
+box_size				= 1
+
+inv_name				= ammo-12x70-buck
+inv_name_short			= ammo-12x70-buck_s
+inv_weight				= 0.057
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 21
+inv_grid_y				= 37
+
+k_dist					= 0.5
+k_disp					= 4.5 ;10.0
+k_hit					= 0.65, 0.67, 0.68, 0.70
+k_impulse				= 0.15
+k_pierce				= 0.5
+impair					= 1.20
+buck_shot				= 9
+tracer					= off
+wm_size					= 0.084
+
+;--------------------------------------------------;
+
+[ammo_12x76_zhekan]:ammo_12x70_buck
+$spawn			= "weapons\ammo\ammo_12x76_zhekan" ; option for Level Editor
+visual			= weapons\ammo\ammo_12x76_zhekan.ogf
+description		= enc_weapons1_ammo_ammo-12x76-zhekan
+
+inv_name		= ammo-12x76-zhekan
+inv_name_short	= ammo-12x76-zhekan_s
+inv_grid_x		= 22
+inv_grid_y		= 37
+
+k_dist			= 200 ;1
+k_disp			= 1.65
+k_hit			= 2.75, 2.80, 2.71, 2.73 ;3.73
+k_impulse		= 1
+k_pierce		= 0.75
+impair			= 1.35
+buck_shot		= 1
+wm_size			= 0.185
+
+;--------------------------------------------------;
+
+[ammo_12x76_zhekan_heli]:ammo_12x76_zhekan
+$spawn		= "weapons\ammo\ammo_12x76_zhekan_heli" ; option for Level Editor
+explosive	= on
+wm_size		= 0.336
+
+;--------------------------------------------------;
+
+[ammo_12x76_dart]:ammo_12x70_buck
+$spawn			= "weapons\ammo\ammo_12x76_dart" ; option for Level Editor
+visual			= weapons\ammo\ammo_12x76_dart.ogf
+description		= enc_weapons1_ammo_ammo-12x76-dart
+
+inv_name		= ammo-12x76-dart
+inv_name_short	= ammo-12x76-dart_s
+inv_grid_x		= 23
+inv_grid_y		= 37
+
+k_dist			= 1.25
+k_disp			= 1.56
+k_hit			= 2.25, 2.21, 2.18, 2.28
+k_impulse		= 1
+k_pierce		= 0.75
+impair			= 1.25
+buck_shot		= 1
+wm_size			= 0.185
+
+;--------------------------------------------------;
+
+[mag_8_12ga_base]
+box_size		= 1
+mag_size		= 8
+script_binding	= ammo_manager.init
+inv_name		= mag_12ga-8_name
+inv_name_short	= mag_12ga-8_sname
+inv_weight		= 0.0475
+belt			= true
+inv_grid_width	= 1
+inv_grid_height	= 1
+inv_grid_x		= 39
+inv_grid_y		= 15
+visual			= weapons\magazines\mag_8_12-76.ogf
+
+[mag_8_12x76_buck]:ammo_12x70_buck,mag_8_12ga_base
+wm_section	= wm_12x76a8
+description	= mag_12ga-8-buck_desc
+cost		= 210
+
+[mag_8_12x76_zhekan]:ammo_12x76_zhekan,mag_8_12ga_base
+wm_section	= wm_12x76b8
+description	= mag_12ga-8-slug_desc
+cost		= 230
+
+[mag_8_12x76_dart]:ammo_12x76_dart,mag_8_12ga_base
+wm_section	= wm_12x76c8
+description	= mag_12ga-8-dart_desc
+cost		= 220
+
+;--------------------------------------------------;
+
+[12x70_reloadable]:identity_immunities
+class				= II_ANTIR
+
+eat_health			= 0
+eat_satiety			= 0
+eat_power			= 0
+eat_radiation		= 0
+eat_alcohol			= 0
+wounds_heal_perc	= 0
+eat_portions_num	= 1
+animation_slot		= 4
+
+;--------------------------------------------------;
+
+[mag_8_12x76_buck_e]:mag_8_12x76_buck,12x70_reloadable
+description	= mag_12ga-8-empty_desc
+cost		= 40
+
+[mag_8_12x76_zhekan_e]:mag_8_12x76_buck_e
+
+[mag_8_12x76_dart_e]:mag_8_12x76_buck_e
