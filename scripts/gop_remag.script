@@ -1,0 +1,359 @@
+--| Turning empty mags and loose rounds into full mags |--
+--| last modified for ZoA 1.07.2 by root			   |--
+--| by: root                                           |--
+--| credits: TKGP                                      |--
+
+--[[ ltx syntax for re-maging (shotgun shells used as example)
+remag_num			= 12				;number of rounds per box
+remag_item1			= ammo_12x70_buck	;section of ammo that can be boxed
+remag_item1_result	= box_12x70_buck	;section of item that is produced
+remag_item2			= ammo_12x76_zhekan	;supports up to four options
+remag_item2_result	= box_12x76_zhekan	]]
+
+-- this script uses config/weapons/magazines.ltx for ammo and mag types
+
+-- helper function to split ammo types
+-- taken from stackoverflow
+function mysplit(inputstr, sep)
+        if sep == nil then
+                sep = "%s"
+        end
+        local t={} ; i=1
+        for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
+                t[i] = str
+                i = i + 1
+        end
+        return t
+end
+
+function string.ends( String , End )
+   return End=='' or string.sub(String,-string.len(End))==End
+end
+
+local objSection , wmSection , remagNum, boxCount
+local remagOpt1, remagOpt2, remagOpt3, remagOpt4
+local ammoList
+
+function onItemDrop( object )
+	objSection = object:section()
+	qqq( "drop objSection: "..objSection )
+end
+
+function onItemUse( object )
+	objSection = object:section()
+
+	-- If we used the ammo box helper item, do something else
+	if objSection == "ammo_helper" then
+		magManagerInit()
+		return
+	end
+
+	wmSection = tkgp_utils.getLtxValue( objSection , "wm_section", "string" )
+
+	if wmSection ~= nil then
+		remagNum = tkgp_utils.getLtxValue( wmSection , "ammo_mag_size", "float" )
+		boxCount = tkgp_utils.getLtxValue( objSection , "box_size", "float" )
+
+		-- build the list of ammo types
+		local ammoClasses = mysplit( tkgp_utils.getLtxValue( wmSection, "ammo_class", "string" ) , "," )
+		ammoList = {}
+
+		for index = 1,4 do
+			if index < #ammoClasses then
+				ammoList[ index ] = ammoClasses[ index ]
+			else
+				ammoList[ index ] = nil
+			end
+		end
+
+		if remagNum ~= nil and #ammoClasses then
+			-- There is an off-by-one error in the unloading code
+			-- that affects full magazines. We get one less bullet back,
+			-- so use one less to load
+			remagNum = remagNum - 1
+
+			-- Give the player their mag back. Remove later
+			tkgp_utils.giveActor( objSection , 1 )
+
+			level.start_stop_menu( remag_ui( get_hud() ), true )
+		end
+	end
+end
+
+class "remag_ui" (CUIScriptWnd)
+
+function remag_ui:__init(owner) super()
+	self.owner = owner
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function remag_ui:__finalize()
+end
+
+function remag_ui:InitControls()
+	self:Init( 0, 0, 1024, 768 )
+	local xml = CScriptXmlInit()
+	xml:ParseFile( "ui_zoa_rebox.xml" )
+	xml:InitStatic( "background", self )
+	local caption = xml:InitStatic( "instruction_caption", self )
+	local cancelBtn = xml:Init3tButton( "btn_cancel", self )
+	self:Register( cancelBtn, "btn_cancel" )
+
+	local btnStrings = { "btn_first" , "btn_second" , "btn_third" , "btn_fourth" }
+	local notFail = false
+
+	-- add ammo buttons
+	for index = 1,4 do
+		local ammo = ammoList[ index ]
+		if ammo ~= nil and ( boxCount * tkgp_utils.countItems( ammo ) ) >= remagNum then
+			notFail = true
+			local btn = xml:Init3tButton( btnStrings[ index ] , self )
+			self:Register( btn , btnStrings[ index ] )
+			btn:SetText( game.translate_string( tkgp_utils.getLtxValue( ammo , "inv_name_short" , "string" ) ) )
+		end
+	end
+
+	if not notFail then
+		caption:SetText( "You do not have enough ammo." )
+		cancelBtn:SetText( "OK" )
+	end
+end
+
+function remag_ui:InitCallBacks()
+	self:AddCallback( "btn_cancel", ui_events.BUTTON_CLICKED, self.onCancel, self )
+	self:AddCallback( "btn_first", ui_events.BUTTON_CLICKED, self.onFirst, self )
+	self:AddCallback( "btn_second", ui_events.BUTTON_CLICKED, self.onSecond, self )
+	self:AddCallback( "btn_third", ui_events.BUTTON_CLICKED, self.onThird, self )
+	self:AddCallback( "btn_fourth", ui_events.BUTTON_CLICKED, self.onFourth, self )
+end
+
+function remag_ui:onCancel()
+	self:GetHolder():start_stop_menu( self , true )
+end
+
+function remag_ui:magFill( removeType, resultField )
+	--trying to do this as a for loop with db.actor:object doesn't work because it hits the same item more than once
+	local amount = 0
+	local takeMag = false
+
+	--tkgp_utils.giveNews( removeType , "debug" )
+	--tkgp_utils.giveNews( resultField , "debug" )
+
+	-- remove mag and amount of ammo from inv
+	db.actor:inventory_for_each(
+		function ( object )
+			if amount < remagNum and object:section() == removeType then
+				alife():release( alife():object( object:id() ) )
+				amount = amount + 1
+			elseif not takeMag and object:section() == objSection then
+				alife():release( alife():object( object:id() ) )
+				takeMag = true
+			end
+		end
+	)
+
+	-- give the player a full clip
+	ammo_manager.give_loaded( tkgp_utils.getLtxValue( wmSection , resultField , "string" ) )
+	self:GetHolder():start_stop_menu( self , true )
+end
+
+function remag_ui:onFirst()
+	self:magFill( ammoList[ 1 ] , "charged0" )
+end
+
+function remag_ui:onSecond()
+	self:magFill( ammoList[ 2 ] , "charged1" )
+end
+
+function remag_ui:onThird()
+	self:magFill( ammoList[ 3 ] , "charged2" )
+end
+
+function remag_ui:onFourth()
+	self:magFill( ammoList[ 4 ] , "charged3" )
+end
+
+-------------------------------------------------------------------------------
+
+local magmaStrings = { "btn_9x18" , "btn_9x19" , "btn_9x39" , "btn_12cal" , "btn_57x28" , "btn_86x70" , "btn_357" , "btn_545x39" , "btn_556x45" , "btn_762x25" , "btn_762x39" , "btn_762x51" , "btn_762x54" , "btn_792x57" , "btn_1143x23" , "btn_1270x99" , "btn_1270x108" }
+
+function magManagerInit()
+	qqq( "magManagerInit" )
+
+	-- Give the box back
+	tkgp_utils.giveActor( objSection , 1 )
+	level.start_stop_menu( magmanager_ui( get_hud() ), true )
+end
+
+class "magmanager_ui" (CUIScriptWnd)
+
+function magmanager_ui:__init(owner) super()
+	self.owner = owner
+	self:InitControls()
+	self:InitCallBacks()
+end
+
+function magmanager_ui:__finalize()
+end
+
+function magmanager_ui:InitControls()
+	self:Init( 0, 0, 1024, 768 )
+	local xml = CScriptXmlInit()
+	xml:ParseFile( "ui_gop_magma.xml" )
+	xml:InitStatic( "background", self )
+	local caption = xml:InitStatic( "instruction_caption", self )
+	local cancelBtn = xml:Init3tButton( "btn_cancel", self )
+	self:Register( cancelBtn, "btn_cancel" )
+
+	local notFail = false
+
+	-- add ammo buttons
+	for index = 1,#magmaStrings do
+		--local ammo = ammoList[ index ]
+		--if ammo ~= nil and ( boxCount * tkgp_utils.countItems( ammo ) ) >= remagNum then
+			--notFail = true
+			local btn = xml:Init3tButton( magmaStrings[ index ] , self )
+			self:Register( btn , magmaStrings[ index ] )
+		--end
+	end
+end
+
+function magmanager_ui:InitCallBacks()
+	self:AddCallback( "btn_9x18" , ui_events.BUTTON_CLICKED, self.on_9x18, self )
+	self:AddCallback( "btn_9x19" , ui_events.BUTTON_CLICKED, self.on_9x19, self )
+	self:AddCallback( "btn_9x39" , ui_events.BUTTON_CLICKED, self.on_9x39, self )
+	self:AddCallback( "btn_12cal" , ui_events.BUTTON_CLICKED, self.on_12cal, self )
+
+	self:AddCallback( "btn_57x28" , ui_events.BUTTON_CLICKED, self.on_57x28, self )
+	self:AddCallback( "btn_86x70" , ui_events.BUTTON_CLICKED, self.on_86x70, self )
+	self:AddCallback( "btn_357" , ui_events.BUTTON_CLICKED, self.on_357, self )
+	self:AddCallback( "btn_545x39" , ui_events.BUTTON_CLICKED, self.on_545x39, self )
+
+	self:AddCallback( "btn_556x45" , ui_events.BUTTON_CLICKED, self.on_556x45, self )
+	self:AddCallback( "btn_762x25" , ui_events.BUTTON_CLICKED, self.on_762x25, self )
+	self:AddCallback( "btn_762x39" , ui_events.BUTTON_CLICKED, self.on_762x39, self )
+	self:AddCallback( "btn_762x51" , ui_events.BUTTON_CLICKED, self.on_762x51, self )
+
+	self:AddCallback( "btn_762x54" , ui_events.BUTTON_CLICKED, self.on_762x54, self )
+	self:AddCallback( "btn_792x57" , ui_events.BUTTON_CLICKED, self.on_792x57, self )
+	self:AddCallback( "btn_1143x23" , ui_events.BUTTON_CLICKED, self.on_1143x23, self )
+	self:AddCallback( "btn_1270x99" , ui_events.BUTTON_CLICKED, self.on_1270x99, self )
+
+	self:AddCallback( "btn_1270x108" , ui_events.BUTTON_CLICKED, self.on_1270x108, self )
+	self:AddCallback( "btn_cancel" , ui_events.BUTTON_CLICKED, self.onCancel, self )
+end
+
+function magmanager_ui:on_9x18()
+	self:unloadType( "9x18" )
+end
+
+function magmanager_ui:on_9x19()
+	self:unloadType( "9x19" )
+end
+
+function magmanager_ui:on_9x39()
+	self:unloadType( "9x39" )
+end
+
+function magmanager_ui:on_12cal()
+	self:unloadType( "12x76" )
+end
+
+function magmanager_ui:on_57x28()
+	self:unloadType( "5.7x28" )
+end
+
+function magmanager_ui:on_86x70()
+	self:unloadType( "8.6x70" )
+end
+
+function magmanager_ui:on_357()
+	self:unloadType( "357" )
+end
+
+function magmanager_ui:on_545x39()
+	self:unloadType( "5.45x39" )
+end
+
+function magmanager_ui:on_556x45()
+	self:unloadType( "5.56x45" )
+end
+
+function magmanager_ui:on_762x25()
+	self:unloadType( "7.62x25" )
+end
+
+function magmanager_ui:on_762x39()
+	self:unloadType( "7.62x39" )
+end
+
+function magmanager_ui:on_762x51()
+	self:unloadType( "7.62x51" )
+end
+
+function magmanager_ui:on_762x54()
+	self:unloadType( "7.62x54" )
+end
+
+function magmanager_ui:on_792x57()
+	self:unloadType( "7.92x57" )
+end
+
+function magmanager_ui:on_1143x23()
+	self:unloadType( "11.43x23" )
+end
+
+function magmanager_ui:on_1270x99()
+	self:unloadType( "12.7x99" )
+end
+
+function magmanager_ui:on_1270x108()
+	self:unloadType( "12.7x108" )
+end
+
+function magmanager_ui:unloadType( type )
+	qqq( "type: "..type )
+
+	--
+	local magCount = 0
+	db.actor:inventory_for_each(
+		function( object )
+			local section = object:section()
+			local capacity = 0
+			local wmSection = ""
+			local ammoClasses = ""
+			local ammoCount = ""
+			local ammoType = ""
+
+			if ( "mag_" == section:sub( 1 , 4 ) or "belt_" == section:sub( 1 , 5 ) or "clip_" == section:sub( 1 , 5 ) ) and section:find( type ) ~= nil then
+				if not string.ends( section , "_e" ) then
+					if object:condition() < 0.995 then
+						capacity = tkgp_utils.getLtxValue( section , "mag_size" , "float" )
+						wmSection = tkgp_utils.getLtxValue( section , "wm_section" , "string" )
+						ammoClasses = mysplit( tkgp_utils.getLtxValue( wmSection , "ammo_class" , "string" ) , "," )
+
+						ammoCount = math.ceil( object:condition() * capacity )
+						ammoType = ammoClasses[ 1 ]
+
+						qqq( "est ammo: "..ammoCount )
+						qqq( "ammo type: "..ammoType )
+
+						-- Give the player the ammo, empty mag, and take the partial
+						tkgp_utils.giveActor( ammoType , ammoCount )
+						tkgp_utils.giveActor( section.."_e" , 1 )
+						alife():release( alife():object( object:id() ) )
+					end
+				end
+			end
+		end
+	)
+
+-- 	object:set_condition( newCondition < 1 and newCondition or 1 )
+
+	self:GetHolder():start_stop_menu( self , true )
+end
+
+function magmanager_ui:onCancel()
+	self:GetHolder():start_stop_menu( self , true )
+end
