@@ -1,7 +1,6 @@
---| Eazy refilling of empty mags and unloading of partial mags |--
---| last modified for ZoA 1.07.2 by root			           |--
---| by: root                                                   |--
---| credits: TKGP                                              |--
+--| Eazy loading and unloading of magazines  |--
+--| Last modified for ZoA 1.07.2             |--
+--| Code adapted from TKGP                   |--
 
 -- This script uses config/weapons/ammo/*.ltx for usable mags
 -- and config/weapons/magazines.ltx for ammo and mag types
@@ -33,8 +32,9 @@ local remagOpt1 , remagOpt2, remagOpt3 , remagOpt4
 local ammoList , boxSize
 
 function onItemDrop( object )
-	-- Could we add sometime to easy drop all spare bullets?
+	-- Could we add something to easy drop all loose bullets?
 	-- What about bank or withdraw all loose bullets?
+
 	--objSection = object:section()
 	--qqq( "drop objSection: "..objSection )
 end
@@ -42,7 +42,7 @@ end
 function onItemUse( object )
 	objSection = object:section()
 
-	-- If we used the ammo box helper item, do something else
+	-- If the ammo box helper item was used, do something else
 	if objSection == "ammo_helper" then
 		magManagerInit()
 		return
@@ -50,30 +50,27 @@ function onItemUse( object )
 
 	wmSection = tkgp_utils.getLtxValue( objSection , "wm_section", "string" )
 
+	-- Do we have a magazine of some kind?
 	if wmSection ~= nil then
+		local ammoClasses = mysplit( tkgp_utils.getLtxValue( wmSection , "ammo_class" , "string" ) , "," )
 		remagNum = tkgp_utils.getLtxValue( wmSection , "ammo_mag_size" , "float" )
 
-		-- build the list of ammo types
-		local ammoClasses = mysplit( tkgp_utils.getLtxValue( wmSection , "ammo_class" , "string" ) , "," )
-		ammoList = { nil , nil , nil , nil }
-		boxSize = { 1 , 1 , 1 , 1 }
-
-		for index = 1 , #ammoClasses do
-			ammoList[ index ] = ammoClasses[ index ]
-
-			if( ammoList[ index ] ~= nil ) then
-				boxSize[ index ] = tkgp_utils.getLtxValue( ammoList[ index ] , "box_size" , "float" )
-				qqq( "section "..objSection.."'s boxSize is "..boxSize[ index ].." for "..ammoList[ index ] )
-			else
-				boxSize[ index ] = 1
-			end
-		end
-
 		if remagNum ~= nil and #ammoClasses then
-			-- There is an off-by-one error in the unloading code
+			-- There is an off-by-one error in the ZoA unloading code
 			-- that affects full magazines. We get one less bullet back,
 			-- so use one less to load
+			-- NOTE: Disabled since mags are now meant to be emptied
+			-- with the ammo_helper item
 			--remagNum = remagNum - 1
+
+			-- Build the list of ammo types
+			ammoList = { nil , nil , nil , nil }
+			boxSize = { 1 , 1 , 1 , 1 }
+
+			for index = 1 , #ammoClasses do
+				ammoList[ index ] = ammoClasses[ index ]
+				boxSize[ index ] = tkgp_utils.getLtxValue( ammoList[ index ] , "box_size" , "float" )
+			end
 
 			-- Give the player their mag back. Remove later
 			tkgp_utils.giveActor( objSection , 1 )
@@ -350,6 +347,7 @@ function magmanager_ui:unloadType( type )
 				if ( "mag_" == section:sub( 1 , 4 ) or "belt_" == section:sub( 1 , 5 ) or "clip_" == section:sub( 1 , 5 ) ) and ( type == "partial" or type == "all" or section:find( type ) ~= nil ) then
 					condition = object:condition()
 
+					-- For some reason, a full mag isn't in perfect condition
 					if type == "all" or condition < 0.995 then
 						capacity = tkgp_utils.getLtxValue( section , "mag_size" , "float" )
 
@@ -370,15 +368,18 @@ function magmanager_ui:unloadType( type )
 						boxSize = tkgp_utils.getLtxValue( ammoType , "box_size" , "float" )
 						ammoCount = math.ceil( condition * capacity ) / boxSize
 
-						qqq( "section: "..section )
+						--qqq( "section: "..section )
 						--qqq( "ammo type: "..ammoType )
-						qqq( "capacity: "..capacity )
-						qqq( "boxSize: "..boxSize )
-						qqq( "est ammo: "..ammoCount )
+						--qqq( "capacity: "..capacity )
+						--qqq( "boxSize: "..boxSize )
+						--qqq( "est ammo: "..ammoCount )
 
 						-- Exchange the magazine with an empty and bullets
 						tkgp_utils.giveActor( ammoType , ammoCount )
-						tkgp_utils.giveActor( section.."_e" , 1 )
+
+						-- Get empty, wm_section of empty, charged0 empty. This
+						-- is to make empty mags of the same calibur stackable
+						tkgp_utils.giveActor( tkgp_utils.getLtxValue( tkgp_utils.getLtxValue( section.."_e" , "wm_section" , "string" ) , "charged0" , "string" ).."_e" , 1 )
 						alife():release( alife():object( object:id() ) )
 					end
 				end
@@ -413,9 +414,9 @@ function g()
 -- 	ammo_manager.give_loaded( "belt_50_7.62x51_fmj" )
 -- 	ammo_manager.give_loaded( "belt_50_7.62x51_m993" )
 -- 	ammo_manager.give_loaded( "belt_50_7.62x51_mk316" )
---
--- 	ammo_manager.give_loaded( "belt_50_7.92x57_ap" )
--- 	ammo_manager.give_loaded( "belt_50_7.92x57_fmj" )
+
+	ammo_manager.give_loaded( "belt_50_7.92x57_ap" )
+	ammo_manager.give_loaded( "belt_50_7.92x57_fmj" )
 
 	-- Clips
 
@@ -513,10 +514,10 @@ function g()
 -- 	ammo_manager.give_loaded( "mag_10_7.62x54_7h14" )
 -- 	ammo_manager.give_loaded( "mag_10_7.62x54_7t2" )
 -- 	ammo_manager.give_loaded( "mag_10_7.62x54_ap" )
-
-	ammo_manager.give_loaded( "mag_10_7.92x57_ap" )
-	ammo_manager.give_loaded( "mag_10_7.92x57_fmj" )
-
+--
+-- 	ammo_manager.give_loaded( "mag_10_7.92x57_ap" )
+-- 	ammo_manager.give_loaded( "mag_10_7.92x57_fmj" )
+--
 -- 	ammo_manager.give_loaded( "mag_10_8.6x70_300gr" )
 -- 	ammo_manager.give_loaded( "mag_10_8.6x70_api" )
 -- 	ammo_manager.give_loaded( "mag_10_8.6x70_fmj" )
@@ -534,12 +535,12 @@ function g()
 -- 	ammo_manager.give_loaded( "mag_20_7.62x51_fmj" )
 -- 	ammo_manager.give_loaded( "mag_20_7.62x51_m993" )
 -- 	ammo_manager.give_loaded( "mag_20_7.62x51_mk316" )
-
-	ammo_manager.give_loaded( "mag_20_9x18_57n181s" )
-	ammo_manager.give_loaded( "mag_20_9x18_fmj" )
-	ammo_manager.give_loaded( "mag_20_9x18_pmm" )
-	ammo_manager.give_loaded( "mag_20_9x18_rg028" )
-
+--
+-- 	ammo_manager.give_loaded( "mag_20_9x18_57n181s" )
+-- 	ammo_manager.give_loaded( "mag_20_9x18_fmj" )
+-- 	ammo_manager.give_loaded( "mag_20_9x18_pmm" )
+-- 	ammo_manager.give_loaded( "mag_20_9x18_rg028" )
+--
 -- 	ammo_manager.give_loaded( "mag_20_9x19_7n21" )
 -- 	ammo_manager.give_loaded( "mag_20_9x19_fmj" )
 -- 	ammo_manager.give_loaded( "mag_20_9x19_jhp" )
