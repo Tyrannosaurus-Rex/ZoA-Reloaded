@@ -1,71 +1,68 @@
 [ammo_12.7x108_ap]:identity_immunities
-GroupControlSection	= spawn_group
+GroupControlSection = spawn_group
 discovery_dependency =
-$spawn			= "weapons\ammo\ammo_50_bmg" ; option for Level Editor
-class			= AMMO
-cform                   = skeleton
-visual                  = weapons\ammo\50_bmg.ogf
-description		= desc_12.7x108
-$prefetch 		= 64
+$spawn              = "weapons\ammo\ammo_50_bmg" ; option for Level Editor
+class               = AMMO
+cform               = skeleton
+visual              = weapons\ammo\bullet_127x108_ap.ogf
+description         = desc_12.7x108
+$prefetch           = 64
 
-cost			= 1350
+cost                = 1350
 
-box_size		= 10
+box_size            = 1
 
-inv_name		= enc_12.7x108
-inv_name_short		= enc_12.7x108_s
-inv_weight		= 1.320
+inv_name            = enc_12.7x108
+inv_name_short      = enc_12.7x108_s
+inv_weight          = 1.320
 
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x		= 11
-inv_grid_y		= 24
+inv_grid_width      = 1
+inv_grid_height     = 1
+inv_grid_x          = 45
+inv_grid_y          = 38
 
-k_dist			= 1
-k_disp			= 1.94
-k_hit			= 11.9
-k_impulse		= 1
-k_pierce		= 1.5
-impair			= 1.0
-buck_shot		= 1
-tracer			= on
-wm_size         = 0.127
-explosive		= off
+k_dist              = 1
+k_disp              = 1.94
+k_hit               = 11.9
+k_impulse           = 1
+k_pierce            = 1.5
+impair              = 1.0
+buck_shot           = 1
+tracer              = on
+wm_size             = 0.127
+explosive           = off
 
+;--------------------------------------------------;
+
+[1270x108_reloadable]:identity_immunities
+class					= II_ANTIR
+eat_health				= 0
+eat_satiety				= 0
+eat_power				= 0
+eat_radiation			= 0
+eat_alcohol				= 0
+wounds_heal_perc		= 0
+eat_portions_num		= 1
+
+;--------------------------------------------------;
 
 [mag_5_12.7x108_ap]:ammo_12.7x108_ap
-box_size	= 1
-mag_size	= 5
+box_size        = 1
+mag_size        = 5
 script_binding  = ammo_manager.init
-wm_section	= wm_12.7x108a5
-inv_name		= mag_5_12.7x108
-description		= desc_load_12.7x108_ap
-inv_name_short	= mag_5_12.7x108_ap_s
-inv_weight		= 0.1320
-belt = true
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x			= 39
-inv_grid_y			= 14
-visual	= weapons\magazines\mag_5_1270x108.ogf
-cost = 220
+wm_section      = wm_12.7x108a5
+inv_name        = mag_5_127x108
+inv_name_short  = mag_5_127x108_s
+description     = mag_5_127x108_ap
+inv_weight      = 0.1320
+belt            = true
+inv_grid_width  = 1
+inv_grid_height = 1
+inv_grid_x      = 39
+inv_grid_y      = 14
+visual          = weapons\magazines\mag_5_1270x108.ogf
+cost            = 220
 
-;--------------------------------------------------;
-
-[12.7x108_reloadable]:identity_immunities
-class				= II_ANTIR
-
-eat_health			= 0
-eat_satiety			= 0
-eat_power			= 0
-eat_radiation		= 0
-eat_alcohol			= 0
-wounds_heal_perc	= 0
-eat_portions_num	= 1
-animation_slot		= 4
-
-;--------------------------------------------------;
-
-[mag_5_12.7x108_ap_e]:mag_5_12.7x108_ap,12.7x108_reloadable
-description		= desc_mag_e
+[mag_5_12.7x108_ap_e]:mag_5_12.7x108_ap,1270x108_reloadable
+description        = mag_5_127x108_e
 inv_weight = 0.24

@@ -4,7 +4,7 @@ discovery_dependency =
 $spawn			= "weapons\ammo\ammo_7.62x51_fmj" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
-visual                  = Arsenal_Mod\ammo\762x51_fmj.ogf
+visual                  = weapons\ammo\bullet_338_fmj.ogf
 description				= ammo_8.6x70-250_vld_desc
 $prefetch 		= 64
 
@@ -39,7 +39,7 @@ discovery_dependency =
 $spawn			= "weapons\ammo\ammo_7.62x51_ap" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
-visual                  = Arsenal_Mod\ammo\762x51_ap.ogf
+visual                  = weapons\ammo\bullet_338_api.ogf
 description				= ammo_8.6x70-ap-i_desc
 $prefetch 		= 64
 
@@ -75,7 +75,7 @@ discovery_dependency =
 $spawn			= "weapons\ammo\ammo_7.62x51_fmj" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
-visual                  = Arsenal_Mod\ammo\762x51_fmj.ogf
+visual                  = weapons\ammo\bullet_338_nat.ogf
 description				= enc_weapons1_ammo-8.6x70-n508
 $prefetch 		= 64
 
@@ -110,7 +110,7 @@ discovery_dependency =
 $spawn			= "weapons\ammo\ammo_7.62x51_ap" ; option for Level Editor
 class			= AMMO
 cform                   = skeleton
-visual                  = Arsenal_Mod\ammo\762x51_ap.ogf
+visual                  = weapons\ammo\bullet_338_hp.ogf
 description				= enc_weapons1_ammo_8.6x70_scenar
 $prefetch 		= 64
 
@@ -140,163 +140,53 @@ explosive		= off
 
 ;--------------------------------------------------;
 
-[mag_5_8.6x70_fmj]:ammo_8.6x70_fmj
-box_size	= 1
-mag_size	= 5
+[86x70_reloadable]:identity_immunities
+class					= II_ANTIR
+eat_health				= 0
+eat_satiety				= 0
+eat_power				= 0
+eat_radiation			= 0
+eat_alcohol				= 0
+wounds_heal_perc		= 0
+eat_portions_num		= 1
+
+;--------------------------------------------------;
+[mag_5_86x70_base]
+box_size		= 1
+mag_size		= 5
 script_binding  = ammo_manager.init
+inv_name		= mag_5_86x70
+inv_name_short	= mag_5_86x70_s
+inv_weight		= 0.0257
+belt 			= true
+inv_grid_width	= 1
+inv_grid_height	= 1
+inv_grid_x		= 39
+inv_grid_y		= 11
+visual			= weapons\magazines\mag_5_762x51.ogf
+
+[mag_5_8.6x70_fmj]:ammo_8.6x70_fmj, mag_5_86x70_base
 wm_section	= wm_8.6x70a5
-inv_name		= mag_5_8.6x70_fmj
-description		= desc_load_8.6x70_fmj
-inv_name_short	= mag_5_8.6x70_fmj_s
-inv_weight		= 0.0257
-belt = true
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x			= 39
-inv_grid_y			= 11
-visual	= weapons\magazines\mag_5_762x51.ogf
-cost = 3250
+description	= mag_5_86x70_fmj
+cost 		= 3250
 
-[mag_5_8.6x70_api]:ammo_8.6x70_api
-box_size	= 1
-mag_size	= 5
-script_binding  = ammo_manager.init
+[mag_5_8.6x70_api]:ammo_8.6x70_api, mag_5_86x70_base
 wm_section	= wm_8.6x70b5
-inv_name		= mag_5_8.6x70_api
-description		= desc_load_8.6x70_api
-inv_name_short	= mag_5_8.6x70_api_s
-inv_weight		= 0.0257
-belt = true
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x			= 39
-inv_grid_y			= 11
-visual	= weapons\magazines\mag_5_762x51.ogf
-cost = 4250
+description	= mag_5_86x70_api
+cost 		= 4250
 
-[mag_5_8.6x70_n508]:ammo_8.6x70_n508
-box_size	= 1
-mag_size	= 5
-script_binding  = ammo_manager.init
+[mag_5_8.6x70_n508]:ammo_8.6x70_n508, mag_5_86x70_base
 wm_section	= wm_8.6x70c5
-inv_name		= mag_5_8.6x70_n508
-description		= desc_load_8.6x70_n508
-inv_name_short	= mag_5_8.6x70_n508_s
-inv_weight		= 0.0257
-belt = true
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x			= 39
-inv_grid_y			= 11
-visual	= weapons\magazines\mag_5_762x51.ogf
-cost = 3550
+description	= mag_5_86x70_n508
+cost 		= 3550
 
-[mag_5_8.6x70_300gr]:ammo_8.6x70_300gr
-box_size	= 1
-mag_size	= 5
-script_binding  = ammo_manager.init
+[mag_5_8.6x70_300gr]:ammo_8.6x70_300gr, mag_5_86x70_base
 wm_section	= wm_8.6x70d5
-inv_name		= mag_5_8.6x70_scenar
-description		= desc_load_8.6x70_scenar
-inv_name_short	= mag_5_8.6x70_scenar_s
-inv_weight		= 0.0257
-belt = true
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x			= 39
-inv_grid_y			= 11
-visual	= weapons\magazines\mag_5_762x51.ogf
-cost = 4550
+description	= mag_5_86x70_scenar
+cost 		= 4550
 
-;--------------------------------------------------;
-
-[mag_10_8.6x70_fmj]:ammo_8.6x70_fmj
-box_size	= 1
-mag_size	= 10
-script_binding  = ammo_manager.init
-wm_section	= wm_8.6x70a10
-inv_name		= mag_10_7.62x51
-description		= desc_load_7.62x51_fmj
-inv_name_short	= mag_10_7.62x51_fmj_s
-inv_weight		= 0.0257
-belt = true
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x			= 38
-inv_grid_y			= 9
-visual	= weapons\magazines\mag_10_762x51.ogf
-cost = 5120
-
-[mag_10_8.6x70_api]:ammo_8.6x70_api
-box_size	= 1
-mag_size	= 10
-script_binding  = ammo_manager.init
-wm_section	= wm_8.6x70b10
-inv_name		= mag_10_7.62x51
-description		= desc_load_7.62x51_ap
-inv_name_short	= mag_10_7.62x51_ap_s
-inv_weight		= 0.0257
-belt = true
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x			= 38
-inv_grid_y			= 9
-visual	= weapons\magazines\mag_10_762x51.ogf
-cost = 6120
-
-
-[mag_10_8.6x70_n508]:ammo_8.6x70_n508
-box_size	= 1
-mag_size	= 10
-script_binding  = ammo_manager.init
-wm_section	= wm_8.6x70c10
-inv_name		= mag_10_8.6x70_n508
-description		= desc_load_8.6x70_n508
-inv_name_short	= mag_10_8.6x70_n508_s
-inv_weight		= 0.0257
-belt = true
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x			= 38
-inv_grid_y			= 9
-visual	= weapons\magazines\mag_10_762x51.ogf
-cost = 5120
-
-[mag_10_8.6x70_300gr]:ammo_8.6x70_300gr
-box_size	= 1
-mag_size	= 10
-script_binding  = ammo_manager.init
-wm_section	= wm_8.6x70d10
-inv_name		= mag_10_8.6x70_scenar
-description		= desc_load_8.6x70_scenar
-inv_name_short	= mag_10_8.6x70_scenar_s
-inv_weight		= 0.0257
-belt = true
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x			= 38
-inv_grid_y			= 9
-visual	= weapons\magazines\mag_10_762x51.ogf
-cost = 6120
-
-;--------------------------------------------------;
-
-[8.6x70_reloadable]:identity_immunities
-class				= II_ANTIR
-
-eat_health			= 0
-eat_satiety			= 0
-eat_power			= 0
-eat_radiation		= 0
-eat_alcohol			= 0
-wounds_heal_perc	= 0
-eat_portions_num	= 1
-animation_slot		= 4
-
-;--------------------------------------------------;
-
-[mag_5_8.6x70_fmj_e]:mag_5_8.6x70_fmj,8.6x70_reloadable
-description		= desc_mag_e
+[mag_5_8.6x70_fmj_e]:mag_5_8.6x70_fmj,86x70_reloadable
+description		= mag_5_86x70_e
 cost = 70
 
 [mag_5_8.6x70_api_e]:mag_5_8.6x70_fmj_e
@@ -307,8 +197,42 @@ cost = 70
 
 ;--------------------------------------------------;
 
-[mag_10_8.6x70_fmj_e]:mag_10_8.6x70_fmj,8.6x70_reloadable
-description		= desc_mag_e
+[mag_10_86x70_base]
+box_size		= 1
+mag_size		= 10
+script_binding  = ammo_manager.init
+inv_name		= mag_10_86x70
+inv_name_short	= mag_10_86x70_s
+inv_weight		= 0.0257
+belt 			= true
+inv_grid_width	= 1
+inv_grid_height	= 1
+inv_grid_x		= 38
+inv_grid_y		= 9
+visual			= weapons\magazines\mag_10_762x51.ogf
+
+[mag_10_8.6x70_fmj]:ammo_8.6x70_fmj, mag_10_86x70_base
+wm_section	= wm_8.6x70a10
+description		= mag_10_86x70_fmj
+cost = 5120
+
+[mag_10_8.6x70_api]:ammo_8.6x70_api, mag_10_86x70_base
+wm_section	= wm_8.6x70b10
+description		= mag_10_86x70_api
+cost = 6120
+
+[mag_10_8.6x70_n508]:ammo_8.6x70_n508, mag_10_86x70_base
+wm_section	= wm_8.6x70c10
+description		= mag_10_86x70_n508
+cost = 5120
+
+[mag_10_8.6x70_300gr]:ammo_8.6x70_300gr, mag_10_86x70_base
+wm_section	= wm_8.6x70d10
+description		= mag_10_86x70_scenar
+cost = 6120
+
+[mag_10_8.6x70_fmj_e]:mag_10_8.6x70_fmj,86x70_reloadable
+description		= mag_10_86x70_e
 cost = 75
 
 [mag_10_8.6x70_api_e]:mag_10_8.6x70_fmj_e

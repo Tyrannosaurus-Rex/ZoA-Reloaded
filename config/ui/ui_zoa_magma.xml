@@ -3,8 +3,8 @@
 		<texture x="168" y="234" width="550.5" height="449">ui\ui_common</texture>
 	</background>
 
-	<instruction_caption x="240" y="150" width="220" height="30">
-		<text font="letterica18" align="c" vert_align="c" r="240" g="220" b="185">ui_rb_help</text>
+	<instruction_caption x="240" y="146" width="220" height="30">
+		<text font="letterica18" align="c" vert_align="c" r="240" g="220" b="185">Select the ammo type to unpack from magazines</text>
 	</instruction_caption>
 
 	<btn_9x18 x="260" y="190" width="100" height="30">
@@ -158,9 +158,9 @@
 		<texture_t>ui_inv_btn_t</texture_t>
 		<texture_h>ui_inv_btn_h</texture_h>
 	</btn_all>
-	
+
 	<btn_partial x="500" y="390" width="100" height="30">
-		<text font="letterica18" r="240" g="220" b="185">Partial</text>
+		<text font="letterica18" r="240" g="220" b="185">All Partial</text>
 		<texture_e>ui_inv_btn_e</texture_e>
 		<texture_d>ui_inv_btn_d</texture_d>
 		<texture_t>ui_inv_btn_t</texture_t>

@@ -4,7 +4,7 @@ discovery_dependency	=
 $spawn					= "weapons\ammo\ammo_5.56x45_ss190" ; option for Level Editor
 class					= AMMO
 cform					= skeleton
-visual					= weapons\ammo\ammo_556x45_ss190.ogf
+visual					= weapons\ammo\bullet_556x45_m855.ogf
 description				= enc_weapons1_ammo_ammo-5.56x45-ss190
 $prefetch				= 64
 
@@ -35,6 +35,7 @@ wm_size					= 0.0556
 
 [ammo_5.56x45_75gr]:ammo_5.56x45_ss190
 description		= enc_weapons1_ammo_ammo-5.56x45-75gr
+visual 			= weapons\ammo\bullet_556x45_hpbt.ogf
 cost			= 40
 inv_name		= ammo-5.56x45-75gr
 inv_name_short	= ammo-5.56x45-75gr_s
@@ -52,7 +53,7 @@ impair			= 1.13
 
 [ammo_5.56x45_ap]:ammo_5.56x45_ss190
 $spawn			= "weapons\ammo\ammo_5.56x45_ap" ; option for Level Editor
-visual			= weapons\ammo\ammo_556x45_ap.ogf
+visual			= weapons\ammo\bullet_556x45_m995.ogf
 description		= enc_weapons1_ammo_ammo-5.56x45-ap
 cost			= 30
 
@@ -72,7 +73,7 @@ impair			= 1.15
 
 [ammo_5.56x45_77gr]:ammo_5.56x45_ss190
 $spawn			= "weapons\ammo\ammo_5.56x45_ap" ; option for Level Editor
-visual			= weapons\ammo\ammo_556x45_ap.ogf
+visual			= weapons\ammo\bullet_556x45_mk262.ogf
 description		= enc_weapons1_ammo_ammo-5.56x45-mk262
 cost			= 60
 
@@ -90,12 +91,24 @@ impair			= 1.10
 
 ;--------------------------------------------------;
 
+[556x45_reloadable]:identity_immunities
+class					= II_ANTIR
+eat_health				= 0
+eat_satiety				= 0
+eat_power				= 0
+eat_radiation			= 0
+eat_alcohol				= 0
+wounds_heal_perc		= 0
+eat_portions_num		= 1
+
+;--------------------------------------------------;
+
 [mag_30_5.56x45_base]
 box_size		= 1
 mag_size		= 30
 script_binding	= ammo_manager.init
-inv_name		= mag_5.56x45-30_name
-inv_name_short	= mag_5.56x45-30_sname
+inv_name		= mag_30_556x45
+inv_name_short	= mag_30_556x45_s
 inv_weight		= 0.0117
 belt			= true
 inv_grid_width	= 1
@@ -106,23 +119,33 @@ visual			= weapons\magazines\mag_30_556x45.ogf
 
 [mag_30_5.56x45_ss190]:ammo_5.56x45_ss190,mag_30_5.56x45_base
 wm_section	= wm_5.56x45a30
-description	= mag_5.56x45-30-ss190_desc
+description	= mag_30_556x45_ss190
 cost		= 1385
 
 [mag_30_5.56x45_ap]:ammo_5.56x45_ap,mag_30_5.56x45_base
 wm_section	= wm_5.56x45b30
-description	= mag_5.56x45-30-ap_desc
+description	= mag_30_556x45_ap
 cost		= 1770
 
 [mag_30_5.56x45_75gr]:ammo_5.56x45_75gr,mag_30_5.56x45_base
 wm_section	= wm_5.56x45c30
-description	= mag_5.56x45-30-hpbt_desc
+description	= mag_30_556x45_hpbt
 cost		= 1885
 
 [mag_30_5.56x45_77gr]:ammo_5.56x45_77gr,mag_30_5.56x45_base
 wm_section	= wm_5.56x45d30
-description	= mag_5.56x45-30-mk262_desc
+description	= mag_30_556x45_mk262
 cost		= 2440
+
+[mag_30_5.56x45_ss190_e]:mag_30_5.56x45_ss190,556x45_reloadable
+description = mag_30_556x45_e
+cost        = 45
+
+[mag_30_5.56x45_ap_e]:mag_30_5.56x45_ss190_e
+
+[mag_30_5.56x45_75gr_e]:mag_30_5.56x45_ss190_e
+
+[mag_30_5.56x45_77gr_e]:mag_30_5.56x45_ss190_e
 
 ;--------------------------------------------------;
 
@@ -130,8 +153,8 @@ cost		= 2440
 box_size		= 1
 mag_size		= 100
 script_binding	= ammo_manager.init
-inv_name		= mag_5.56x45-100_name
-inv_name_short	= mag_5.56x45-100_sname
+inv_name		= mag_100_556x45
+inv_name_short	= mag_100_556x45_s
 inv_weight		= 0.0117
 belt			= true
 inv_grid_width	= 1
@@ -142,92 +165,27 @@ visual			= weapons\magazines\mag_100_556x45.ogf
 
 [mag_100_5.56x45_ss190]:ammo_5.56x45_ss190,mag_100_5.56x45_base
 wm_section	= wm_5.56x45a100
-description	= mag_5.56x45-100-ss190_desc
+description	= mag_100_556x45_ss190
 cost		= 3200
 
 [mag_100_5.56x45_ap]:ammo_5.56x45_ap,mag_100_5.56x45_base
 wm_section	= wm_5.56x45b100
-description	= mag_5.56x45-100-ap_desc
+description	= mag_100_556x45_ap
 cost		= 3680
 
 [mag_100_5.56x45_75gr]:ammo_5.56x45_75gr,mag_100_5.56x45_base
 wm_section	= wm_5.56x45c100
-description	= mag_5.56x45-100-hpbt_desc
+description	= mag_100_556x45_hpbt
 cost		= 5200
 
 [mag_100_5.56x45_77gr]:ammo_5.56x45_77gr,mag_100_5.56x45_base
 wm_section	= wm_5.56x45d100
-description	= mag_5.56x45-100-mk262_desc
+description	= mag_100_556x45_mk262
 cost		= 7280
 
-;--------------------------------------------------;
-; Unused?
-
-[belt_100_5.56x45_ss190]:ammo_5.56x45_ss190
-box_size		= 1
-mag_size		= 100
-script_binding	= ammo_manager.init
-wm_section		= wm_5.56x45e100
-inv_name		= belt_100_5.56x45
-description		= desc_load_5.56x45_ss190
-inv_name_short	= belt_100_5.56x45_ss190_s
-inv_weight		= 0.0117
-belt			= true
-inv_grid_width	= 1
-inv_grid_height	= 1
-inv_grid_x		= 37
-inv_grid_y		= 2
-visual			= weapons\magazines\box_100_556x45.ogf
-cost			= 4050
-
-[belt_100_5.56x45_ap]:ammo_5.56x45_ap
-box_size		= 1
-mag_size		= 100
-script_binding	= ammo_manager.init
-wm_section		= wm_5.56x45f100
-inv_name		= belt_100_5.56x45
-description		= desc_load_5.56x45_ap
-inv_name_short	= belt_100_5.56x45_ap_s
-inv_weight		= 0.0117
-belt			= true
-inv_grid_width	= 1
-inv_grid_height	= 1
-inv_grid_x		= 37
-inv_grid_y		= 2
-visual			= weapons\magazines\box_100_556x45.ogf
-cost			= 4280
-
-;--------------------------------------------------;
-
-[5.56x45_reloadable]:identity_immunities
-class				= II_ANTIR
-
-eat_health			= 0
-eat_satiety			= 0
-eat_power			= 0
-eat_radiation		= 0
-eat_alcohol			= 0
-wounds_heal_perc	= 0
-eat_portions_num	= 1
-animation_slot		= 4
-
-;--------------------------------------------------;
-
-[mag_30_5.56x45_ss190_e]:mag_30_5.56x45_ss190,5.56x45_reloadable
-description	= mag_5.56x45-30-empty_desc
-cost		= 45
-
-[mag_30_5.56x45_ap_e]:mag_30_5.56x45_ss190_e
-
-[mag_30_5.56x45_75gr_e]:mag_30_5.56x45_ss190_e
-
-[mag_30_5.56x45_77gr_e]:mag_30_5.56x45_ss190_e
-
-;--------------------------------------------------;
-
-[mag_100_5.56x45_ss190_e]:mag_100_5.56x45_ss190,5.56x45_reloadable
-description	= mag_5.56x45-100-empty_desc
-cost		= 100
+[mag_100_5.56x45_ss190_e]:mag_100_5.56x45_ss190,556x45_reloadable
+description	= mag_100_556x45_e
+cost		= 25
 
 [mag_100_5.56x45_ap_e]:mag_100_5.56x45_ss190_e
 
@@ -238,10 +196,34 @@ cost		= 100
 ;--------------------------------------------------;
 ; Unused?
 
-[belt_100_5.56x45_ss190_e]:belt_100_5.56x45_ss190
-description	= desc_belt_e
+[belt_100_5.56x45_base]
+box_size		= 1
+mag_size		= 100
+script_binding	= ammo_manager.init
+inv_name		= belt_100_556x45
+inv_name_short	= belt_100_556x45_s
+inv_weight		= 0.0117
+belt			= true
+inv_grid_width	= 1
+inv_grid_height	= 1
+inv_grid_x		= 37
+inv_grid_y		= 2
+visual			= weapons\magazines\box_100_556x45.ogf
+
+[belt_100_5.56x45_ss190]:ammo_5.56x45_ss190, belt_100_5.56x45_base
+wm_section		= wm_5.56x45e100
+description		= belt_100_556x45_ss190
+cost			= 4050
+
+[belt_100_5.56x45_ap]:ammo_5.56x45_ap, belt_100_5.56x45_base
+wm_section		= wm_5.56x45f100
+description		= belt_100_556x45_ap
+cost			= 4280
+
+[belt_100_5.56x45_ss190_e]:belt_100_5.56x45_ss190,556x45_reloadable
+description	= belt_100_556x45_e
 cost		= 200
 
-[belt_100_5.56x45_ap_e]:belt_100_5.56x45_ap
-description	= desc_belt_e
+[belt_100_5.56x45_ap_e]:belt_100_5.56x45_ss190_e
+description	= belt_100_556x45_e
 cost		= 200

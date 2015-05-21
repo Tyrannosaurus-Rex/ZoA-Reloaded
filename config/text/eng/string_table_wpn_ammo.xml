@@ -1,0 +1,555 @@
+<!-- included from string_table_weapons.xml -->
+<!-- 7.62x25mm -->
+    <string id="ammo-7.62x25-p-m"><text>Box of 7.62x25mm rounds</text></string>
+    <string id="ammo-7.62x25-p"><text>7.62x25mm rounds</text></string>
+    <string id="ammo-7.62x25-p_s"><text>7.62x25</text></string>
+    <string id="enc_weapons1_ammo_ammo-7.62x25-p">
+        <text>7.62x25mm cartridge, head stamps indicate that it was manufactured by the Ulyanovsk Machinery Plant in the USSR during the 1940s.</text>
+    </string>
+    
+    <string id="ammo-7.62x25-ps-m"><text>Box of 7.62x2 P45 rounds</text></string>
+    <string id="ammo-7.62x25-ps"><text>7.62x25mm P45 rounds</text></string>
+    <string id="ammo-7.62x25-ps_s"><text>7.62x25 P45</text></string>
+    <string id="enc_weapons1_ammo_ammo-7.62x25-ps">
+        <text>Romanian surplus 7.62x25mm, manufactured during the 1980s.</text>
+    </string>
+    
+    <string id="ammo-7.62x25-p41-m"><text>Box of 7.62x25mm P41 rounds</text></string>
+    <string id="ammo-7.62x25-p41"><text>7.62x25mm P41 rounds</text></string>
+    <string id="ammo-7.62x25-p41_s"><text>7.62x25 P41</text></string>
+    <string id="enc_weapons1_ammo_ammo-7.62x25-p41">
+        <text>An incendiary variant of the 7.62x25mm cartridge designed specifically for the PPSh-41 submachine gun, it is loaded hotter than the standard cartridge and produces a muzzle velocity of 1600fps.</text>
+    </string>
+    
+    <string id="ammo-7.62x25-ppu-m"><text>Box of 7.62x25 PPU rounds</text></string>
+    <string id="ammo-7.62x25-ppu"><text>7.62x25mm PPU rounds</text></string>
+    <string id="ammo-7.62x25-ppu_s"><text>7.62x25 PPU</text></string>
+    <string id="enc_weapons1_ammo_ammo-7.62x25-ppu">
+        <text>Commercial 7.62x25 ammo, manufactured by Prvi Partizan PPU of Serbia. Uses an 85gr lead bullet with brass case and non-corrosive primers.</text>
+    </string>
+
+<!-- 9x18mm -->
+    <string id="ammo-9x18-fmj"><text>9x18mm PST rounds</text></string>
+    <string id="ammo-9x18-fmj_s"><text>9x18 PST</text></string>
+    <string id="ammo-9x18-fmj-m"><text>Box of 9x18mm PST rounds</text></string>
+    <string id="ammo-9x18-fmj_s-m"><text>9x18 PST</text></string>
+    <string id="enc_weapons1_ammo_ammo-9x18-fmj">
+        <text>Adopted by the Soviet Union in 1954, 9x18mm PST is a standard round for the PM, PB, and Fort 12 pistols. Has a steel core and full-jacketed bullet with a weak armor-piercing effect.</text>
+    </string>
+    
+    <string id="ammo-9x18-pmm"><text>9x18mm PP rounds</text></string>
+    <string id="ammo-9x18-pmm_s"><text>9x18 PP</text></string>
+    <string id="ammo-9x18-pmm-m"><text>Box of 9x18mm PP rounds</text></string>
+    <string id="enc_weapons1_ammo_ammo-9x18-pmm">
+        <text>Adopted during the 1980s for the improved Makarov PMM, 9x18mm PP has a higher pressure loading and can be distinguished by its conical tip.</text>
+    </string>
+    
+    <string id="ammo-9x18-rg028"><text>9x18mm RG 028 rounds</text></string>
+    <string id="ammo-9x18-rg028_s"><text>9x18 RG 028</text></string>
+    <string id="ammo-9x18-rg028-m"><text>Box of 9x18mm RG 028 rounds</text></string>
+    <string id="enc_weapons1_ammo_ammo-9x18-rg028">
+        <text>The RG 028 version of the 9x18mm cartridge was developed during the 1970s for military personnel of the Soviet Union to have a cartridge capable of penetrating various types of body armor of the time period. Unfortunately the cartridge's performance is rather obsolete against contemporary body armor.</text>
+    </string>   
+    
+    <string id="ammo-9x18-sp7"><text>9x18mm SP7 rounds</text></string>
+    <string id="ammo-9x18-sp7_s"><text>9x18 SP7</text></string>
+    <string id="ammo-9x18-sp7-m"><text>Box of 9x18mm SP7 rounds</text></string>
+    <string id="enc_weapons1_ammo_ammo-9x18-sp7">
+        <text>The SP7 variant of the 9x18mm cartridge was created to serve the needs of Russian law enforcement for a round with an increased stopping effect against unarmored targets, it achieves this by having a higher muzzle velocity and an expanding bullet.</text>
+    </string>
+
+<!-- 9x19mm -->
+    <string id="ammo-9x19-fmj"><text>9x19mm FMJ</text></string>
+    <string id="ammo-9x19-fmj_s"><text>9x19 FMJ</text></string>
+    <string id="ammo-9x19-fmj-m"><text>Box of 9x19mm FMJ</text></string>
+    <string id="enc_weapons1_ammo_ammo-9x19-fmj">
+        <text>9x19mm Parabellum, also known as 9mm Luger, is a pistol cartridge used by a wide variety of handguns and submachine guns, and is one of the most popular handgun cartridges around the globe.</text>
+    </string>
+    
+    <string id="ammo-9x19-jhp"><text>9x19mm JHP+P</text></string>
+    <string id="ammo-9x19-jhp_s"><text>9x19 JHP+P</text></string>
+    <string id="ammo-9x19-jhp-m"><text>Box of 9x19mm JHP+P</text></string>
+    <string id="enc_weapons1_ammo_ammo-9x19-jhp">
+        <text>A hollow-point load of 9x19mm, provides a considerably better wounding profile over the standard FMJ 9x19 due to its expansive properties.</text>
+    </string>   
+    
+    <string id="ammo-9x19-7n21"><text>9x19mm 7N21 rounds</text></string>
+    <string id="ammo-9x19-7n21_s"><text>9x19 7N21</text></string>
+    <string id="ammo-9x19-7n21-m"><text>Box of 9x19mm 7N21 rounds</text></string>
+    <string id="enc_weapons1_ammo_ammo-9x19-7n21">
+        <text>9x19 7N21, is one of two Russian "high performance" cartridges of this type, it was developed as an armor-piercing overpressure pistol cartridge for the GSh-18 pistol, and was later adopted by the PP-90M1 and PP-2000 submachine guns. The 7N21 bullet features a hardened (sub-caliber) steel penetrator core, enclosed by a bi-metal jacket. The space between the core and jacket is filled with polyethylene, and the tip of the penetrator is exposed at the front of the bullet, to achieve better penetration. The penetration range for body armor is specified at up to 40 m. Both 7N31 and 7N21 provide armor penetration in a pistol round that is comparable to the performance of FN Herstal's 5.7x28mm cartridge without the need to modify the dimensions of existing handgun / submachine gun chamberings.</text>
+    </string>
+    
+    <string id="ammo-9x19-pbp"><text>9x19mm 7N31 rounds</text></string>
+    <string id="ammo-9x19-pbp_s"><text>9x19 7N31</text></string>
+    <string id="ammo-9x19-pbp-m"><text>Box of 9x19mm 7N31 rounds</text></string>
+    <string id="enc_weapons1_ammo_ammo-9x19-pbp">
+        <text>9x19 7N31, is one of two Russian "high performance" cartridges of this type, it was developed as an armor-piercing overpressure pistol cartridge for the GSh-18 pistol, and was later adopted by the PP-90M1 and PP-2000 submachine guns. The bullet uses a hardened steel core that renders it capable of penetrating 8 mm thick steel plate at up to 10 m. Both 7N31 and 7N21 provide armor penetration in a pistol round that is comparable to the performance of FN Herstal's 5.7x28mm cartridge without the need to modify the dimensions of existing handgun / submachine gun chamberings.</text>
+    </string>
+
+<!-- .357 Magnum -->
+    <string id="ammo-357-jfp"><text>.357 Magnum JFP</text></string>
+    <string id="ammo-357-jfp_s"><text>.357 Mag JFP</text></string>
+    <string id="ammo-357-jfp-m"><text>Box of .357 Magnum</text></string>
+    <string id="enc_weapons1_ammo_ammo-357-jfp"><text>A .357 caliber jacketed flatpoint bullet used mostly in revolvers and some American West lever action guns.</text></string>
+
+    <string id="ammo-357-jhp"><text>.357 Magnum JHP</text></string>
+    <string id="ammo-357-jhp_s"><text>.357 Mag HP</text></string>
+    <string id="ammo-357-jhp-m"><text>Box of .357 Magnum HP</text></string>
+    <string id="enc_weapons1_ammo_ammo-357-jhp"><text>A .357 caliber jacketed hollowpoint bullet used mostly in revolvers and some American West lever action guns.</text></string>
+
+<!-- .45 Auto -->
+    <string id="ammo-11.43x23-fmj"><text>.45ACP rounds</text></string>
+    <string id="ammo-11.43x23-fmj_s"><text>.45ACP</text></string>
+    <string id="ammo-11.43x23-fmj-m"><text>Box of .45ACP rounds</text></string>
+    <string id="enc_weapons1_ammo_ammo-11.43x23-fmj"><text>A standard round for the Colt M1911 and the SIG P220 pistols. It has a standard core and a full-jacketed bullet.</text></string>
+    
+    <string id="ammo-11.43x23-hydro"><text>.45ACP HP rounds</text></string>
+    <string id="ammo-11.43x23-hydro_s"><text>.45 HP</text></string>
+    <string id="ammo-11.43x23-hydro-m"><text>Box of .45ACP HP rounds</text></string>
+    <string id="enc_weapons1_ammo_ammo-11.43x23-hydro"><text>A hollow-point version of the .45 ACP pistol cartridge manufactured by Federal. Due to the bullet's expanding effect it transfers kinetic energy more effectively.</text></string>
+    
+    <string id="ammo-11.43x23-frng"><text>.45 Glaser blue safety slugs</text></string>
+    <string id="ammo-11.43x23-frng_s"><text>.45 Glaser</text></string>
+    <string id="ammo-11.43x23-frng-m"><text>Box of .45 Glaser blue safety slugs</text></string>
+    <string id="enc_weapons1_ammo_ammo-11.43x23-frng"><text>A type of frangible ammunition for .45 ACP manufactured by Cor-bon, instead of using a solid core bullet it uses No. 12 birdshot contained behind a polymer cap. On impacting a target the jacket disintegrates and causes the birdshot to very quickly expend all of the bullet's energy into the target and avoid over-penetration. While it is designed to avoid causing ricochets and hitting bystanders, it is woefully ineffective against enemies wearing armor or even heavy clothing.</text></string>
+
+<!-- 5.45x39mm -->
+    <string id="ammo-5.45x39-ap"><text>5.45x39mm 7N22 AP</text></string>
+    <string id="ammo-5.45x39-ap_s"><text>5.45x39 7N22 AP</text></string>
+    <string id="ammo-5.45x39-ap-m"><text>Box of 5.45x39 AP</text></string>
+    <string id="enc_weapons1_ammo_ammo-5.45x39-ap">
+        <text>Introduced in 1998, the 7N22 cartridge is the armor-piercing variant of 5.45x39, it has a pointed steel penetrator instead of the tapered steel core used in 7N6 and can be identified by its painted black tip. 7N22 is seldomly-found in the Zone, yet it is still far more common than the modern 7N24 round that uses a tungsten-carbide penetrator.</text>
+    </string>
+    
+    <string id="ammo-5.45x39-fmj"><text>5.45x39mm 7N6 FMJ</text></string>
+    <string id="ammo-5.45x39-fmj_s"><text>5.45x39 FMJ</text></string>
+    <string id="ammo-5.45x39-fmj-m"><text>Box of 5.45x39mm FMJ</text></string>
+    <string id="enc_weapons1_ammo_ammo-5.45x39-fmj">
+        <text>Developed during the 1970s and officially adopted by the Soviet Union in 1974, the 5.45x39mm round, designation 7N6, was designed to replace the obsolete 7.62x39mm, which is considerably heavier and larger. 5.45 7N6 is an indirect descendent of the 7.62x39mm M67 round, which experimented with adding a steel core that shifts the center of gravity upon impact. 5.45x39 consists of a copper jacket around a steel core and lead cap placed behind a hollow cavity in the bullet point. Impact causes the tip of the bullet to deform, and the steel core to turn, which leads to its distinctive yawing characteristic, the 5.45's yawing in tissue is generally considered to occur more reliably than the 5.56's fragmentation because that design component is more dependent on the bullet's center of gravity than its kinetic energy. The 7N6 round was replaced by 7N10 cartridge in the early 90s, causing much of this ammunition to be found in the Zone.</text>
+    </string>
+    
+    <string id="ammo-5.45x39-7n24"><text>5.45x39mm 7N24 AP+</text></string>
+    <string id="ammo-5.45x39-7n24_s"><text>5.45x39 7N24 AP+</text></string>
+    <string id="box_545_7n24"><text>Box of 5.45x39mm 7N24 AP+</text></string>
+    <string id="enc_weapons1_ammo_ammo-5.45x39-7n24">
+        <text>Also, known as 5.45 BS, 7N24 is a relatively new armor piercing round, intended to replace the aging 7N22 round, 7N24 uses a tungsten-carbide penetrator, intended to pierce modern body armor. 7N24 started being manufactured ca. 2002, at the Barnaul Cartridge Plant, since then, some of it has found its way into the Zone, though it is still far less common than the hardened steel-core variety.</text>
+    </string>
+    
+    <string id="ammo-5.45x39-7t3"><text>5.45x39mm 7T3</text></string>
+    <string id="ammo-5.45x39-7t3_s"><text>5.45x39 7T3</text></string>
+    <string id="box_545_7t3"><text>Box of 5.45x39mm Tracer</text></string>
+    <string id="enc_weapons1_ammo_ammo-5.45x39-7t3">
+        <text>7T3 and 7T3M, are designations for the tracer variant of 5.45x39mm</text>
+    </string>
+
+<!-- 5.56x45mm -->
+    <string id="ammo-5.56x45-ap"><text>5.56x45mm M995 AP rounds</text></string>
+    <string id="ammo-5.56x45-ap_s"><text>5.56 M995 AP</text></string>
+    <string id="ammo-5.56x45-ap-m"><text>Box of 5.56x45mm M995 AP rounds</text></string>
+    <string id="enc_weapons1_ammo_ammo-5.56x45-ap">
+        <text>The 5.56x45mm M995 round, was developed in 1992 as part of the U.S. Military's Soldier Enhancement Program, M995 is non-expanding, non-fragmenting, armor piercing ammunition that can defeat common hard body armor, and was specifically designed to be used against heavy body armor and light vehicles. It uses a tungsten core, and can be identified by its painted black tip, it is capable of penetrating a 12mm armor plate of 300 HB at 100 meters.</text>
+    </string>
+    
+    <string id="ammo-5.56x45-ss190"><text>5.56x45mm M855/SS109 rounds</text></string>
+    <string id="ammo-5.56x45-ss190_s"><text>5.56 M855</text></string>
+    <string id="ammo-5.56x45-ss190-m"><text>Box of 5.56x45mm M855/SS109 rounds</text></string>
+    <string id="enc_weapons1_ammo_ammo-5.56x45-ss190">
+        <text>SS109/M855 ball, is the standardized form of the 5.56x45mm cartridge used by NATO. It is 62gr ammunition that uses a lead core with a steel penetrator designed to defeat steel helmets and light body armor. It's most infamous quality, is its characteristic of fragmentation under 100m. However, 5.56 round's probability of fragmentation is reduced at longer ranges, and this effect is compounded when it is fired from a rifle with a shorter barrel. The SS109 classification is a specification of standards designed by FN Herstal for the 5.56x45mm cartridge, to improve upon the U.S. military's M193 cartridge. The SS109 5.56x45 cartridges found in the Zone consist of different varieties from mixed sources, including FN Herstal's own manufactured ammunition, U.S. Military M855 ball, and many other forms of commercial ammunition that conforms to the SS109 index. </text>
+    </string>
+    
+    <string id="ammo-5.56x45-75gr"><text>5.56x45mm 75gr HPBT rounds</text></string>
+    <string id="ammo-5.56x45-75gr_s"><text>5.56 HPBT</text></string>
+    <string id="ammo-5.56x45-75gr-m"><text>Box of 5.56x45mm 75gr HPBT rounds</text></string>
+    <string id="enc_weapons1_ammo_ammo-5.56x45-75gr">
+        <text>Hornady Match 75gr boat tailed hollow point cartridges for the .223 Remington caliber, has improved damage and accuracy over SS109 standard rounds. Its open tip design and heavier weight improve its likelihood of fragmentation.</text>
+    </string>
+    
+    <string id="ammo-5.56x45-mk262"><text>5.56x45mm Mk262 Mod 1 rounds</text></string>
+    <string id="ammo-5.56x45-mk262_s"><text>5.56 Mk262</text></string>
+    <string id="ammo-5.56x45-mk262-m"><text>Box of 5.56x45mm Mk262 Mod 1 rounds</text></string>
+    <string id="enc_weapons1_ammo_ammo-5.56x45-mk262">
+        <text>Mk262 Mod 1 is a 77gr open-tipped match cartridge for 5.56x45mm manufactured by Black Hills Ammunition, designed to be used with the Mk 12 SPR rifle by the United States military. Due to its higher weight and bullet design, it is more effective at longer ranges than the standard issue M855 round. Originally intended as a sniper round to be used out to 700m, Mk262 became increasingly used by Special Forces Operators who found that the NATO standard M855 was inferior in its design, and its capacity to maintain kinetic energy at longer ranges, especially when used in conjunction with carbines. Since Mk262 is a heavier round with an open cannelure, it is more prone to violent fragmentation and yawing than conventional 5.56x45mm, and this gives it significantly more wounding potential.</text>
+    </string>
+
+<!-- 5.7x28mm -->
+    <string id="ammo-5.7x28-fmj"><text>5.7x28mm L191 FMJ Tracer rounds</text></string>
+    <string id="ammo-5.7x28-fmj-s"><text>5.7x28mm FMJ</text></string>
+    <string id="ammo-5.7x28-fmj-descr">
+        <text>The 5.7x28mm round was designed and manufactured in Belgium by FN Herstal. This tracer FMJ round does well against unarmored targets, especially in dim light conditions. It also cites better overall performance than 4.6x30mm, it's direct competition. This round is not native to the zone, and will be quite expensive to acquire due to the restricted availabilty regulated by FN. For use in the FN P90 and Five-seven.</text>
+    </string>
+    
+    <string id="ammo-5.7x28-ap"><text>5.7x28mm SS190 AP rounds</text></string>
+    <string id="ammo-5.7x28-ap-s"><text>5.7x28mm AP</text></string>
+    <string id="ammo-5.7x28-ap-descr">
+        <text>The 5.7x28mm L191 AP round was designed and manufactured in Belgium by FN Herstal, and is designated by the ATF as armor-piercing. Designed in conjunction with the FN P90 and Five-seven, this particular round was intended to replace 9x19mm parabellum as the standard PDW cartidge. A rare sight in the zone, mostly due to its availability being restricted by FN to militaries or law enforcement. For use in the FN P90 and Five-seven.</text>
+    </string>
+
+<!-- 7.62x39mm -->
+    <string id="ammo-7.62x39-fmj"><text>7.62x39 PS (M43)</text></string>
+    <string id="ammo-7.62x39-fmj_s"><text>7.62x39 PS</text></string>
+    <string id="ammo-7.62x39-fmj-m"><text>Box of 7.62x39 (M43)</text></string>
+    <string id="enc_weapons1_ammo_ammo-7.62x39-fmj">
+        <text>The Soviet 7.62x39mm FMJ rifle cartridge was designed during World War II and first used in the SKS carbine. The cartridge was likely influenced by a variety of foreign developments, especially the pre-war German GeCo, 7.75x39mm experimental round, and possibly by the late-war German 7.92x33mm Kurz ("Kurz" meaning "short" in German). Shortly after the war, the world's most recognized assault rifle was designed for this cartridge: the AK-47. The cartridge remained the Soviet standard until the 1970s, and is still one of the most common intermediate rifle cartridges used around the world. Its replacement, the 5.45x39mm cartridge, is slightly less powerful but is more controllable in fully automatic fire due to the lower recoil. The change was in part a response to NATO switching from the 7.62x51mm NATO cartridge to 5.56x45mm NATO.</text>
+    </string>
+    
+    <string id="ammo-7.62x39-m67"><text>7.62x39mm M67 rounds</text></string>
+    <string id="ammo-7.62x39-m67_s"><text>7.62x39 M67</text></string>
+    <string id="ammo-7.62x39-m67-m"><text>Box of 7.62x39mm M67 rounds</text></string>
+    <string id="enc_weapons1_ammo_ammo-7.62x39-m67">
+        <text>This version of 7.62x39mm was initially conceived by the Socialist Federal Republic of Yugoslavia during the 1960s, it differs from the Soviet M43 type of 7.62x39 by using a lead core instead of a steel core, and a brass case. The softer bullet core, and some incidental spaces created between the bullet nose and the jacket cover, have led to a higher chance for the round to yaw violently in soft tissue, creating a widened wound channel. Other minor design differences of the M67 type round lead to it being more accurate, in particular the boat-tail of the bullet base.</text>
+    </string>
+    
+    <string id="ammo-7.62x39-hp"><text>7.62x39mm HP rounds</text></string>
+    <string id="ammo-7.62x39-hp_s"><text>7.62x39 HP</text></string>
+    <string id="ammo-7.62x39-hp-m"><text>Box of 7.62x39mm HP rounds</text></string>
+    <string id="enc_weapons1_ammo_ammo-7.62x39-hp">
+        <text>Wolf Military Classic 124gr Hollowpoint cartridges for 7.62x39mm, steel-cased expanding ammunition. Manufactured in Russia.</text>
+    </string>
+    
+    <string id="ammo-7.62x39-sp"><text>7.62x39mm SP rounds</text></string>
+    <string id="ammo-7.62x39-sp_s"><text>7.62x39 SP</text></string>
+    <string id="ammo-7.62x39-sp-m"><text>Box of 7.62x39mm SP rounds</text></string>
+    <string id="enc_weapons1_ammo_ammo-7.62x39-sp">
+        <text>Silver Bear 125gr. Soft Point Ammunition for 7.62x39mm, manufactured by JSC Barnaul Machine-Tool Plant in Russia. Non-corrosive, steel-cased expanding ammunition.</text>
+    </string>
+
+<!-- 7.62x51mm -->
+    <string id="ammo-7.62x51-fmj"><text>7.62x51mm NATO M80 FMJ rounds</text></string>
+    <string id="ammo-7.62x51-fmj-m"><text>Box of 7.62x51mm NATO M80 FMJ rounds</text></string>
+    <string id="ammo-7.62x51-fmj_s"><text>7.62x51 M80</text></string>
+    <string id="enc_weapons1_ammo_ammo-7.62x51-fmj">
+        <text>The 7.62x51mm NATO FMJ is a rifle cartridge developed in the 1950s as a standard firearm cartridge among NATO countries. The 7.62x51mm NATO cartridge was introduced to military service in rifles and machine guns. It was introduced in U.S. service in the M14 Rifle and M60 Machine gun in the late 1950s. Fabrique Nationale's FAL became the most popular 7.62 mm NATO rifle in Europe and served well into the early 1980s. The M14 was superseded in U.S. service as the infantry adopted the 5.56x45mm M16. However, the M14 and many other firearms that use the 7.62x51 round remain in service, especially in the case of sniper rifles and machine guns. The round is used by infantry and from ground vehicles, aircraft and ships. While similar in appearance, the military 7.62x51 NATO cartridge is not identical to the commercial .308 Winchester. However, their interchange is not listed as unsafe in either combination. Some confuse the round with the 7.62x39mm intermediate cartridge used in the AK-47/AKM and other weapons, because both may be referred to simply as "7.62". They are not interchangeable.</text>
+    </string>
+    
+    <string id="ammo-7.62x51-m61"><text>7.62x51mm NATO M61 AP rounds</text></string>
+    <string id="ammo-7.62x51-m61-m"><text>Box of 7.62x51mm NATO M61 AP rounds</text></string>
+    <string id="ammo-7.62x51-m61_s"><text>7.62x51 M61</text></string>
+    <string id="enc_weapons1_ammo_ammo-7.62x51-m61">
+        <text>An armor-piercing round created by the United States for the 7.62x51 NATO cartridge. Uses a hardened steel core painted with a black tip.</text>
+    </string>
+    
+    <string id="ammo-7.62x51-mk316"><text>7.62x51mm Mk 316 Mod 0 rounds</text></string>
+    <string id="ammo-7.62x51-mk316-m"><text>Box of 7.62x51mm Mk 316 Mod 0 rounds</text></string>
+    <string id="ammo-7.62x51-mk316_s"><text>7.62x51 Mk316</text></string>
+    <string id="enc_weapons1_ammo_ammo-7.62x51-mk316">
+        <text>A round purposefully-designed for long range sniper engagements, Mk 316 Mod 0 consists of a 175gr hollow-point boat-tailed bullet, loaded in match cartridge cases with match primers and an undisclosed modified extruded propellant. The primary manufacturer of this ammunition type is Black Hills Ammunition. It has a sub 0.8 MOA performance at 274.3 m, and is specified to a sub 1.1 MOA requirement at 548.6 m</text>
+    </string>
+    
+    <string id="ammo-7.62x51-ap"><text>7.62x51mm M61 M993 AP rounds</text></string>
+    <string id="ammo-7.62x51-ap-m"><text>Box of 7.62x51mm M993 AP rounds</text></string>
+    <string id="ammo-7.62x51-ap_s"><text>7.62x51 M993</text></string>
+    <string id="enc_weapons1_ammo_ammo-7.62x51-ap">
+        <text>M993 is a tungsten core armor-piercing cartridge developed by the United States military during the 1990s in an effort to provide a cartridge with improved armor penetration capabilities. The M995 and M993 AP cartridges are required to have better penetration capability than the standard M855 and M80 ball rounds, especially improved capability to penetrate lightly armored vehicles at extended ranges. The primary intent is to improve incapacitation against troops within lightly armored vehicles. All available test data indicate that the M995 and M993 meet these requirements, and will be effective in a realistic combat environment. The primary manufacture of M993 and M995 is Bofors of Sweden.</text>
+    </string>
+
+<!-- 9x39mm -->
+    <string id="ammo-9x39-ap"><text>9x39mm SP-6 rounds</text></string>
+    <string id="ammo-9x39-ap_s"><text>9x39 SP-6</text></string>
+    <string id="ammo-9x39-ap-m"><text>Box of 9x39mm SP-6 rounds</text></string>
+    <string id="enc_weapons1_ammo_ammo-9x39-ap">
+        <text>An armor-piercing round for 9x39 weapons. It uses a hardened steel core that is machined rather than stamped, It provides substantial armor penetration and wounding capability out to 300m.</text>
+    </string>
+    
+    <string id="ammo-9x39-pab9"><text>9x39mm PAB-9 rounds</text></string>
+    <string id="ammo-9x39-pab9_s"><text>9x39 PAB9</text></string>
+    <string id="ammo-9x39-pab9-m"><text>Box of 9x39mm PAB-9 rounds</text></string>
+    <string id="enc_weapons1_ammo_ammo-9x39-pab9">
+        <text>An armor-piercing round for 9x39 weapons. The later and cheaper modification of the armor-piercing SP6 cartridge, however it has been proven to be in-effective and has been discontinued.</text>
+    </string>
+    
+    <string id="ammo-9x39-sp5"><text>9x39mm SP-5 rounds</text></string>
+    <string id="ammo-9x39-sp5_s"><text>9x39 SP-5</text></string>
+    <string id="ammo-9x39-sp5-m"><text>Box of 9x39mm SP-5 rounds</text></string>
+    <string id="enc_weapons1_ammo_ammo-9x39-sp5">
+        <text>Standard FMJ round for 9x39 weapons. It has a subsonic bullet which due to its heavy weight and special design can penetrate most bulletproof vests at a range of up to 400 meters.</text>
+    </string>
+    
+    <string id="ammo-9x39-spp"><text>9x39mm SPP rounds</text></string>
+    <string id="ammo-9x39-spp_s"><text>9x39 SPP</text></string>
+    <string id="ammo-9x39-spp-m"><text>Box of 9x39mm SPP rounds</text></string>
+    <string id="enc_weapons1_ammo_ammo-9x39-spp">
+        <text>A sniper round for 9x39 weapons, It is an FMJ round similar to SP-5, but with improved accuracy and armor-penetration capabilities.</text>
+    </string>
+
+<!-- 7.62x54mm -->
+    <string id="ammo-7.62x54-7h1"><text>7.62x54mm 7N13 rounds</text></string>
+    <string id="ammo-7.62x54-7h1-m"><text>Box of 7.62x54mm PP (7N13) rounds</text></string>
+    <string id="ammo-7.62x54-7h1_s"><text>7.62 PP</text></string>
+    <string id="enc_weapons1_ammo_ammo-7.62x54-7h1">
+        <text>7.62x54R PP (7N13,) is a variant of the 7.62x54R cartridge designed for the PKM machine gun, It has a hardened steel core and is designed to defeat 10mm armor plating out to 200m.</text>
+    </string>
+    
+    <string id="ammo-7.62x54-7h14"><text>7.62x54mm 7N14 rounds</text></string>
+    <string id="ammo-7.62x54-7h14_s"><text>7.62 SNB</text></string>
+    <string id="ammo-7.62x54-7h14_s-m"><text>Box of 7.62 7N14</text></string>
+    <string id="ammo-7.62x54-7h14-m"><text>Box of 7.62 7N14</text></string>
+    <string id="enc_weapons1_ammo_ammo-7.62x54-7h14">
+        <text>7.62x54R SNB (7N14) is a sniper round for the SVD and other Russian sniper rifles. It provides improved accuracy and range, and has moderate armor penetration capabilities. The cartridge has a bimetallic case.</text>
+    </string>
+    
+    <string id="ammo-7.62x54-ap"><text>7.62x54mm B-32 (7-BZ-3) rounds</text></string>
+    <string id="ammo-7.62x54-ap_s"><text>7.62 B-32</text></string>
+    <string id="ammo-7.62x54-ap-m"><text>Box of 7.62x54mm B-32, (7-BZ-3) rounds</text></string>
+    <string id="ammo-7.62x54-ap_s-m"><text>Box of 7.62 B-32</text></string>
+    <string id="enc_weapons1_ammo_ammo-7.62x54-ap">
+        <text>Armor piercing incendiary variant of 7.62x54R, uses a steel core for the penetration of armor, with a cap placed rearward of the core containing the incendiary mixture. Like many Russian rounds it uses a bimetallic or lacquered steel case instead of a brass case, for cost effectiveness and ease of manufacture.</text>
+    </string>
+
+    <string id="ammo-7.62x54-7t2"><text>7.62x54mm T-46M (7T2) rounds</text></string>
+    <string id="ammo-7.62x54-7t2_s"><text>7.62 7T2</text></string>
+    <string id="ammo-7.62x54-7t2-m"><text>Box of 7.62x54mm 7T2 rounds</text></string>
+    <string id="enc_weapons1_ammo_ammo-7.62x54-7t2">
+        <text>7.62x54R T-46M, also known as 7T2, is a tracer variant of the 7.62x54R cartridge, ignition of tracer powder occurs at 80-120m from weapon muzzle, provides line-of-sight to target.</text>
+    </string>
+
+<!-- .338 Lapua -->
+    <string id="ammo_8.6x70-250_vld"><text>.338 Lapua Magnum 250gr Scenar VLD rounds</text></string>
+    <string id="ammo_8.6x70-250_vld-m"><text>Box of .338 Lapua Magnum 250gr Scenar VLD rounds</text></string>
+    <string id="ammo_8.6x70-250_vld_s"><text>.338 FMJ</text></string>
+    <string id="ammo_8.6x70-250_vld_desc">
+        <text>.338 Lapua Magum (8.6x70mm) is a cartridge developed specifically for long range sniper rifles with a maximum range of approximately 1500m. The Afghanistan War and Iraq War made it a combat-proven round with ready and substantial ammunition availability. The .338 Lapua is a dual-purpose, anti-personnel and anti-material round, but its anti-material potential is limited, due to the bullet's lower kinetic energy compared with that of the .50 BMG's 35.64-to-55.08-gram (550.0 to 850.0 gr) projectiles.\n\nThis version of the cartridge is the 250 Scenar VLD variety. The VLD designation of the ammo stands for very-low-drag, which fits the specification for long range sniper engagements.</text>
+    </string>
+    
+    <string id="ammo_8.6x70-api"><text>.338 Lapua Magnum API rounds</text></string>
+    <string id="ammo_8.6x70-api-m"><text>Box of .338 Lapua Magnum API rounds</text></string>
+    <string id="ammo_8.6x70-api_s"><text>.338 API</text></string>
+    <string id="ammo_8.6x70-ap-i_desc">
+        <text>Armor-piercing incendiary load for .338 LM, intended for anti-material purposes.</text>
+    </string>
+    
+    <string id="ammo-8.6x70-n508"><text>.338 Lapua Magnum Naturalis rounds</text></string>
+    <string id="ammo-8.6x70-n508-m"><text>Box of .338 Lapua Magnum Naturalis rounds</text></string>
+    <string id="ammo-8.6x70-n508_s"><text>.338 Naturalis</text></string>
+    <string id="enc_weapons1_ammo-8.6x70-n508">
+        <text>The Naturalis version of the .338 cartridge is intended for hunting, it uses a lead-free bullet with a hollow core covered by a plastic cap. It is designed to rapidly expand and transfer its energy, creating a large wound channel.</text>
+    </string>
+    
+    <string id="ammo-8.6x70-scenar"><text>.338 Lapua Magnum 300gr VLD rounds</text></string>
+    <string id="ammo-8.6x70-scenar-m"><text>Box of .338 Lapua Magnum 300gr VLD rounds</text></string>
+    <string id="ammo-8.6x70-scenar_s"><text>.338 Scenar</text></string>
+    <string id="enc_weapons1_ammo_8.6x70_scenar">
+        <text>Heavier 300gr loading of .338 Scenar VLD.</text>
+    </string>
+
+<!-- 7.92x57mm -->
+    <string id="ammo-7.92x57-fmj"><text>7.92x57mm FMJ</text></string>
+    <string id="ammo-7.92x57-fmj-m"><text>Box of 7.92x57mm FMJ rounds</text></string>
+    <string id="ammo-7.92x57-fmj_s"><text>7.92x57mm FMJ</text></string>
+    <string id="enc_weapons1_ammo_ammo-7.92x57-fmj"><text>Also known as 8mm Mauser, this round isn't used in ZoA at all.</text></string>
+
+    <string id="ammo-7.92x57-ap"><text>7.92x57mm FMJ</text></string>
+    <string id="ammo-7.92x57-ap-m"><text>Box of 7.92x57mm FMJ rounds</text></string>
+    <string id="ammo-7.92x57-ap_s"><text>7.92x57mm FMJ</text></string>
+    <string id="enc_weapons1_ammo_ammo-7.92x57-ap"><text>Also known as 8mm Mauser, this round isn't used in ZoA at all.</text></string>
+
+<!-- 50 BMG -->
+    <string id="enc_50BMG"><text>.50 BMG FMJ</text></string>
+        <string id="enc_50BMG_s"><text>.50 BMG</text></string>
+        <string id="desc_ammo_50bmg"><text>A .50 caliber bullet in a 99mm length cartidge. Commonly used in large AT and AP sniper rifles.</text></string>
+
+<!-- 12.7x108mm -->
+    <string id="enc_12.7x108"><text>12.7x108mm AP</text></string>
+        <string id="enc_12.7x108_s"><text>12.7x108mm</text></string>
+        <string id="desc_12.7x108"><text>A .50 caliber bullet in a 108mm length cartridge. Commonly used in large AT and AP sniper rifles.</text></string>
+
+<!-- 12-gauge -->
+    <string id="ammo-12x70-buck"><text>12 gauge buckshot</text></string>
+    <string id="ammo-12x70-buck_s"><text>12ga buckshot</text></string>
+    <string id="ammo-12x70-buck-m"><text>Box of 12 gauge buckshot</text></string>
+    <string id="enc_weapons1_ammo_ammo-12x70-buck">
+        <text>A 70mm 12 gauge shell filled with 6mm buckshot. Has enormous killing power at a close range. Designed for the BM-16, the Winchester M1300, and the SPAS-12 shotguns. Most effective at ranges under 30 meters.</text>
+    </string>
+    
+    <string id="ammo-12x70-drag"><text>12 gauge dragons breath</text></string>
+    <string id="ammo-12x70-drag_s"><text>12ga dragon</text></string>
+    <string id="ammo-12x70-drag-m"><text>Box of 12 gauge dragon</text></string>
+    <string id="enc_weapons1_ammo_ammo-12x70-drag">
+        <text>A 70mm 12 gauge shell that has been filled with shards from a fireball. This highly exerimental form of ammunition could only be created by the bravest or most intoxicated gunsmiths in the zone. Creates quite a show with fired, and creates small explosions upon contact with anything.</text>
+    </string>
+    
+    <string id="ammo-12x76-dart"><text>12 gauge dart</text></string>
+    <string id="ammo-12x76-dart_s"><text>12ga dart</text></string>
+    <string id="ammo-12x76-dart-m"><text>Box of 12 gauge dart</text></string>
+    <string id="enc_weapons1_ammo_ammo-12x76-dart">
+        <text>A 76mm 12 gauge shell filled with finned flechettes. These flechettes stabilize in flight, which greatly increases accuracy. Has an armor-piercing effect and an increased range, up to 150 meters.</text>
+    </string>
+    
+    <string id="ammo-12x76-zhekan"><text>12 gauge slug</text></string>
+    <string id="ammo-12x76-zhekan_s"><text>12ga slug</text></string>
+    <string id="ammo-12x76-zhekan-m"><text>Box of 12 gauge slug</text></string>
+    <string id="enc_weapons1_ammo_ammo-12x76-zhekan">
+        <text>A 76mm shell with a single large bullet. Mostly used for big game hunting, but can be used for other purposes. Its heavy bullet does not pierce, but forces itself through bulletproof vests. Effective range is up to 100 meters.</text>
+    </string>
+
+<!-- Other -->
+    <string id="ammo-vog-25"><text>VOG-25 Grenade</text></string>
+    <string id="ammo-vog-25_s"><text>VOG-25 Grenade</text></string>
+    <string id="enc_weapons1_ammo_ammo-vog-25">
+        <text>A 40mm grenade for the GP-25 grenade launcher.</text>
+    </string>
+    
+    <string id="ammo-vog-25p"><text>VOG-25P Grenade</text></string>
+    <string id="ammo-vog-25p_s"><text>VOG-25P Grenade</text></string>
+    <string id="enc_weapons1_ammo_ammo-vog-25p">
+        <text>A 40mm grenade for the GP-25 grenade launcher. Prior to explosion, the grenade leaps in to the air about one meter, increasing its kill effectiveness.</text>
+    </string>
+    
+    <string id="ammo-m209"><text>M203 Grenade</text></string>
+    <string id="ammo-m209_s"><text>M203 Grenade</text></string>
+    <string id="enc_weapons1_ammo_ammo-m209">
+        <text>A 40mm grenade for the M203 or M79 grenade launchers.</text>
+    </string>
+    
+    <string id="ammo-og-7b"><text>OG-7V Warhead</text></string>
+    <string id="ammo-og-7b_s"><text>OG-7V Warhead</text></string>
+    <string id="enc_weapons1_ammo_ammo-og-7b">
+        <text>A highly-explosive 40mm fragmentation warhead for the RPG-7. Equally effective against troops and light armored vehicles.</text>
+    </string>
+    
+    <string id="ammo-gauss"><text>2mm Flash rounds</text></string>
+    <string id="ammo-gauss_s"><text>2mm Flash</text></string>
+    <string id="enc_weapons1_ammo_ammo-gauss">
+        <text>Energy cells prepared with lethal elements in a Gauss rifle magazine. The energy source is an encapsulated piece of the Flash Artifact.</text>
+    </string>
+
+<!-- empty ammo box strings --> 
+    <string id="box_762x25_empty_name"><text>Empty Box of 7.62x25</text></string>
+    <string id="box_762x25_empty_desc">
+        <text>An empty cardboard box used for storing small quantities of ammunition. This box can hold 40 7.62x25mm cartridges. If you have enough ammo, use this to choose what type to store.</text>
+    </string>
+    
+    <string id="box_9x18_empty_name"><text>Empty Box of 9x18</text></string>
+    <string id="box_9x18_empty_desc">
+        <text>An empty cardboard box used for storing small quantities of ammunition. This box can hold 20 9x18mm cartridges. If you have enough ammo, use this to choose what type to store.</text>
+    </string>
+    
+    <string id="box_9x19_empty_name"><text>Empty Box of 9x19</text></string>
+    <string id="box_9x19_empty_desc">
+        <text>An empty cardboard box used for storing small quantities of ammunition. This box can hold 20 9x19mm cartridges. If you have enough ammo, use this to choose what type to store.</text>
+    </string>
+    
+    <string id="box_45_empty_name"><text>Empty Box of .45</text></string>
+    <string id="box_45_empty_desc">
+        <text>An empty cardboard box used for storing small quantities of ammunition. This box can hold 20 .45 caliber cartridges. If you have enough ammo, use this to choose what type to store.</text>
+    </string>
+    
+    <string id="box_545x39_empty_name"><text>Empty Box of 5.45x39</text></string>
+    <string id="box_545x39_empty_desc">
+        <text>An empty cardboard box used for storing small quantities of ammunition. This box can hold 30 5.45x39mm cartridges. If you have enough ammo, use this to choose what type to store.</text>
+    </string>
+    
+    <string id="box_556x45_empty_name"><text>Empty Box of 5.56x45</text></string>
+    <string id="box_556x45_empty_desc">
+        <text>An empty cardboard box used for storing small quantities of ammunition. This box can hold 30 5.56x45mm cartridges. If you have enough ammo, use this to choose what type to store.</text>
+    </string>
+    
+    <string id="box_57x28_empty_name"><text>Empty Box of 5.7x28</text></string>
+    <string id="box_57x28_empty_desc">
+        <text>An empty cardboard box used for storing small quantities of ammunition. This box can hold 50 5.7x28mm cartridges. If you have enough ammo, use this to choose what type to store.</text>
+    </string>
+    
+    <string id="box_762x39_empty_name"><text>Empty Box of 7.62x39</text></string>
+    <string id="box_762x39_empty_desc">
+        <text>An empty cardboard box used for storing small quantities of ammunition. This box can hold 30 7.62x39mm cartridges. If you have enough ammo, use this to choose what type to store.</text>
+    </string>
+    
+    <string id="box_762x51_empty_name"><text>Empty Box of 7.62x51</text></string>
+    <string id="box_762x51_empty_desc">
+        <text>An empty cardboard box used for storing small quantities of ammunition. This box can hold 20 7.62x51mm cartridges. If you have enough ammo, use this to choose what type to store.</text>
+    </string>
+    
+    <string id="box_762x54_empty_name"><text>Empty Box of 7.62x54</text></string>
+    <string id="box_762x54_empty_desc">
+        <text>An empty cardboard box used for storing small quantities of ammunition. This box can hold 10 7.62x54mm cartridges. If you have enough ammo, use this to choose what type to store.</text>
+    </string>
+    
+    <string id="box_9x39_empty_name"><text>Empty Box of 9x39</text></string>
+    <string id="box_9x39_empty_desc">
+        <text>An empty cardboard box used for storing small quantities of ammunition. This box can hold 20 9x39mm cartridges. If you have enough ammo, use this to choose what type to store.</text>
+    </string>
+    
+    <string id="box_338_empty_name"><text>Empty Box of .338</text></string>
+    <string id="box_338_empty_desc">
+        <text>An empty cardboard box used for storing small quantities of ammunition. This box can hold 5 .338 caliber cartridges. If you have enough ammo, use this to choose what type to store.</text>
+    </string>
+    
+    <string id="box_shell_empty_name"><text>Empty Box of Shells</text></string>
+    <string id="box_shell_empty_desc">
+        <text>An empty cardboard box used for storing small quantities of ammunition. This box can hold 12 12-gauge shells. If you have enough ammo, use this to choose what type to store.</text>
+    </string>
+    
+    <string id="ammo_crate_762_ps"><text>Ammunition Crate (7.62x39 PS)</text></string>
+    <string id="ammo_crate_762_ps_desc">
+        <text>A crate housing two sealed weatherproof "spam cans," each containing 660 rounds, the total number of rounds this crate contains are 1320 rounds of ammunition. </text>
+    </string>   
+    
+    <string id="ammo_can_762_ps"><text>Ammunition Tin (7.62x39 PS)</text></string>
+    <string id="ammo_can_762_ps_desc">
+        <text>A hermetically-sealed tin of ammunition, sometimes referred to as a "spam can." It contains 660 rounds of ammunition.</text>
+    </string>   
+    
+    <string id="ammo_crate_762_54"><text>Ammunition Crate (7.62x54 PP)</text></string>
+    <string id="ammo_crate_762_54_desc">
+        <text>A crate housing two sealed weatherproof "spam cans," each containing 440 rounds, the total number of rounds this crate contains are 880 rounds of ammunition. </text>
+    </string>   
+    
+    <string id="ammo_can_762_54"><text>Ammunition Tin (7.62x54 PP)</text></string>
+    <string id="ammo_can_762_54_desc">
+        <text>A hermetically-sealed tin of ammunition, sometimes referred to as a "spam can." It contains 440 rounds of ammunition.</text>
+    </string>
+
+    <string id="ammo_crate_m67"><text>Ammunition Crate (7.62x39 M67)</text></string>
+    <string id="ammo_crate_m67_desc">
+        <text>A crate containing 1260 rounds of ammunition. </text>
+    </string>   
+
+    <string id="ammo_crate_545_7n6"><text>Ammunition Crate (5.45x39 7N6)</text></string>
+    <string id="ammo_crate_545_7n6_desc">
+        <text>A crate housing two sealed weatherproof "spam cans," each containing 1080 rounds, the total number of rounds this crate contains are 2160 rounds of ammunition. </text>
+    </string>   
+    
+    <string id="ammo_can_545_7n6"><text>Ammunition Tin (5.45x39 7N6)</text></string>
+    <string id="ammo_can_545_7n6_desc">
+        <text>A hermetically-sealed tin of ammunition, sometimes referred to as a "spam can." It contains 1080 rounds of ammunition.</text>
+    </string>       
+    
+    <string id="ammo_crate_545_t"><text>Ammunition Crate (5.45x39 7T3)</text></string>
+    <string id="ammo_crate_545_t_desc">
+        <text>A crate housing two sealed weatherproof "spam cans," each containing 1080 rounds, the total number of rounds this crate contains are 2160 rounds of ammunition. </text>
+    </string>   
+    
+    <string id="ammo_can_545_t"><text>Ammunition Tin (5.45x39 7T3)</text></string>
+    <string id="ammo_can_545_t_desc">
+        <text>A hermetically-sealed tin of ammunition, sometimes referred to as a "spam can." It contains 1080 rounds of ammunition.</text>
+    </string>       
+    
+    <string id="ammo_crate_7n22"><text>Ammunition Crate (5.45x39 7N22)</text></string>
+    <string id="ammo_crate_7n22_desc">
+        <text>A crate housing two sealed weatherproof "spam cans," each containing 1080 rounds, the total number of rounds this crate contains are 2160 rounds of ammunition. </text>
+    </string>   
+    
+    <string id="ammo_can_7n22"><text>Ammunition Tin (5.45x39 7N22)</text></string>
+    <string id="ammo_can_7n22_desc">
+        <text>A hermetically-sealed tin of ammunition, sometimes referred to as a "spam can." It contains 1080 rounds of ammunition.</text>
+    </string>   
+    
+    <string id="ammo_crate_7n24"><text>Ammunition Crate (5.45x39 7N24)</text></string>
+    <string id="ammo_crate_7n24_desc">
+        <text>A crate housing two sealed weatherproof "spam cans," each containing 1080 rounds, the total number of rounds this crate contains are 2160 rounds of ammunition. </text>
+    </string>   
+    
+    <string id="ammo_can_7n24"><text>Ammunition Tin (5.45x39 7N24)</text></string>
+    <string id="ammo_can_7n24_desc">
+        <text>A hermetically-sealed tin of ammunition, sometimes referred to as a "spam can." It contains 1080 rounds of ammunition.</text>
+    </string>   
+    
+    <string id="ammo_can_556"><text>Ammunition Tin (5.56x45 M855)</text></string>
+    <string id="ammo_can_556_desc">
+        <text>An ammunition tin containing 420 rounds.</text>
+    </string>   
+    
+    <string id="ammo_can_308"><text>Ammunition Tin (7.62x51 M80)</text></string>
+    <string id="ammo_can_308_desc">
+        <text>An ammunition tin containing 200 rounds.</text>
+    </string>       

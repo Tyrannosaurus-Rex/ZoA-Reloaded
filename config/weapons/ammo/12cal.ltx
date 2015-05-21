@@ -1,12 +1,10 @@
-; buckshot
-
-[ammo_12x70_buck]:identity_immunities
+[ammo_12x70_buck]:identity_immunities ; ךאנעוק? 00, 8.4 לל, 3.5 ד
 GroupControlSection		= spawn_group
 discovery_dependency	=
 $spawn					= "weapons\ammo\ammo_12x70_buck" ; option for Level Editor
 class					= AMMO
 cform					= skeleton
-visual					= weapons\ammo\ammo_12x70_buck.ogf
+visual					= weapons\ammo\bullet_12x70_buck.ogf
 description				= enc_weapons1_ammo_ammo-12x70-buck
 $prefetch				= 64
 
@@ -16,7 +14,7 @@ box_size				= 1
 
 inv_name				= ammo-12x70-buck
 inv_name_short			= ammo-12x70-buck_s
-inv_weight				= 0.057
+inv_weight				= 0.05
 
 inv_grid_width			= 1
 inv_grid_height			= 1
@@ -37,11 +35,13 @@ wm_size					= 0.084
 
 [ammo_12x76_zhekan]:ammo_12x70_buck
 $spawn			= "weapons\ammo\ammo_12x76_zhekan" ; option for Level Editor
-visual			= weapons\ammo\ammo_12x76_zhekan.ogf
+visual			= weapons\ammo\bullet_12x76_zhekan.ogf
 description		= enc_weapons1_ammo_ammo-12x76-zhekan
 
 inv_name		= ammo-12x76-zhekan
 inv_name_short	= ammo-12x76-zhekan_s
+inv_weight      = 0.06
+
 inv_grid_x		= 22
 inv_grid_y		= 37
 
@@ -65,7 +65,7 @@ wm_size		= 0.336
 
 [ammo_12x76_dart]:ammo_12x70_buck
 $spawn			= "weapons\ammo\ammo_12x76_dart" ; option for Level Editor
-visual			= weapons\ammo\ammo_12x76_dart.ogf
+visual			= weapons\ammo\bullet_12x76_dart.ogf
 description		= enc_weapons1_ammo_ammo-12x76-dart
 
 inv_name		= ammo-12x76-dart
@@ -84,12 +84,42 @@ wm_size			= 0.185
 
 ;--------------------------------------------------;
 
+[ammo_12x70_dragon]:ammo_12x70_buck
+$spawn			= "weapons\ammo\ammo_12x76_buck" ; option for Level Editor
+visual			= weapons\ammo\bullet_12x70_dragon.ogf
+description		= enc_weapons1_ammo_ammo-12x70-drag
+
+inv_name		= ammo-12x70-drag
+inv_name_short	= ammo-12x70-drag_s
+inv_grid_width  = 1
+inv_grid_height = 1
+inv_grid_x		= 24
+inv_grid_y		= 37
+
+buck_shot		= 8
+explosive       = on
+tracer          = on
+
+;--------------------------------------------------;
+
+[12cal_reloadable]:identity_immunities
+class					= II_ANTIR
+eat_health				= 0
+eat_satiety				= 0
+eat_power				= 0
+eat_radiation			= 0
+eat_alcohol				= 0
+wounds_heal_perc		= 0
+eat_portions_num		= 1
+
+;--------------------------------------------------;
+
 [mag_8_12ga_base]
 box_size		= 1
 mag_size		= 8
 script_binding	= ammo_manager.init
-inv_name		= mag_12ga-8_name
-inv_name_short	= mag_12ga-8_sname
+inv_name		= mag_12ga_8
+inv_name_short	= mag_12ga_8_s
 inv_weight		= 0.0475
 belt			= true
 inv_grid_width	= 1
@@ -98,41 +128,32 @@ inv_grid_x		= 39
 inv_grid_y		= 15
 visual			= weapons\magazines\mag_8_12-76.ogf
 
-[mag_8_12x76_buck]:ammo_12x70_buck,mag_8_12ga_base
+[mag_8_12x76_buck]:ammo_12x70_buck, mag_8_12ga_base
 wm_section	= wm_12x76a8
-description	= mag_12ga-8-buck_desc
+description	= mag_12ga_8_buck
 cost		= 210
 
-[mag_8_12x76_zhekan]:ammo_12x76_zhekan,mag_8_12ga_base
+[mag_8_12x76_zhekan]:ammo_12x76_zhekan, mag_8_12ga_base
 wm_section	= wm_12x76b8
-description	= mag_12ga-8-slug_desc
+description	= mag_12ga_8_slug
 cost		= 230
 
-[mag_8_12x76_dart]:ammo_12x76_dart,mag_8_12ga_base
-wm_section	= wm_12x76c8
-description	= mag_12ga-8-dart_desc
+[mag_8_12x76_dart]:ammo_12x76_dart, mag_8_12ga_base
+wm_section  = wm_12x76c8
+description = mag_12ga_8_dart
+cost        = 220
+
+[mag_8_12x76_drag]:ammo_12x70_dragon, mag_8_12ga_base
+wm_section	= wm_12x76d8
+description	= mag_12ga_8_drag
 cost		= 220
 
-;--------------------------------------------------;
-
-[12x70_reloadable]:identity_immunities
-class				= II_ANTIR
-
-eat_health			= 0
-eat_satiety			= 0
-eat_power			= 0
-eat_radiation		= 0
-eat_alcohol			= 0
-wounds_heal_perc	= 0
-eat_portions_num	= 1
-animation_slot		= 4
-
-;--------------------------------------------------;
-
-[mag_8_12x76_buck_e]:mag_8_12x76_buck,12x70_reloadable
-description	= mag_12ga-8-empty_desc
+[mag_8_12x76_buck_e]:mag_8_12x76_buck,12cal_reloadable
+description	= mag_12ga_8_e
 cost		= 40
 
 [mag_8_12x76_zhekan_e]:mag_8_12x76_buck_e
 
 [mag_8_12x76_dart_e]:mag_8_12x76_buck_e
+
+;[mag_8_12x76_drag_e]:mag_8_12x76_buck_e

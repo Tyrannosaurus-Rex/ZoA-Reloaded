@@ -1,0 +1,420 @@
+<!-- included from string_table_weapons.xml -->
+<!-- Empty -->
+    <string id="desc_clip_e"><text>Empty magazine.</text></string>
+    <string id="desc_belt_e"><text>Empty ammunition belt.</text></string>
+    <string id="desc_mag_e"><text>Empty magazine.</text></string>
+
+<!-- 9x18 -->
+    <string id="clip_8_9x18"><text>8 round 9x18 magazine</text></string>
+        <string id="clip_8_9x18_s"><text>8rd 9x18 mag</text></string>
+        <string id="clip_8_9x18_e"><text>A steel 8 round magazine for various 9x18mm handguns.\n%c[255,238,155,23]\nCompatible with: PM, PB.\n\nUnloaded</text></string>
+		<string id="clip_8_9x18_fmj"><text>A steel 8 round magazine for various 9x18mm handguns.\n%c[255,238,155,23]\nCompatible with: PM, PB.\n\nLoaded: FMJ</text></string>
+		<string id="clip_8_9x18_pmm"><text>A steel 8 round magazine for various 9x18mm handguns.\n%c[255,238,155,23]\nCompatible with: PM, PB.\n\nLoaded: PP</text></string>
+        <string id="clip_8_9x18_sp7"><text>A steel 8 round magazine for various 9x18mm handguns.\n%c[255,238,155,23]\nCompatible with: PM, PB.\n\nLoaded: SP7</text></string>
+	    <string id="clip_8_9x18_rg028"><text>A steel 8 round magazine for various 9x18mm handguns.\n%c[255,238,155,23]\nCompatible with: PM, PB.\n\nLoaded: RG 028</text></string>
+    <string id="clip_12_9x18"><text>12 round 9x18 magazine</text></string>
+        <string id="clip_12_9x18_s"><text>12rd 9x18 mag</text></string>
+        <string id="clip_12_9x18_e"><text>A steel 12 round 9x18 magazine for the Fort pistol.\n%c[255,238,155,23]\nCompatible with: Fort-12.\n\nUnloaded</text></string>
+        <string id="clip_12_9x18_fmj"><text>A steel 12 round 9x18 magazine for the Fort pistol.\n%c[255,238,155,23]\nCompatible with: Fort-12.\n\nLoaded: FMJ</text></string>
+        <string id="clip_12_9x18_pmm"><text>A steel 12 round 9x18 magazine for the Fort pistol.\n%c[255,238,155,23]\nCompatible with: Fort-12.\n\nLoaded: PP</text></string>
+        <string id="clip_12_9x18_sp7"><text>A steel 12 round 9x18 magazine for the Fort pistol.\n%c[255,238,155,23]\nCompatible with: Fort-12.\n\nLoaded: SP7</text></string>
+        <string id="clip_12_9x18_rg028"><text>A steel 12 round 9x18 magazine for the Fort pistol.\n%c[255,238,155,23]\nCompatible with: Fort-12.\n\nLoaded: RG 028</text></string>
+    <string id="clip_20_9x18"><text>15 round 9x18 magazine</text></string>
+        <string id="clip_20_9x18_s"><text>15rd 9x18 mag</text></string>
+        <string id="clip_20_9x18_e"><text>A steel 15 round magazine for various 9x18mm handguns.\n%c[255,238,155,23]\nCompatible with: MP-444.\n\nUnloaded</text></string>
+        <string id="clip_20_9x18_fmj"><text>A steel 15 round magazine for various 9x18mm handguns.\n%c[255,238,155,23]\nCompatible with: MP-444.\n\nLoaded: FMJ</text></string>
+        <string id="clip_20_9x18_pmm"><text>A steel 15 round magazine for various 9x18mm handguns.\n%c[255,238,155,23]\nCompatible with: MP-444.\n\nLoaded: PP</text></string>
+		<string id="clip_20_9x18_sp7"><text>A steel 15 round magazine for various 9x18mm handguns.\n%c[255,238,155,23]\nCompatible with: MP-444.\n\nLoaded: SP7</text></string>
+		<string id="clip_20_9x18_rg028"><text>A steel 15 round magazine for various 9x18mm handguns.\n%c[255,238,155,23]\nCompatible with: MP-444.\n\nLoaded: RG 028</text></string>
+    <string id="mag_20_9x18"><text>20 round 9x18 magazine</text></string>
+        <string id="mag_20_9x18_s"><text>20rd 9x18 mag</text></string>
+		<string id="mag_20_9x18_e"><text>A steel 15 round magazine for the AEK-919k handgun.\n%c[255,238,155,23]\nCompatible with: AEK-919k.\n\nUnloaded</text></string>
+		<string id="mag_20_9x18_fmj"><text>A steel 15 round magazine for the AEK-919k handgun.\n%c[255,238,155,23]\nCompatible with: AEK-919k.\n\nLoaded: FMJ</text></string>
+		<string id="mag_20_9x18_pmm"><text>A steel 15 round magazine for the AEK-919k handgun.\n%c[255,238,155,23]\nCompatible with: AEK-919k.\n\nLoaded: PP</text></string>
+		<string id="mag_20_9x18_sp7"><text>A steel 15 round magazine for the AEK-919k handgun.\n%c[255,238,155,23]\nCompatible with: AEK-919k.\n\nLoaded: SP7</text></string>
+		<string id="mag_20_9x18_rg028"><text>A steel 15 round magazine for the AEK-919k handgun.\n%c[255,238,155,23]\nCompatible with: AEK-919k.\n\nLoaded: RG 028</text></string>
+    <string id="mag_64_9x18"><text>64 round 9x18 helical magazine</text></string>
+        <string id="mag_64_9x18_s"><text>64rd 9x18 mag</text></string>
+          <string id="mag_64_9x18_e"><text>A steel 64 round helical magazine for the PP-91 "Bizon" submachine gun.\n%c[255,238,155,23]\nCompatible with: PP-91 "Bizon"\n\nUnloaded</text></string>
+        <string id="mag_64_9x18_fmj"><text>A steel 64 round helical magazine for the PP-91 "Bizon" submachine gun.\n%c[255,238,155,23]\nCompatible with: PP-91 "Bizon"\n\nLoaded: FMJ</text></string>
+        <string id="mag_64_9x18_pmm"><text>A steel 64 round helical magazine for the PP-91 "Bizon" submachine gun.\n%c[255,238,155,23]\nCompatible with: PP-91 "Bizon"\n\nLoaded: PP</text></string>
+        <string id="mag_64_9x18_sp7"><text>A steel 64 round helical magazine for the PP-91 "Bizon" submachine gun.\n%c[255,238,155,23]\nCompatible with: PP-91 "Bizon"\n\nLoaded: SP7</text></string>
+      <string id="mag_64_9x18_rg028"><text>A steel 64 round helical magazine for the PP-91 "Bizon" submachine gun.\n%c[255,238,155,23]\nCompatible with: PP-91 "Bizon"\n\nLoaded: RG 028</text></string>
+
+    <!--Unused? -->
+    <string id="clip_27_9x18"><text>27 round 9x18 magazine</text></string>
+    	<string id="clip_27_9x18_s"><text>27rd 9x18 mag</text></string>
+        <string id="clip_27_9x18_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nUnloaded</text></string>
+        <string id="clip_27_9x18_fmj"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nLoaded: FMJ</text></string>
+        <string id="clip_27_9x18_pmm"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nLoaded: PP</text></string>
+
+<!-- 9x19 -->
+    <string id="clip_13_9x19"><text>13 round 9x19 magazine</text></string>
+        <string id="clip_13_9x19_s"><text>13rd 9x19 mag</text></string>
+        <string id="clip_13_9x19_e"><text>A 13 round magazine for the Browning Hi-Power handgun.\n%c[255,238,155,23]\nCompatible with: Browning Hi-Power\n\nUnloaded</text></string>
+        <string id="clip_13_9x19_fmj"><text>A 13 round magazine for the Browning Hi-Power handgun.\n%c[255,238,155,23]\nCompatible with: Browning Hi-Power\n\nLoaded: FMJ</text></string>
+        <string id="clip_13_9x19_pbp"><text>A 13 round magazine for the Browning Hi-Power handgun.\n%c[255,238,155,23]\nCompatible with: Browning Hi-Power\n\nLoaded: PBP</text></string>
+        <string id="clip_13_9x19_jhp"><text>A 13 round magazine for the Browning Hi-Power handgun.\n%c[255,238,155,23]\nCompatible with: Browning Hi-Power\n\nLoaded: JHP</text></string>
+        <string id="clip_13_9x19_7n21"><text>A 13 round magazine for the Browning Hi-Power handgun.\n%c[255,238,155,23]\nCompatible with: Browning Hi-Power\n\nLoaded: 7N21</text></string>
+    <string id="clip_15_9x19"><text>15 round 9x19 magazine</text></string>
+        <string id="clip_15_9x19_s"><text>15rd 9x19 mag</text></string>
+        <string id="clip_15_9x19_e"><text>A 15 round magazine used by various 9mm handguns.\n%c[255,238,155,23]\nCompatible with: M92FS, P99\n\nUnloaded</text></string>
+        <string id="clip_15_9x19_fmj"><text>A 15 round magazine used by various 9mm handguns.\n%c[255,238,155,23]\nCompatible with: M92FS, P99\n\nLoaded: FMJ</text></string>
+        <string id="clip_15_9x19_pbp"><text>A 15 round magazine used by various 9mm handguns.\n%c[255,238,155,23]\nCompatible with: M92FS, P99\n\nLoaded: PBP</text></string>
+        <string id="clip_15_9x19_jhp"><text>A 15 round magazine used by various 9mm handguns.\n%c[255,238,155,23]\nCompatible with: M92FS, P99\n\nLoaded: JHP</text></string>
+        <string id="clip_15_9x19_7n21"><text>A 15 round magazine used by various 9mm handguns.\n%c[255,238,155,23]\nCompatible with: M92FS, P99\n\nLoaded: 7N21</text></string>
+    <string id="clip_16_9x19"><text>16 round 9x19 magazine</text></string>
+        <string id="clip_16_9x19_s"><text>16rd 9x19 mag</text></string>
+        <string id="clip_16_9x19_e"><text>A 16 round magazine for the CZ-75 handgun.\n%c[255,238,155,23]\nCompatible with: CZ-75\n\nUnloaded</text></string>
+        <string id="clip_16_9x19_fmj"><text>A 16 round magazine for the CZ-75 handgun.\n%c[255,238,155,23]\nCompatible with: CZ-75\n\nLoaded: FMJ</text></string>
+        <string id="clip_16_9x19_pbp"><text>A 16 round magazine for the CZ-75 handgun.\n%c[255,238,155,23]\nCompatible with: CZ-75\n\nLoaded: PBP</text></string>
+        <string id="clip_16_9x19_jhp"><text>A 16 round magazine for the CZ-75 handgun.\n%c[255,238,155,23]\nCompatible with: CZ-75\n\nLoaded: JHP</text></string>
+        <string id="clip_16_9x19_7n21"><text>A 16 round magazine for the CZ-75 handgun.\n%c[255,238,155,23]\nCompatible with: CZ-75\n\nLoaded: 7N21</text></string>
+    <string id="clip_18_9x19"><text>18 round 9x19 magazine</text></string>
+        <string id="clip_18_9x19_s"><text>18rd 9x19 mag</text></string>
+        <string id="clip_18_9x19_e"><text>An 18 round magazine for various 9mm handguns.\n%c[255,238,155,23]\nCompatible with: GSh-18, OTs-27\n\nUnloaded</text></string>
+        <string id="clip_18_9x19_fmj"><text>An 18 round magazine for various 9mm handguns.\n%c[255,238,155,23]\nCompatible with: GSh-18, OTs-27\n\nLoaded: FMJ</text></string>
+        <string id="clip_18_9x19_pbp"><text>An 18 round magazine for various 9mm handguns.\n%c[255,238,155,23]\nCompatible with: GSh-18, OTs-27\n\nLoaded: PBP</text></string>
+        <string id="clip_18_9x19_jhp"><text>An 18 round magazine for various 9mm handguns.\n%c[255,238,155,23]\nCompatible with: GSh-18, OTs-27\n\nLoaded: JHP</text></string>
+        <string id="clip_18_9x19_7n21"><text>An 18 round magazine for various 9mm handguns.\n%c[255,238,155,23]\nCompatible with: GSh-18, OTs-27\n\nLoaded: 7N21</text></string>
+    <string id="mag_20_9x19"><text>20 round 9x19 magazine</text></string>
+        <string id="mag_20_9x19_s"><text>20rd 9x19 mag</text></string>
+        <string id="mag_20_9x19_e"><text>A 20 round magazine used for the PP2000 submachine gun.\n%c[255,238,155,23]\nCompatible with: PP2000\n\nUnloaded</text></string>
+        <string id="mag_20_9x19_fmj"><text>A 20 round magazine used for the PP2000 submachine gun.\n%c[255,238,155,23]\nCompatible with: PP2000\n\nLoaded: FMJ</text></string>
+        <string id="mag_20_9x19_pbp"><text>A 20 round magazine used for the PP2000 submachine gun.\n%c[255,238,155,23]\nCompatible with: PP2000\n\nLoaded: PBP</text></string>
+        <string id="mag_20_9x19_jhp"><text>A 20 round magazine used for the PP2000 submachine gun.\n%c[255,238,155,23]\nCompatible with: PP2000\n\nLoaded: JHP</text></string>
+        <string id="mag_20_9x19_7n21"><text>A 20 round magazine used for the PP2000 submachine gun.\n%c[255,238,155,23]\nCompatible with: PP2000\n\nLoaded: 7N21</text></string>
+    <string id="mag_30_9x19"><text>30 round 9x19 magazine</text></string>
+        <string id="mag_30_9x19_s"><text>30rd 9x19 mag</text></string>
+        <string id="mag_30_9x19_e"><text>A 30 round magazine for the MP5 submachine gun.\n%c[255,238,155,23]\nCompatible with: MP5, MP5A2, MP5SD\n\nUnloaded</text></string>
+        <string id="mag_30_9x19_fmj"><text>A 30 round magazine for the MP5 submachine gun.\n%c[255,238,155,23]\nCompatible with: MP5, MP5A2, MP5SD\n\nLoaded: FMJ</text></string>
+        <string id="mag_30_9x19_pbp"><text>A 30 round magazine for the MP5 submachine gun.\n%c[255,238,155,23]\nCompatible with: MP5, MP5A2, MP5SD\n\nLoaded: PBP</text></string>
+        <string id="mag_30_9x19_jhp"><text>A 30 round magazine for the MP5 submachine gun.\n%c[255,238,155,23]\nCompatible with: MP5, MP5A2, MP5SD\n\nLoaded: JHP</text></string>
+        <string id="mag_30_9x19_7n21"><text>A 30 round magazine for the MP5 submachine gun.\n%c[255,238,155,23]\nCompatible with: MP5, MP5A2, MP5SD\n\nLoaded: 7N21</text></string>
+    <string id="mag_44_9x19"><text>44 round 9x19 magazine</text></string>
+        <string id="mag_44_9x19_s"><text>44rd 9x19 mag</text></string>
+        <string id="mag_44_9x19_e"><text>A 44 round magazine used for the PP2000 submachine gun.\n%c[255,238,155,23]\nCompatible with: PP2000\n\nUnloaded</text></string>
+        <string id="mag_44_9x19_fmj"><text>A 44 round magazine used for the PP2000 submachine gun.\n%c[255,238,155,23]\nCompatible with: PP2000\n\nLoaded: FMJ</text></string>
+        <string id="mag_44_9x19_pbp"><text>A 44 round magazine used for the PP2000 submachine gun.\n%c[255,238,155,23]\nCompatible with: PP2000\n\nLoaded: PBP</text></string>
+        <string id="mag_44_9x19_jhp"><text>A 44 round magazine used for the PP2000 submachine gun.\n%c[255,238,155,23]\nCompatible with: PP2000\n\nLoaded: JHP</text></string>
+        <string id="mag_44_9x19_7n21"><text>A 44 round magazine used for the PP2000 submachine gun.\n%c[255,238,155,23]\nCompatible with: PP2000\n\nLoaded: 7N21</text></string>
+
+    <!--Unused?-->
+    <string id="clip_8_9x19"><text>8 round 9x19 magazine</text></string>
+        <string id="clip_8_9x19_s"><text>8rd 9x19 mag</text></string>
+        <string id="clip_8_9x19_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nUnloaded</text></string>
+        <string id="clip_8_9x19_fmj"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: FMJ</text></string>
+        <string id="clip_8_9x19_pbp"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: PBP</text></string>
+    <string id="clip_17_9x19"><text>17 round 9x19 magazine</text></string>
+        <string id="clip_17_9x19_s"><text>17rd 9x19 mag</text></string>
+        <string id="clip_17_9x19_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nUnloaded</text></string>
+        <string id="clip_17_9x19_fmj"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: FMJ</text></string>
+        <string id="clip_17_9x19_pbp"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: PBP</text></string>
+    <string id="clip_31_9x19"><text>31 round 9x19 magazine</text></string>
+        <string id="clip_31_9x19_s"><text>31rd 9x19 mag</text></string>
+        <string id="clip_31_9x19_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nUnloaded</text></string>
+        <string id="clip_31_9x19_fmj"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: FMJ</text></string>
+        <string id="clip_31_9x19_pbp"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: PBP</text></string>
+    <string id="mag_32_9x19"><text>32 round 9x19 magazine</text></string>
+        <string id="mag_32_9x19_s"><text>32rd 9x19 mag</text></string>
+        <string id="mag_32_9x19_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nUnloaded</text></string>
+        <string id="mag_32_9x19_fmj"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: FMJ</text></string>
+        <string id="mag_32_9x19_pbp"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: PBP</text></string>
+
+<!-- 7.62x25 -->
+    <string id="clip_8_762x25"><text>8 round 7.62x25mm magazine</text></string>
+        <string id="clip_8_762x25_s"><text>8rd 7.62x25 mag</text></string>
+        <string id="clip_8_762x25_e"><text>A steel 8 round magazine used in early Soviet handguns.\n%c[255,238,155,23]\nCompatible with: CZ-52, TT-33.\n\nUnloaded</text></string>
+        <string id="clip_8_762x25_p"><text>A steel 8 round magazine used in early Soviet handguns.\n%c[255,238,155,23]\nCompatible with: CZ-52, TT-33.\n\nLoaded: FMJ</text></string>
+        <string id="clip_8_762x25_ps"><text>A steel 8 round magazine used in early Soviet handguns.\n%c[255,238,155,23]\nCompatible with: CZ-52, TT-33.\n\nLoaded: PS</text></string>
+        <string id="clip_8_762x25_p41"><text>A steel 8 round magazine used in early Soviet handguns.\n%c[255,238,155,23]\nCompatible with: CZ-52, TT-33.\n\nLoaded: P41</text></string>
+        <string id="clip_8_762x25_ppu"><text>A steel 8 round magazine used in early Soviet handguns.\n%c[255,238,155,23]\nCompatible with: CZ-52, TT-33.\n\nLoaded: PPU</text></string>
+    <string id="mag_71_762x25"><text>71 round 7.62x25mm drum magazine</text></string>
+        <string id="mag_71_762x25_s"><text>71rd 7.62x25 drum mag</text></string>
+        <string id="mag_71_762x25_e"><text>A 71 round drum magazine for the PPSh-41 submachine gun.\n%c[255,238,155,23]\nCompatible with: PPSh-41.\n\nUnloaded</text></string>
+        <string id="mag_71_762x25_p"><text>A 71 round drum magazine for the PPSh-41 submachine gun.\n%c[255,238,155,23]\nCompatible with: PPSh-41.\n\nLoaded: FMJ</text></string>
+        <string id="mag_71_762x25_ps"><text>A 71 round drum magazine for the PPSh-41 submachine gun.\n%c[255,238,155,23]\nCompatible with: PPSh-41.\n\nLoaded: PS</text></string>
+        <string id="mag_71_762x25_p41"><text>A 71 round drum magazine for the PPSh-41 submachine gun.\n%c[255,238,155,23]\nCompatible with: PPSh-41.\n\nLoaded: P41</text></string>
+        <string id="mag_71_762x25_ppu"><text>A 71 round drum magazine for the PPSh-41 submachine gun.\n%c[255,238,155,23]\nCompatible with: PPSh-41.\n\nLoaded: PPU</text></string>
+
+    <!--Unused?-->
+    <string id="mag_20_762x25"><text>20 round 7.62x25mm magazine</text></string>
+        <string id="mag_20_762x25_s"><text>20rd 7.62x25 mag</text></string>
+        <string id="mag_20_762x25_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nUnloaded</text></string>
+        <string id="mag_20_762x25_p"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: FMJ</text></string>
+        <string id="mag_20_762x25_ps"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: PS</text></string>
+    <string id="mag_64_762x25"><text>64 round 7.62x25mm helical magazine</text></string>
+        <string id="mag_64_762x25_s"><text>64rd 7.62x25 helical mag</text></string>
+        <string id="mag_64_762x25_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nUnloaded</text></string>
+        <string id="mag_64_762x25_p"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: FMJ</text></string>
+        <string id="mag_64_762x25_ps"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: PS</text></string>
+
+<!-- .45ACP -->
+    <string id="clip_7_45"><text>7 round .45 ACP magazine</text></string>
+        <string id="clip_7_45_s"><text>7rd .45 mag</text></string>
+        <string id="clip_7_45_e"><text>An aluminum 7 round magazine for .45 caliber pistols.\n%c[255,238,155,23]\nCompatible with: Colt M1911, Colt Kimber Custom, SIG P220\n\nUnloaded</text></string>
+        <string id="clip_7_45_fmj"><text>An aluminum 7 round magazine for .45 caliber pistols.\n%c[255,238,155,23]\nCompatible with: Colt M1911, Colt Kimber Custom, SIG P220\n\nLoaded: FMJ</text></string>
+        <string id="clip_7_45_hydro"><text>An aluminum 7 round magazine for .45 caliber pistols.\n%c[255,238,155,23]\nCompatible with: Colt M1911, Colt Kimber Custom, SIG P220\n\nLoaded: Hollowpoint</text></string>
+        <string id="clip_7_45_frng"><text>An aluminum 7 round magazine for .45 caliber pistols.\n%c[255,238,155,23]\nCompatible with: Colt M1911, Colt Kimber Custom, SIG P220\n\nLoaded: Frangible</text></string>
+    <string id="clip_8_45"><text>8 round .45 ACP magazine</text></string>
+        <string id="clip_8_45_s"><text>8rd .45 mag</text></string>
+        <string id="clip_8_45_e"><text>An aluminum 8 round magazine for .45 caliber pistols.\n%c[255,238,155,23]\nCompatible with: Desert Eagle, HK USP\n\nUnloaded</text></string>
+        <string id="clip_8_45_fmj"><text>An aluminum 8 round magazine for .45 caliber pistols.\n%c[255,238,155,23]\nCompatible with: Desert Eagle, HK USP\n\nLoaded: FMJ</text></string>
+        <string id="clip_8_45_hydro"><text>An aluminum 8 round magazine for .45 caliber pistols.\n%c[255,238,155,23]\nCompatible with: Desert Eagle, HK USP\n\nLoaded: Hollowpoint</text></string>
+        <string id="clip_8_45_frng"><text>An aluminum 8 round magazine for .45 caliber pistols.\n%c[255,238,155,23]\nCompatible with: Desert Eagle, HK USP\n\nLoaded: Frangible</text></string>
+
+    <!--Unused-->
+    <string id="clip_8s_45"><text>8 round .45 ACP magazine</text></string>
+        <string id="clip_8s_45_s"><text>8rd .45 mag</text></string>
+        <string id="clip_8s_45_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nUnloaded</text></string>
+        <string id="clip_8s_45_fmj"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nLoaded: FMJ</text></string>
+        <string id="clip_8s_45_hydro"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nLoaded: HP</text></string>
+        <string id="clip_8s_45_frng"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nLoaded: Frangible</text></string>
+    <string id="mag_30_45"><text>30 round .45 ACP magazine</text></string>
+        <string id="mag_30_45_s"><text>30rd .45 mag</text></string>
+        <string id="mag_30_45_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nUnloaded</text></string>
+        <string id="mag_30_45_fmj"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nLoaded: FMJ</text></string>
+        <string id="mag_30_45_hydro"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nLoaded: HP</text></string>
+        <string id="mag_30_45_frng"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nLoaded: Frangible</text></string>
+
+<!-- .357 Magnum -->
+    <string id="clip_6_357"><text>6 round .357 moon clip</text></string>
+        <string id="clip_6_357_s"><text>6rd .357 clip</text></string>
+        <string id="clip_6_357_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nUnloaded</text></string>
+        <string id="clip_6_357_jfp"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nLoaded: JFP</text></string>
+        <string id="clip_6_357_jhp"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nLoaded: JHP</text></string>
+    <string id="clip_8_357"><text>8 round .357 magazine</text></string>
+        <string id="clip_8_357_s"><text>8rd .357 mag</text></string>
+        <string id="clip_8_357_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nUnloaded</text></string>
+        <string id="clip_8_357_jfp"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nLoaded: JFP</text></string>
+        <string id="clip_8_357_jhp"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nLoaded: JHP</text></string>
+
+<!-- 5.7x28 -->
+    <string id="clip_57x28_20"><text>20 round 5.7x28 magazine</text></string>
+        <string id="clip_57x28_20_s"><text>20rd 5.7x28 mag</text></string>
+        <string id="clip_57x28_20_e"><text>A 20 round magazine developed by FN Herstal for the Five Seven pistol.\n%c[255,238,155,23]\nCompatible with: Five Seven\n\nUnloaded</text></string>
+        <string id="clip_57x28_20_fmj"><text>A 20 round magazine developed by FN Herstal for the Five Seven pistol.\n%c[255,238,155,23]\nCompatible with: Five Seven\n\nLoaded: FMJ</text></string>
+        <string id="clip_57x28_20_ap"><text>A 20 round magazine developed by FN Herstal for the Five Seven pistol.\n%c[255,238,155,23]\nCompatible with: Five Seven\n\nLoaded: AP</text></string>
+    <string id="mag_57x28_50"><text>50 round 5.7x28 P90 magazine</text></string>
+        <string id="mag_57x28_50_s"><text>50rd 5.7x28 mag</text></string>
+        <string id="mag_57x28_50_e"><text>A 50 round magazine developed by FN Herstal for the P90 submachine gun.\n%c[255,238,155,23]\nCompatible with: P90\n\nUnloaded</text></string>
+        <string id="mag_57x28_50_fmj"><text>A 50 round magazine developed by FN Herstal for the P90 submachine gun.\n%c[255,238,155,23]\nCompatible with: P90\n\nLoaded: FMJ</text></string>
+        <string id="mag_57x28_50_ap"><text>A 50 round magazine developed by FN Herstal for the P90 submachine gun.\n%c[255,238,155,23]\nCompatible with: P90\n\nLoaded: AP</text></string>
+
+    <!-- Unused? -->
+    <string id="mag_57x28_50b"><text>50 round 5.7x28 magazine</text></string>
+        <string id="mag_57x28_50b_s"><text>50rd 5.7x28 mag</text></string>
+        <string id="mag_57x28_50b_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nUnloaded</text></string>
+        <string id="mag_57x28_50b_fmj"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nLoaded: FMJ</text></string>
+        <string id="mag_57x28_50b_ap"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing\n\nLoaded: AP</text></string>
+
+<!-- 5.45x39 -->
+    <string id="mag_30_545x39"><text>30 round 5.45x39mm magazine</text></string>
+        <string id="mag_30_545x39_e"><text>A 30 round bakelite magazine manufactured at the Tula arms plant.\n%c[255,238,155,23]\nCompatible with: AN-94, AK-105, AK-74, RPK-74\n\nUnloaded</text></string>
+        <string id="mag_30_545x39_fmj"><text>A 30 round bakelite magazine manufactured at the Tula arms plant.\n%c[255,238,155,23]\nCompatible with: AN-94, AK-105, AK-74, RPK-74\n\nLoaded: FMJ</text></string>
+        <string id="mag_30_545x39_ap"><text>A 30 round bakelite magazine manufactured at the Tula arms plant.\n%c[255,238,155,23]\nCompatible with: AN-94, AK-105, AK-74, RPK-74\n\nLoaded: 7N22 AP</text></string>
+        <string id="mag_30_545x39_7t3"><text>A 30 round bakelite magazine manufactured at the Tula arms plant.\n%c[255,238,155,23]\nCompatible with: AN-94, AK-105, AK-74, RPK-74\n\nLoaded: Tracer</text></string>
+        <string id="mag_30_545x39_7n24"><text>A 30 round bakelite magazine manufactured at the Tula arms plant.\n%c[255,238,155,23]\nCompatible with: AN-94, AK-105, AK-74, RPK-74\n\nLoaded: 7N24 AP</text></string>
+    <string id="mag_45_545x39"><text>30 round 5.45x39mm magazine</text></string>
+        <string id="mag_45_545x39_e"><text>A 30 round polymer magazine manufactured at the Izhmash plant.\n%c[255,238,155,23]\nCompatible with: AN-94, AK-105, AK-74, RPK-74\n\nUnloaded</text></string>
+        <string id="mag_45_545x39_fmj"><text>A 30 round polymer magazine manufactured at the Izhmash plant.\n%c[255,238,155,23]\nCompatible with: AN-94, AK-105, AK-74, RPK-74\n\nLoaded: FMJ</text></string>
+        <string id="mag_45_545x39_ap"><text>A 30 round polymer magazine manufactured at the Izhmash plant.\n%c[255,238,155,23]\nCompatible with: AN-94, AK-105, AK-74, RPK-74\n\nLoaded: 7N22 AP</text></string>
+        <string id="mag_45_545x39_7t3"><text>A 30 round polymer magazine manufactured at the Izhmash plant.\n%c[255,238,155,23]\nCompatible with: AN-94, AK-105, AK-74, RPK-74\n\nLoaded: Tracer</text></string>
+        <string id="mag_45_545x39_7n24"><text>A 30 round polymer magazine manufactured at the Izhmash plant.\n%c[255,238,155,23]\nCompatible with: AN-94, AK-105, AK-74, RPK-74\n\nLoaded: 7N24 AP</text></string>
+    <string id="mag_75_545x39"><text>75 round 5.45x39mm drum magazine</text></string>
+        <string id="mag_75_545x39_e"><text>A 75 round drum magazine used in WarPac assault rifles.\n%c[255,238,155,23]\nCompatible with: AN-94, AK-105, AK-74, RPK-74\n\nUnloaded</text></string>
+        <string id="mag_75_545x39_fmj"><text>A 75 round drum magazine used in WarPac assault rifles.\n%c[255,238,155,23]\nCompatible with: AN-94, AK-105, AK-74, RPK-74\n\nLoaded: FMJ</text></string>
+        <string id="mag_75_545x39_ap"><text>A 75 round drum magazine used in WarPac assault rifles.\n%c[255,238,155,23]\nCompatible with: AN-94, AK-105, AK-74, RPK-74\n\nLoaded: 7N22 AP</text></string>
+        <string id="mag_75_545x39_7t3"><text>A 75 round drum magazine used in WarPac assault rifles.\n%c[255,238,155,23]\nCompatible with: AN-94, AK-105, AK-74, RPK-74\n\nLoaded: Tracer</text></string>
+        <string id="mag_75_545x39_7n24"><text>A 75 round drum magazine used in WarPac assault rifles.\n%c[255,238,155,23]\nCompatible with: AN-94, AK-105, AK-74, RPK-74\n\nLoaded: 7N24 AP</text></string>
+
+<!-- 5.56x45 -->
+    <string id="mag_30_556x45"><text>30 round 5.56x45mm Magazine</text></string>
+        <string id="mag_30_556x45_s"><text>30rd 5.56x45 Mag</text></string>
+        <string id="mag_30_556x45_e"><text>A 30 round magazine used in NATO assault rifles.\n%c[255,238,155,23]\nCompatible with: FAMAS, FN F2000, FN FNC, FN SCAR, HK 416, HK G36(c), HK G41, IMI Galil, LR300, M16, M4, SA80 L22/L85, SIG 550/2\n\nUnloaded</text></string>
+        <string id="mag_30_556x45_ss190"><text>A 30 round magazine used in NATO assault rifles.\n%c[255,238,155,23]\nCompatible with: FAMAS, FN F2000, FN FNC, FN SCAR, HK 416, HK G36(c), HK G41, IMI Galil, LR300, M16, M4, SA80 L22/L85, SIG 550/2\n\nLoaded: FMJ</text></string>
+        <string id="mag_30_556x45_ap"><text>A 30 round magazine used in NATO assault rifles.\n%c[255,238,155,23]\nCompatible with: FAMAS, FN F2000, FN FNC, FN SCAR, HK 416, HK G36(c), HK G41, IMI Galil, LR300, M16, M4, SA80 L22/L85, SIG 550/2\n\nLoaded: AP</text></string>
+        <string id="mag_30_556x45_hpbt"><text>A 30 round magazine used in NATO assault rifles.\n%c[255,238,155,23]\nCompatible with: FAMAS, FN F2000, FN FNC, FN SCAR, HK 416, HK G36(c), HK G41, IMI Galil, LR300, M16, M4, SA80 L22/L85, SIG 550/2\n\nLoaded: HPBT</text></string>
+        <string id="mag_30_556x45_mk262"><text>A 30 round magazine used in NATO assault rifles.\n%c[255,238,155,23]\nCompatible with: FAMAS, FN F2000, FN FNC, FN SCAR, HK 416, HK G36(c), HK G41, IMI Galil, LR300, M16, M4, SA80 L22/L85, SIG 550/2\n\nLoaded: Mk 262</text></string>
+    <string id="mag_100_556x45"><text>100 round 5.56x45mm Beta C-Magazine</text></string>
+        <string id="mag_100_556x45_s"><text>100rd 5.56x45 Beta C-Mag</text></string>
+        <string id="mag_100_556x45_e"><text>A 100 round beta c-magazine used in NATO assault rifles.\n%c[255,238,155,23]\nCompatible with: FAMAS, FN F2000, FN FNC, FN SCAR, HK 416, HK G36(c), HK G41, IMI Galil, LR300, M16, M4, SA80 L22/L85, SIG 550/2\n\nUnloaded</text></string>
+        <string id="mag_100_556x45_ss190"><text>A 100 round beta c-magazine used in NATO assault rifles.\n%c[255,238,155,23]\nCompatible with: FAMAS, FN F2000, FN FNC, FN SCAR, HK 416, HK G36(c), HK G41, IMI Galil, LR300, M16, M4, SA80 L22/L85, SIG 550/2\n\nLoaded: FMJ</text></string>
+        <string id="mag_100_556x45_ap"><text>A 100 round beta c-magazine used in NATO assault rifles.\n%c[255,238,155,23]\nCompatible with: FAMAS, FN F2000, FN FNC, FN SCAR, HK 416, HK G36(c), HK G41, IMI Galil, LR300, M16, M4, SA80 L22/L85, SIG 550/2\n\nLoaded: AP</text></string>
+        <string id="mag_100_556x45_hpbt"><text>A 100 round beta c-magazine used in NATO assault rifles.\n%c[255,238,155,23]\nCompatible with: FAMAS, FN F2000, FN FNC, FN SCAR, HK 416, HK G36(c), HK G41, IMI Galil, LR300, M16, M4, SA80 L22/L85, SIG 550/2\n\nLoaded: HPBT</text></string>
+        <string id="mag_100_556x45_mk262"><text>A 100 round beta c-magazine used in NATO assault rifles.\n%c[255,238,155,23]\nCompatible with: FAMAS, FN F2000, FN FNC, FN SCAR, HK 416, HK G36(c), HK G41, IMI Galil, LR300, M16, M4, SA80 L22/L85, SIG 550/2\n\nLoaded: Mk 262</text></string>
+        <!-- Unused? -->
+    <string id="belt_100_556x45"><text>100 round belt for 5.56x45mm</text></string>
+        <string id="belt_100_556x45_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nUnloaded</text></string>
+        <string id="belt_100_556x45_ss190"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: FMJ</text></string>
+        <string id="belt_100_556x45_ap">   <text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: AP</text></string>
+
+<!-- 7.62x39 -->
+    <string id="mag_30_762x39"><text>30 round 7.62x39 Magazine</text></string>
+    <string id="mag_30_762x39p"><text>30 round 7.62x39 Polymer Magazine</text></string>
+        <string id="mag_30_762x39_s"><text>30rd 7.62x39 Mag</text></string>
+        <string id="mag_30_762x39_e"><text>A 30 round magazine for 7.62x39mm cartridges.\n%c[255,238,155,23]\nCompatible with: AK-47, AKM, AK-103, RK-95, RPK, Vz. 58, AEK-973.\n\nUnloaded</text></string>
+        <string id="mag_30_762x39_fmj"><text>A 30 round magazine for 7.62x39mm cartridges.\n%c[255,238,155,23]\nCompatible with: AK-47, AKM, AK-103, RK-95, RPK, Vz. 58, AEK-973.\n\nLoaded: PS</text></string>
+        <string id="mag_30_762x39_ap"><text>A 30 round magazine for 7.62x39mm cartridges.\n%c[255,238,155,23]\nCompatible with: AK-47, AKM, AK-103, RK-95, RPK, Vz. 58, AEK-973.\n\nLoaded: SP</text></string>
+        <string id="mag_30_762x39_m67"><text>A 30 round magazine for 7.62x39mm cartridges.\n%c[255,238,155,23]\nCompatible with: AK-47, AKM, AK-103, RK-95, RPK, Vz. 58, AEK-973.\n\nLoaded: M67</text></string>
+        <string id="mag_30_762x39_hp"><text>A 30 round magazine for 7.62x39mm cartridges.\n%c[255,238,155,23]\nCompatible with: AK-47, AKM, AK-103, RK-95, RPK, Vz. 58, AEK-973.\n\nLoaded: HP</text></string>
+    <string id="mag_75_762x39"><text>75-round 7.62x39 Drum Magazine</text></string>
+        <string id="mag_75_762x39_s"><text>75rd 7.62x39 Mag</text></string>
+        <string id="mag_75_762x39_e"><text>A 75 round drum magazine for 7.62x39mm cartridges.\n%c[255,238,155,23]\nCompatible with: AK-47, AKM, AK-103, RK-95, RPK, Vz. 58, AEK-973.\n\nUnloaded</text></string>
+        <string id="mag_75_762x39_fmj"><text>A 75 round drum magazine for 7.62x39mm cartridges.\n%c[255,238,155,23]\nCompatible with: AK-47, AKM, AK-103, RK-95, RPK, Vz. 58, AEK-973.\n\nLoaded: PS</text></string>
+        <string id="mag_75_762x39_ap"><text>A 75 round drum magazine for 7.62x39mm cartridges.\n%c[255,238,155,23]\nCompatible with: AK-47, AKM, AK-103, RK-95, RPK, Vz. 58, AEK-973.\n\nLoaded: SP</text></string>
+        <string id="mag_75_762x39_m67"><text>A 75 round drum magazine for 7.62x39mm cartridges.\n%c[255,238,155,23]\nCompatible with: AK-47, AKM, AK-103, RK-95, RPK, Vz. 58, AEK-973.\n\nLoaded: M67</text></string>
+        <string id="mag_75_762x39_hp"><text>A 75 round drum magazine for 7.62x39mm cartridges.\n%c[255,238,155,23]\nCompatible with: AK-47, AKM, AK-103, RK-95, RPK, Vz. 58, AEK-973.\n\nLoaded: HP</text></string>
+
+    <!-- Unused? -->
+    <string id="mag_10_762x39"><text>10 round 7.62x39 magazine</text></string>
+        <string id ="mag_10_762x39_s"><text>10rd 7.62x39mm Mag</text></string>
+        <string id="mag_10_762x39_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nUnloaded</text></string>
+        <string id="mag_10_762x39_fmj"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: FMJ</text></string>
+        <string id="mag_10_762x39_ap"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: AP</text></string>
+
+<!-- 9x39 -->
+    <string id="mag_10_9x39"><text>10 round 9x39mm magazine</text></string>
+        <string id="mag_10_9x39_s"><text>10rd 9x39mm mag</text></string>
+        <string id="mag_10_9x39_e"><text>A 10 round magazine for the 9x39mm caliber.\n%c[255,238,155,23]\nCompatible with: OTs-14 "Groza", VSS "Vintorez", VSK-94, and AS "Val".\n\nUnloaded</text></string>
+        <string id="mag_10_9x39_pab9"><text>A 10 round magazine for the 9x39mm caliber.\n%c[255,238,155,23]\nCompatible with: OTs-14 "Groza", VSS "Vintorez", VSK-94, and AS "Val".\n\nLoaded: PAB9</text></string>
+        <string id="mag_10_9x39_ap"><text>A 10 round magazine for the 9x39mm caliber.\n%c[255,238,155,23]\nCompatible with: OTs-14 "Groza", VSS "Vintorez", VSK-94, and AS "Val".\n\nLoaded: SP6</text></string>
+        <string id="mag_10_9x39_sp5"><text>A 10 round magazine for the 9x39mm caliber.\n%c[255,238,155,23]\nCompatible with: OTs-14 "Groza", VSS "Vintorez", VSK-94, and AS "Val".\n\nLoaded: SP5</text></string>
+        <string id="mag_10_9x39_spp"><text>A 10 round magazine for the 9x39mm caliber.\n%c[255,238,155,23]\nCompatible with: OTs-14 "Groza", VSS "Vintorez", VSK-94, and AS "Val".\n\nLoaded: SPP</text></string>
+    <string id="mag_20_9x39"><text>20 round 9x39mm magazine</text></string>
+        <string id="mag_20_9x39_s"><text>20rd 9x39mm mag</text></string>
+        <string id="mag_20_9x39_e"><text>A 20 round magazine for the 9x39mm caliber.\n%c[255,238,155,23]\nCompatible with: OTs-14 "Groza", VSS "Vintorez", VSK-94, and AS "Val".\n\nUnloaded</text></string>
+        <string id="mag_20_9x39_pab9"><text>A 20 round magazine for the 9x39mm caliber.\n%c[255,238,155,23]\nCompatible with: OTs-14 "Groza", VSS "Vintorez", VSK-94, and AS "Val".\n\nLoaded: PAB9</text></string>
+        <string id="mag_20_9x39_ap"><text>A 20 round magazine for the 9x39mm caliber.\n%c[255,238,155,23]\nCompatible with: OTs-14 "Groza", VSS "Vintorez", VSK-94, and AS "Val".\n\nLoaded: SP6</text></string>
+        <string id="mag_20_9x39_sp5"><text>A 20 round magazine for the 9x39mm caliber.\n%c[255,238,155,23]\nCompatible with: OTs-14 "Groza", VSS "Vintorez", VSK-94, and AS "Val".\n\nLoaded: SP5</text></string>
+        <string id="mag_20_9x39_spp"><text>A 20 round magazine for the 9x39mm caliber.\n%c[255,238,155,23]\nCompatible with: OTs-14 "Groza", VSS "Vintorez", VSK-94, and AS "Val".\n\nLoaded: SPP</text></string>
+
+<!-- 7.62x51 -->
+    <string id="mag_10_762x51"><text>10 round 7.62x51mm magazine</text></string>
+        <string id="mag_10_762x51_s"><text>10rd 7.62x51 mag</text></string>
+        <string id="mag_10_762x51_e"><text>A 10 round magazine used in NATO sniper rifles.\n%c[255,238,155,23]\nCompatible with: AWP, M24, SV-98.\n\nUnloaded</text></string>
+        <string id="mag_10_762x51_fmj"><text>A 10 round magazine used in NATO sniper rifles.\n%c[255,238,155,23]\nCompatible with: AWP, M24, SV-98.\n\nLoaded: M80 FMJ</text></string>
+        <string id="mag_10_762x51_m61"><text>A 10 round magazine used in NATO sniper rifles.\n%c[255,238,155,23]\nCompatible with: AWP, M24, SV-98.\n\nLoaded: M61 AP</text></string>
+        <string id="mag_10_762x51_mk316"><text>A 10 round magazine used in NATO sniper rifles.\n%c[255,238,155,23]\nCompatible with: AWP, M24, SV-98.\n\nLoaded: Mk.316 Mod 0 FMJ</text></string>
+        <string id="mag_10_762x51_ap"><text>A 10 round magazine used in NATO sniper rifles.\n%c[255,238,155,23]\nCompatible with: AWP, M24, SV-98.\n\nLoaded: M993 AP</text></string>
+    <string id="mag_20_762x51"><text>20 round 7.62x51mm magazine</text></string>
+        <string id="mag_20_762x51_s"><text>20rd 7.62x51 mag</text></string>
+        <string id="mag_20_762x51_e"><text>A 20 round magazine used in NATO battle rifles.\n%c[255,238,155,23]\nCompatible with: G3, FAL, M14, and SA-58.\n\nUnloaded</text></string>
+        <string id="mag_20_762x51_fmj"><text>A 20 round magazine used in NATO battle rifles.\n%c[255,238,155,23]\nCompatible with: G3, FAL, M14, and SA-58.\n\nLoaded: M80 FMJ</text></string>
+        <string id="mag_20_762x51_m61"><text>A 20 round magazine used in NATO battle rifles.\n%c[255,238,155,23]\nCompatible with: G3, FAL, M14, and SA-58.\n\nLoaded: M61 AP</text></string>
+        <string id="mag_20_762x51_mk316"><text>A 20 round magazine used in NATO battle rifles.\n%c[255,238,155,23]\nCompatible with: G3, FAL, M14, and SA-58.\n\nLoaded: Mk.316 Mod 0 FMJ</text></string>
+        <string id="mag_20_762x51_ap"><text>A 20 round magazine used in NATO battle rifles.\n%c[255,238,155,23]\nCompatible with: G3, FAL, M14, and SA-58.\n\nLoaded: M993 AP</text></string>
+    <string id="belt_50_762x51"><text>50 round 7.62x51mm belt</text></string>
+        <string id="belt_50_762x51_s"><text>50rd 7.62x51 belt</text></string>
+        <string id="belt_50_762x51_e"><text>A drum containing a 50 round belt for a machine gun.\n%c[255,238,155,23]\nCompatible with: MG3.\n\nUnloaded</text></string>
+        <string id="belt_50_762x51_fmj"><text>A drum containing a 50 round belt for a machine gun.\n%c[255,238,155,23]\nCompatible with: MG3.\n\nLoaded: M80 FMJ</text></string>
+        <string id="belt_50_762x51_m61"><text>A drum containing a 50 round belt for a machine gun.\n%c[255,238,155,23]\nCompatible with: MG3.\n\nLoaded: M61 AP</text></string>
+        <string id="belt_50_762x51_mk316"><text>A drum containing a 50 round belt for a machine gun.\n%c[255,238,155,23]\nCompatible with: MG3.\n\nLoaded: Mk.316 Mod 0 FMJ</text></string>
+        <string id="belt_50_762x51_ap"><text>A drum containing a 50 round belt for a machine gun.\n%c[255,238,155,23]\nCompatible with: MG3.\n\nLoaded: M993 AP</text></string>
+    <!-- Unused? -->
+    <string id="mag_5_762x51"><text>5 round 7.62x51mm magazine</text></string>
+        <string id="mag_5_762x51_s"><text>5rd 7.62x51 mag</text></string>
+        <string id="mag_5_762x51_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nUnloaded</text></string>
+        <string id="mag_5_762x51_fmj"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: M80 FMJ</text></string>
+        <string id="mag_5_762x51_m61"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: M61 AP</text></string>
+        <string id="mag_5_762x51_mk316"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: Mk.316 Mod 0 FMJ</text></string>
+        <string id="mag_5_762x51_ap"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: M993 AP</text></string>
+    <string id="mag_8_762x51"><text>8 round 7.62x51mm magazine</text></string>
+        <string id="mag_8_762x51_s"><text>8rd 7.62x51 mag</text></string>
+        <string id="mag_8_762x51_e"><text>Unused\n%c[255,238,155,23]\n\nCompatible with: Nothing.\n\nUnloaded</text></string>
+        <string id="mag_8_762x51_fmj"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: M80 FMJ</text></string>
+        <string id="mag_8_762x51_m61"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: M61 AP</text></string>
+        <string id="mag_8_762x51_mk316"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: Mk.316 Mod 0 FMJ</text></string>
+        <string id="mag_8_762x51_ap"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: M993 AP</text></string>
+    <string id="belt_100_762x51"><text>100 round 7.62x51mm belt</text></string>
+        <string id="belt_100_762x51_s"><text>100rd 7.62x51 belt</text></string>
+        <string id="belt_100_762x51_e"><text>Unused\n%c[255,238,155,23]\n\nCompatible with: Nothing.\n\nUnloaded</text></string>
+        <string id="belt_100_762x51_fmj"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: M80 FMJ</text></string>
+        <string id="belt_100_762x51_ap"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: M993 AP</text></string>
+
+<!-- 7.62x54R -->
+    <string id="mag_10_762x54"><text>10 round 7.62x54mmR magazine</text></string>
+        <string id="mag_10_762x54_s"><text>10rd 7.62x54 mag</text></string>
+        <string id="mag_10_762x54_e"><text>A 10 round magazine for warsaw pact sniper rifles.\n%c[255,238,155,23]\nCompatible with: M76, SV-98, SVD, and SVU.\n\nUnloaded</text></string>
+        <string id="mag_10_762x54_7h1"><text>A 10 round magazine for warsaw pact sniper rifles.\n%c[255,238,155,23]\nCompatible with: M76, SV-98, SVD, and SVU.\n\nLoaded: 7N13 FMJ</text></string>
+        <string id="mag_10_762x54_ap"><text>A 10 round magazine for warsaw pact sniper rifles.\n%c[255,238,155,23]\nCompatible with: M76, SV-98, SVD, and SVU.\n\nLoaded: B-32 API</text></string>
+        <string id="mag_10_762x54_7h14"><text>A 10 round magazine for warsaw pact sniper rifles.\n%c[255,238,155,23]\nCompatible with: M76, SV-98, SVD, and SVU.\n\nLoaded: 7N14 FMJ</text></string>
+        <string id="mag_10_762x54_7t2"><text>A 10 round magazine for warsaw pact sniper rifles.\n%c[255,238,155,23]\nCompatible with: M76, SV-98, SVD, and SVU.\n\nLoaded: 7T2 Tracer</text></string>
+    <string id="mag_47_762x54"><text>47 round 7.62x54mmR drum magazine</text></string>
+        <string id="mag_47_762x54_s"><text>47rd 7.62x54R mag</text></string>
+        <string id="mag_47_762x54_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nUnloaded</text></string>
+        <string id="mag_47_762x54_7h1"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: 7N13 FMJ</text></string>
+        <string id="mag_47_762x54_ap"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: B-32 API</text></string>
+        <string id="mag_47_762x54_7h14"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: 7N14 FMJ</text></string>
+        <string id="mag_47_762x54_7h14"><text>Unused\n%c[255,238,155,23]\nCompatible with: Nothing.\n\nLoaded: 7T2 Tracer</text></string>
+    <string id="belt_100_762x54"><text>100 round 7.62x54mmR belt</text></string>
+        <string id="belt_100_762x54_s"><text>100rd 7.62x54R belt</text></string>
+        <string id="belt_100_762x54_e"><text>A 100 round belt for warsaw pact machine guns.\n%c[255,238,155,23]\nCompatible with: PKM, PKP.\n\nUnloaded</text></string>
+        <string id="belt_100_762x54_7h1"><text>A 100 round belt for warsaw pact machine guns.\n%c[255,238,155,23]\nCompatible with: PKM, PKP.\n\nLoaded: 7N13 FMJ</text></string>
+        <string id="belt_100_762x54_ap"><text>A 100 round belt for warsaw pact machine guns.\n%c[255,238,155,23]\nCompatible with: PKM, PKP.\n\nLoaded: B-32 API</text></string>
+        <string id="belt_100_762x54_7h14"><text>A 100 round belt for warsaw pact machine guns.\n%c[255,238,155,23]\nCompatible with: PKM, PKP.\n\nLoaded: 7N14 FMJ</text></string>
+        <string id="belt_100_762x54_7t2"><text>A 100 round belt for warsaw pact machine guns.\n%c[255,238,155,23]\nCompatible with: PKM, PKP.\n\nLoaded: 7T2 Tracer</text></string>
+
+<!-- 7.92x57 -->
+    <string id="mag_10_792x57"><text>10 round 7.92x57mm magazine</text></string>
+        <string id="mag_10_792x57_s"><text>10rd 7.92x57 mag</text></string>
+        <string id="mag_10_792x57_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: nothing.\n\nUnloaded</text></string>
+        <string id="mag_10_792x57_fmj"><text>Unused\n%c[255,238,155,23]\nCompatible with: nothing.\n\nLoaded: FMJ</text></string>
+        <string id="mag_10_792x57_ap"><text>Unused\n%c[255,238,155,23]\nCompatible with: nothing.\n\nLoaded: AP</text></string>
+    <string id="belt_50_792x57"><text>50 round 7.92x57mm belt</text></string>
+        <string id="belt_50_792x57_s"><text>50rd 7.92x57 belt</text></string>
+        <string id="belt_50_792x57_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: nothing.\n\nUnloaded</text></string>
+        <string id="belt_50_792x57_fmj"><text>Unused\n%c[255,238,155,23]\nCompatible with: nothing.\n\nLoaded: FMJ</text></string>
+        <string id="belt_50_792x57_ap"><text>Unused\n%c[255,238,155,23]\nCompatible with: nothing.\n\nLoaded: AP</text></string>
+
+<!-- 338 Lapua -->
+	<string id="mag_5_86x70"><text>5 round .338 Lapua magazine</text></string>
+        <string id="mag_5_86x70_s"><text>5rd .338 Lapua mag</text></string>
+        <string id="mag_5_86x70_e"><text>A 5 round magazine for .338 Lapua Magnum.\n%c[255,238,155,23]\nCompatible with: L115A3, M24, and TRG-42.\n\nUnloaded</text></string>
+        <string id="mag_5_86x70_fmj"><text>A 5 round magazine for .338 Lapua Magnum.\n%c[255,238,155,23]\nCompatible with: L115A3, M24, and TRG-42.\n\nLoaded: FMJ</text></string>
+        <string id="mag_5_86x70_api"><text>A 5 round magazine for .338 Lapua Magnum.\n%c[255,238,155,23]\nCompatible with: L115A3, M24, and TRG-42.\n\nLoaded: API</text></string>
+        <string id="mag_5_86x70_n508"><text>A 5 round magazine for .338 Lapua Magnum.\n%c[255,238,155,23]\nCompatible with: L115A3, M24, and TRG-42.\n\nLoaded: Naturalis</text></string>
+        <string id="mag_5_86x70_scenar"><text>A 5 round magazine for .338 Lapua Magnum.\n%c[255,238,155,23]\nCompatible with: L115A3, M24, and TRG-42.\n\nLoaded: 300 grain</text></string>
+    <string id="mag_10_86x70"><text>10 round .338 Lapua magazine</text></string>
+        <string id="mag_10_86x70_s"><text>10rd .338 Lapua mag</text></string>
+        <string id="mag_10_86x70_e"><text>A 10 round magazine for .338 Lapua Magnum.\n%c[255,238,155,23]\nCompatible with: TRG-42.\nUnloaded</text></string>
+        <string id="mag_10_86x70_fmj"><text>A 10 round magazine for .338 Lapua Magnum.\n%c[255,238,155,23]\nCompatible with: TRG-42.\nLoaded: AP</text></string>
+        <string id="mag_10_86x70_api"><text>A 10 round magazine for .338 Lapua Magnum.\n%c[255,238,155,23]\nCompatible with: TRG-42.\nLoaded: AP</text></string>
+        <string id="mag_10_86x70_n508"><text>A 10 round magazine for .338 Lapua Magnum.\n%c[255,238,155,23]\nCompatible with: TRG-42.\nLoaded: AP</text></string>
+        <string id="mag_10_86x70_scenar"><text>A 10 round magazine for .338 Lapua Magnum.\n%c[255,238,155,23]\nCompatible with: TRG-42.\nLoaded: AP</text></string>
+
+<!-- .50 BMG -->
+    <string id="mag_5_127x99"><text>5 round .50 BMG magazine</text></string>
+        <string id="mag_5_127x99_s"><text>5rd .50 BMG mag</text></string>
+        <string id="mag_5_127x99_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: nothing.\n\nUnloaded</text></string>
+        <string id="mag_5_127x99_ap"><text>Unused\n%c[255,238,155,23]\nCompatible with: nothing.\n\nLoaded: AP</text></string>
+    <string id="mag_10_127x99"><text>10 round .50 BMG magazine</text></string>
+        <string id="mag_10_127x99_s"><text>10rd .50 BMG mag</text></string>
+        <string id="mag_10_127x99_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: nothing.\n\nUnloaded</text></string>
+        <string id="mag_10_127x99_ap"><text>Unused\n%c[255,238,155,23]\nCompatible with: nothing.\n\nLoaded: AP</text></string>
+
+<!-- 12.7x108 -->
+    <string id="mag_5_127x108"><text>5 round 12.7x108 magazine</text></string>
+        <string id="mag_5_127x108_s"><text>5rd 12.7x108 mag</text></string>
+        <string id="mag_5_127x108_e"><text>Unused\n%c[255,238,155,23]\nCompatible with: nothing.\n\nUnloaded</text></string>
+        <string id="mag_5_127x108_ap"><text>Unused\n%c[255,238,155,23]\nCompatible with: nothing.\n\nLoaded: AP</text></string>
+
+<!-- 12-gauge -->
+    <string id="mag_12ga_8"><text>8 round 12 gauge magazine</text></string>
+        <string id="mag_12ga_8_s"><text>8rd 12ga mag</text></string>
+        <string id="mag_12ga_8_e"><text>An 8 round magazine for the Saiga-12 shotgun.\n%c[255,238,155,23]\nCompatible with: Saiga-12.\n\nUnloaded</text></string>
+        <string id="mag_12ga_8_buck"><text>An 8 round magazine for the Saiga-12 shotgun.\n%c[255,238,155,23]\nCompatible with: Saiga-12.\n\nLoaded: Buckshot</text></string>
+        <string id="mag_12ga_8_slug"><text>An 8 round magazine for the Saiga-12 shotgun.\n%c[255,238,155,23]\nCompatible with: Saiga-12.\n\nLoaded: Slugs</text></string>
+        <string id="mag_12ga_8_dart"><text>An 8 round magazine for the Saiga-12 shotgun.\n%c[255,238,155,23]\nCompatible with: Saiga-12.\n\nLoaded: Darts</text></string>
+        <string id="mag_12ga_8_drag"><text>An 8 round magazine for the Saiga-12 shotgun.\n%c[255,238,155,23]\nCompatible with: Saiga-12.\n\nLoaded: Dragonsbreath</text></string>
+
+<!-- Gauss -->
+    <string id="mag_10_gauss"><text>10 charge 2mm gauss magazine</text></string>
+        <string id="mag_10_gauss"><text>10 ch 2mm gauss mag</text></string>
+        <string id="mag_10_gauss_s"><text>For the gauss rifle.\n%c[255,238,155,23]\nUnloaded</text></string>
+        <string id="mag_10_gauss_s"><text>For the gauss rifle.\n%c[255,238,155,23]\nLoaded: 2mm gauss</text></string>
+        <string id="mag_50_gauss"><text>50 charge 6mm auto gauss magazine</text></string>
+        <string id="mag_50_gauss_s"><text>50ch 6mm auto gauss mag</text></string>
+        <string id="mag_50_gauss_e"><text>Unused\n%c[255,238,155,23]\nUnloaded</text></string>
+        <string id="mag_50_gauss_std_s"><text>Unused\n%c[255,238,155,23]\nLoaded: 6mm gauss</text></string>
+        <string id="mag_50_gauss_ndl_s"><text>Unused\n%c[255,238,155,23]\nLoaded: 6mm needle</text></string>

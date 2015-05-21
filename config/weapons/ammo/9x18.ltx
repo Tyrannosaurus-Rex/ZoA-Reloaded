@@ -1,12 +1,10 @@
-; standard pistol
-
 [ammo_9x18_fmj]:identity_immunities
 GroupControlSection		= spawn_group
 discovery_dependency	=
 $spawn					= "weapons\ammo\ammo_9x18_fmj" ; option for Level Editor
 class					= AMMO
 cform					= skeleton
-visual					= weapons\ammo\ammo_9x18_fmj.ogf
+visual					= weapons\ammo\bullet_9x18_fmj.ogf
 description				= enc_weapons1_ammo_ammo-9x18-fmj
 $prefetch				= 64
 
@@ -36,6 +34,7 @@ wm_size					= 0.09
 ;--------------------------------------------------;
 
 [ammo_9x18_pbp]:ammo_9x18_fmj
+visual          = weapons\ammo\bullet_9x18_pmm.ogf
 
 ;--------------------------------------------------;
 
@@ -43,7 +42,7 @@ wm_size					= 0.09
 inv_name		= ammo-9x18-sp7
 inv_name_short	= ammo-9x18-sp7_s
 description		= enc_weapons1_ammo_ammo-9x18-sp7
-
+visual			= weapons\ammo\bullet_9x18_sp7.ogf
 inv_grid_x		= 50
 inv_grid_y		= 37
 
@@ -60,8 +59,8 @@ wm_size			= 0.09
 ;--------------------------------------------------;
 
 [ammo_9x18_pmm]:ammo_9x18_fmj
-$spawn			= "weapons\ammo\ammo_9x18_pmm"
-visual			= weapons\ammo\ammo_9x18_pmm.ogf
+$spawn			= "weapons\ammo\ammo_9x18_fmj"
+visual			= weapons\ammo\bullet_9x18_pmm.ogf
 description		= enc_weapons1_ammo_ammo-9x18-pmm
 
 cost			= 11
@@ -83,8 +82,8 @@ wm_size			= 0.09
 ;--------------------------------------------------;
 
 [ammo_9x18_rg028]:ammo_9x18_fmj
-$spawn			= "weapons\ammo\ammo_9x18_pmm"
-visual			= weapons\ammo\ammo_9x18_pmm.ogf
+$spawn			= "weapons\ammo\ammo_9x18_fmj"
+visual			= weapons\ammo\bullet_9x18_rg028.ogf
 description		= enc_weapons1_ammo_ammo-9x18-rg028
 
 cost			= 11
@@ -105,12 +104,24 @@ wm_size			= 0.09
 
 ;--------------------------------------------------;
 
+[9x18_reloadable]:identity_immunities
+class					= II_ANTIR
+eat_health				= 0
+eat_satiety				= 0
+eat_power				= 0
+eat_radiation			= 0
+eat_alcohol				= 0
+wounds_heal_perc		= 0
+eat_portions_num		= 1
+
+;--------------------------------------------------;
+
 [clip_8_9x18_base]
 box_size		= 1
 mag_size		= 8
 script_binding	= ammo_manager.init
-inv_name		= clip_9x18-8_name
-inv_name_short	= clip_9x18-8_sname
+inv_name		= clip_8_9x18
+inv_name_short	= clip_8_9x18_s
 inv_weight		= 0.01
 belt			= true
 inv_grid_width	= 1
@@ -119,225 +130,28 @@ inv_grid_x		= 40
 inv_grid_y		= 13
 visual			= weapons\magazines\clip_8_900x18.ogf
 
-[clip_8_9x18_fmj]:ammo_9x18_fmj,clip_8_9x18_base
+[clip_8_9x18_fmj]:ammo_9x18_fmj, clip_8_9x18_base
 wm_section	= wm_9x18a8
-description	= clip_9x18-8-fmj_desc
+description	= clip_8_9x18_fmj
 cost		= 250
 
-[clip_8_9x18_pmm]:ammo_9x18_pmm,clip_8_9x18_base
+[clip_8_9x18_pmm]:ammo_9x18_pmm, clip_8_9x18_base
 wm_section	= wm_9x18b8
-description	= clip_9x18-8-pmm_desc
+description	= clip_8_9x18_pmm
 cost		= 300
 
-[clip_8_9x18_57n181s]:ammo_9x18_57n181s,clip_8_9x18_base
+[clip_8_9x18_57n181s]:ammo_9x18_57n181s, clip_8_9x18_base
 wm_section	= wm_9x18c8
-description	= clip_9x18-8-sp7_desc
+description	= clip_8_9x18_sp7
 cost		= 265
 
-[clip_8_9x18_rg028]:ammo_9x18_rg028,clip_8_9x18_base
+[clip_8_9x18_rg028]:ammo_9x18_rg028, clip_8_9x18_base
 wm_section	= wm_9x18d8
-description	= clip_9x18-8-rg028_desc
+description	= clip_8_9x18_rg028
 cost		= 320
-
-;--------------------------------------------------;
-
-[clip_12_9x18_base]
-box_size		= 1
-mag_size		= 12
-script_binding	= ammo_manager.init
-inv_name		= clip_9x18-12_name
-inv_name_short	= clip_9x18-12_sname
-inv_weight		= 0.01
-belt			= true
-inv_grid_width	= 1
-inv_grid_height	= 1
-inv_grid_x		= 40
-inv_grid_y		= 9
-visual			= weapons\magazines\clip_12_900x18.ogf
-
-[clip_12_9x18_fmj]:ammo_9x18_fmj,clip_12_9x18_base
-wm_section	= wm_9x18a12
-description	= clip_9x18-12-fmj_desc
-cost		= 270
-
-[clip_12_9x18_pmm]:ammo_9x18_pmm,clip_12_9x18_base
-wm_section	= wm_9x18b12
-description	= clip_9x18-12-pmm_desc
-cost		= 320
-
-[clip_12_9x18_57n181s]:ammo_9x18_57n181s,clip_12_9x18_base
-wm_section	= wm_9x18c12
-description	= clip_9x18-12-sp7_desc
-cost		= 270
-
-[clip_12_9x18_rg028]:ammo_9x18_rg028,clip_12_9x18_base
-wm_section	= wm_9x18d12
-description	= clip_9x18-12-rg028_desc
-cost		= 320
-
-;--------------------------------------------------;
-
-[clip_15_9x18_base]
-box_size		= 1
-mag_size		= 15
-script_binding	= ammo_manager.init
-inv_name		= clip_9x18-15_name
-inv_name_short	= clip_9x18-15_sname
-inv_weight		= 0.01
-belt			= true
-inv_grid_width	= 1
-inv_grid_height	= 1
-inv_grid_x		= 40
-inv_grid_y		= 2
-visual			= weapons\magazines\clip_20_900x18.ogf
-
-[clip_20_9x18_fmj]:ammo_9x18_fmj,clip_15_9x18_base
-wm_section	= wm_9x18a20
-description	= clip_9x18-15-fmj_desc
-cost		= 280
-
-[clip_20_9x18_pmm]:ammo_9x18_pmm,clip_15_9x18_base
-wm_section	= wm_9x18b20
-description	= clip_9x18-15-pmm_desc
-cost		= 330
-
-[clip_20_9x18_57n181s]:ammo_9x18_57n181s,clip_15_9x18_base
-wm_section	= wm_9x18c20
-description	= clip_9x18-15-sp7_desc
-cost		= 280
-
-[clip_20_9x18_rg028]:ammo_9x18_rg028,clip_15_9x18_base
-wm_section	= wm_9x18d20
-description	= clip_9x18-15-rg028_desc
-cost		= 330
-
-;--------------------------------------------------;
-; Unused?
-
-[clip_27_9x18_fmj]:ammo_9x18_fmj
-box_size		= 1
-mag_size		= 27
-script_binding	= ammo_manager.init
-wm_section		= wm_9x18a27
-inv_name		= clip_27_9x18
-description		= desc_load_9x18_fmj
-inv_name_short	= clip_27_9x18_fmj_s
-inv_weight		= 0.0100
-belt			= true
-inv_grid_width	= 1
-inv_grid_height	= 1
-inv_grid_x		= 40
-inv_grid_y		= 1
-visual			= weapons\magazines\clip_27_900x18.ogf
-cost			= 9
-
-[clip_27_9x18_pmm]:ammo_9x18_pmm
-box_size		= 1
-mag_size		= 27
-script_binding	= ammo_manager.init
-wm_section		= wm_9x18b27
-inv_name		= clip_27_9x18
-description		= desc_load_9x18_pmm
-inv_name_short	= clip_27_9x18_pmm_s
-inv_weight		= 0.0100
-belt			= true
-inv_grid_width	= 1
-inv_grid_height	= 1
-inv_grid_x		= 40
-inv_grid_y		= 1
-visual			= weapons\magazines\clip_27_900x18.ogf
-cost			= 9
-
-;--------------------------------------------------;
-
-[mag_20_9x18_base]
-box_size		= 1
-mag_size		= 20
-script_binding	= ammo_manager.init
-inv_name		= mag_9x18-20_name
-inv_name_short	= mag_9x18-20_sname
-inv_weight		= 0.0119
-belt			= true
-inv_grid_width	= 1
-inv_grid_height	= 1
-inv_grid_x		= 39
-inv_grid_y		= 8
-visual			= weapons\magazines\mag_20_900x19.ogf
-
-[mag_20_9x18_fmj]:ammo_9x18_fmj,mag_20_9x18_base
-wm_section	= wm_9x18a20mag
-description	= mag_9x18-20-fmj_desc
-cost		= 375
-
-[mag_20_9x18_pmm]:ammo_9x18_pmm,mag_20_9x18_base
-wm_section	= wm_9x18b20mag
-description	= mag_9x18-20-pmm_desc
-cost		= 420
-
-[mag_20_9x18_57n181s]:ammo_9x18_57n181s,mag_20_9x18_base
-wm_section	= wm_9x18c20mag
-description	= mag_9x18-20-sp7_desc
-cost		= 375
-
-[mag_20_9x18_rg028]:ammo_9x18_rg028,mag_20_9x18_base
-wm_section	= wm_9x18d20mag
-description	= mag_9x18-20-rg028_desc
-cost		= 420
-
-;--------------------------------------------------;
-
-[mag_64_9x18_base]
-box_size		= 1
-mag_size		= 64
-script_binding	= ammo_manager.init
-inv_name		= mag_9x18-64_name
-inv_name_short	= mag_9x18-64_sname
-inv_weight		= 0.01
-belt			= true
-inv_grid_width	= 1
-inv_grid_height	= 1
-inv_grid_x		= 39
-inv_grid_y		= 1
-visual			= weapons\magazines\mag_64_900x18.ogf
-
-[mag_64_9x18_fmj]:ammo_9x18_fmj,mag_64_9x18_base
-wm_section	= wm_9x18a64
-description	= mag_9x18-64-fmj_desc
-cost		= 340
-
-[mag_64_9x18_pmm]:ammo_9x18_pmm,mag_64_9x18_base
-wm_section	= wm_9x18b64
-description	= mag_9x18-64-pmm_desc
-cost		= 360
-
-[mag_64_9x18_57n181s]:ammo_9x18_57n181s,mag_64_9x18_base
-wm_section	= wm_9x18c64
-description	= mag_9x18-64-sp7_desc
-cost		= 340
-
-[mag_64_9x18_rg028]:ammo_9x18_rg028,mag_64_9x18_base
-wm_section	= wm_9x18d64
-description	= mag_9x18-64-rg028_desc
-cost		= 360
-
-;--------------------------------------------------;
-
-[9x18_reloadable]:identity_immunities
-class				= II_ANTIR
-
-eat_health			= 0
-eat_satiety			= 0
-eat_power			= 0
-eat_radiation		= 0
-eat_alcohol			= 0
-wounds_heal_perc	= 0
-eat_portions_num	= 1
-animation_slot		= 4
-
-;--------------------------------------------------;
 
 [clip_8_9x18_fmj_e]:clip_8_9x18_fmj,9x18_reloadable
-description	= clip_9x18-8-empty_desc
+description	= clip_8_9x18_e
 cost		= 15
 
 [clip_8_9x18_pmm_e]:clip_8_9x18_fmj_e
@@ -348,8 +162,42 @@ cost		= 15
 
 ;--------------------------------------------------;
 
+[clip_12_9x18_base]
+box_size		= 1
+mag_size		= 12
+script_binding	= ammo_manager.init
+inv_name		= clip_12_9x18
+inv_name_short	= clip_12_9x18_s
+inv_weight		= 0.01
+belt			= true
+inv_grid_width	= 1
+inv_grid_height	= 1
+inv_grid_x		= 40
+inv_grid_y		= 9
+visual			= weapons\magazines\clip_12_900x18.ogf
+
+[clip_12_9x18_fmj]:ammo_9x18_fmj, clip_12_9x18_base
+wm_section	= wm_9x18a12
+description	= clip_12_9x18_fmj
+cost		= 270
+
+[clip_12_9x18_pmm]:ammo_9x18_pmm, clip_12_9x18_base
+wm_section	= wm_9x18b12
+description	= clip_12_9x18_pmm
+cost		= 320
+
+[clip_12_9x18_57n181s]:ammo_9x18_57n181s, clip_12_9x18_base
+wm_section	= wm_9x18c12
+description	= clip_12_9x18_sp7
+cost		= 270
+
+[clip_12_9x18_rg028]:ammo_9x18_rg028, clip_12_9x18_base
+wm_section	= wm_9x18d12
+description	= clip_12_9x18_rg028
+cost		= 320
+
 [clip_12_9x18_fmj_e]:clip_12_9x18_fmj,9x18_reloadable
-description	= clip_9x18-12-empty_desc
+description	= clip_12_9x18_e
 cost		= 17
 
 [clip_12_9x18_pmm_e]:clip_12_9x18_fmj_e
@@ -360,8 +208,42 @@ cost		= 17
 
 ;--------------------------------------------------;
 
+[clip_20_9x18_base]
+box_size		= 1
+mag_size		= 20
+script_binding	= ammo_manager.init
+inv_name		= clip_20_9x18
+inv_name_short	= clip_20_9x18_s
+inv_weight		= 0.01
+belt			= true
+inv_grid_width	= 1
+inv_grid_height	= 1
+inv_grid_x		= 40
+inv_grid_y		= 2
+visual			= weapons\magazines\clip_20_900x18.ogf
+
+[clip_20_9x18_fmj]:ammo_9x18_fmj, clip_20_9x18_base
+wm_section	= wm_9x18a20
+description	= clip_20_9x18_fmj
+cost		= 280
+
+[clip_20_9x18_pmm]:ammo_9x18_pmm, clip_20_9x18_base
+wm_section	= wm_9x18b20
+description	= clip_20_9x18_pmm
+cost		= 330
+
+[clip_20_9x18_57n181s]:ammo_9x18_57n181s, clip_20_9x18_base
+wm_section	= wm_9x18c20
+description	= clip_20_9x18_sp7
+cost		= 280
+
+[clip_20_9x18_rg028]:ammo_9x18_rg028, clip_20_9x18_base
+wm_section	= wm_9x18d20
+description	= clip_20_9x18_rg028
+cost		= 330
+
 [clip_20_9x18_fmj_e]:clip_20_9x18_fmj,9x18_reloadable
-description	= clip_9x18-15-empty_desc
+description	= clip_20_9x18_e
 cost		= 20
 
 [clip_20_9x18_pmm_e]:clip_20_9x18_fmj_e
@@ -371,9 +253,76 @@ cost		= 20
 [clip_20_9x18_rg028_e]:clip_20_9x18_fmj_e
 
 ;--------------------------------------------------;
+; Unused?
+
+[clip_27_9x18_base]
+box_size		= 1
+mag_size		= 27
+script_binding	= ammo_manager.init
+inv_name		= clip_27_9x18
+inv_name_short	= clip_27_9x18_s
+inv_weight		= 0.0100
+belt			= true
+inv_grid_width	= 1
+inv_grid_height	= 1
+inv_grid_x		= 40
+inv_grid_y		= 1
+visual			= weapons\magazines\clip_27_900x18.ogf
+
+[clip_27_9x18_fmj]:ammo_9x18_fmj, clip_27_9x18_base
+wm_section		= wm_9x18a27
+description		= clip_27_9x18_fmj
+cost			= 9
+
+[clip_27_9x18_pmm]:ammo_9x18_pmm, clip_27_9x18_base
+wm_section		= wm_9x18b27
+description		= clip_27_9x18_pmm
+cost			= 9
+
+[clip_27_9x18_fmj_e]:clip_27_9x18_fmj,9x18_reloadable
+description	= clip_27_9x18_e
+cost		= 20
+
+[clip_27_9x18_pmm_e]:clip_27_9x18_fmj_e
+
+;--------------------------------------------------;
+
+[mag_20_9x18_base]
+box_size		= 1
+mag_size		= 20
+script_binding	= ammo_manager.init
+inv_name		= mag_20_9x18
+inv_name_short	= mag_20_9x18_s
+inv_weight		= 0.0119
+belt			= true
+inv_grid_width	= 1
+inv_grid_height	= 1
+inv_grid_x		= 39
+inv_grid_y		= 8
+visual			= weapons\magazines\mag_20_900x19.ogf
+
+[mag_20_9x18_fmj]:ammo_9x18_fmj, mag_20_9x18_base
+wm_section	= wm_9x18a20mag
+description	= mag_20_9x18_fmj
+cost		= 375
+
+[mag_20_9x18_pmm]:ammo_9x18_pmm, mag_20_9x18_base
+wm_section	= wm_9x18b20mag
+description	= mag_20_9x18_pmm
+cost		= 420
+
+[mag_20_9x18_57n181s]:ammo_9x18_57n181s, mag_20_9x18_base
+wm_section	= wm_9x18c20mag
+description	= mag_20_9x18_sp7
+cost		= 375
+
+[mag_20_9x18_rg028]:ammo_9x18_rg028, mag_20_9x18_base
+wm_section	= wm_9x18d20mag
+description	= mag_20_9x18_rg028
+cost		= 420
 
 [mag_20_9x18_fmj_e]:mag_20_9x18_fmj,9x18_reloadable
-description	= mag_9x18-20-empty_desc
+description	= mag_20_9x18_e
 cost		= 20
 
 [mag_20_9x18_pmm_e]:mag_20_9x18_fmj_e
@@ -383,17 +332,43 @@ cost		= 20
 [mag_20_9x18_rg028_e]:mag_20_9x18_fmj_e
 
 ;--------------------------------------------------;
-; Unused?
-[clip_27_9x18_fmj_e]:clip_27_9x18_fmj
-description	= desc_clip_e
-cost		= 20
 
-[clip_27_9x18_pmm_e]:clip_27_9x18_fmj_e
+[mag_64_9x18_base]
+box_size		= 1
+mag_size		= 64
+script_binding	= ammo_manager.init
+inv_name		= mag_64_9x18
+inv_name_short	= mag_64_9x18_s
+inv_weight		= 0.01
+belt			= true
+inv_grid_width	= 1
+inv_grid_height	= 1
+inv_grid_x		= 39
+inv_grid_y		= 1
+visual			= weapons\magazines\mag_64_900x18.ogf
 
-;--------------------------------------------------;
+[mag_64_9x18_fmj]:ammo_9x18_fmj, mag_64_9x18_base
+wm_section	= wm_9x18a64
+description	= mag_64_9x18_fmj
+cost		= 340
+
+[mag_64_9x18_pmm]:ammo_9x18_pmm, mag_64_9x18_base
+wm_section	= wm_9x18b64
+description	= mag_64_9x18_pmm
+cost		= 360
+
+[mag_64_9x18_57n181s]:ammo_9x18_57n181s, mag_64_9x18_base
+wm_section	= wm_9x18c64
+description	= mag_64_9x18_sp7
+cost		= 340
+
+[mag_64_9x18_rg028]:ammo_9x18_rg028, mag_64_9x18_base
+wm_section	= wm_9x18d64
+description	= mag_64_9x18_rg028
+cost		= 360
 
 [mag_64_9x18_fmj_e]:mag_64_9x18_fmj,9x18_reloadable
-description	= mag_9x18-64-empty_desc
+description	= mag_64_9x18_e
 cost		= 25
 
 [mag_64_9x18_pmm_e]:mag_64_9x18_fmj_e

@@ -7,27 +7,30 @@
 -- and config/weapons/magazines.ltx for ammo and mag types
 
 -- Helper function to split ammo types. Taken from stackoverflow
-function mysplit(inputstr, sep)
-        if sep == nil then
-                sep = "%s"
-        end
-        local t={} ; i=1
-        for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
-                t[i] = str
-                i = i + 1
-        end
-        return t
+function mysplit( inputstr , sep )
+		if sep == nil then
+				sep = "%s"
+		end
+
+		local t={} ; i=1
+
+		for str in string.gmatch( inputstr , "([^"..sep.."]+)" ) do
+			t[ i ] = str
+			i = i + 1
+		end
+
+		return t
 end
 
 function string.ends( String , End )
-   return End=='' or string.sub(String,-string.len(End))==End
+   return End == '' or string.sub( String , -string.len( End ) ) == End
 end
 
 -------------------------------------------------------------------------------
 
-local objSection , wmSection , remagNum, boxCount
-local remagOpt1, remagOpt2, remagOpt3, remagOpt4
-local ammoList
+local objSection , wmSection , remagNum
+local remagOpt1 , remagOpt2, remagOpt3 , remagOpt4
+local ammoList , boxSize
 
 function onItemDrop( object )
 	-- Could we add sometime to easy drop all spare bullets?
@@ -48,18 +51,21 @@ function onItemUse( object )
 	wmSection = tkgp_utils.getLtxValue( objSection , "wm_section", "string" )
 
 	if wmSection ~= nil then
-		remagNum = tkgp_utils.getLtxValue( wmSection , "ammo_mag_size", "float" )
-		boxCount = tkgp_utils.getLtxValue( objSection , "box_size", "float" )
+		remagNum = tkgp_utils.getLtxValue( wmSection , "ammo_mag_size" , "float" )
 
 		-- build the list of ammo types
-		local ammoClasses = mysplit( tkgp_utils.getLtxValue( wmSection, "ammo_class", "string" ) , "," )
-		ammoList = {}
+		local ammoClasses = mysplit( tkgp_utils.getLtxValue( wmSection , "ammo_class" , "string" ) , "," )
+		ammoList = { nil , nil , nil , nil }
+		boxSize = { 1 , 1 , 1 , 1 }
 
-		for index = 1,4 do
-			if index < #ammoClasses then
-				ammoList[ index ] = ammoClasses[ index ]
+		for index = 1 , #ammoClasses do
+			ammoList[ index ] = ammoClasses[ index ]
+
+			if( ammoList[ index ] ~= nil ) then
+				boxSize[ index ] = tkgp_utils.getLtxValue( ammoList[ index ] , "box_size" , "float" )
+				qqq( "section "..objSection.."'s boxSize is "..boxSize[ index ].." for "..ammoList[ index ] )
 			else
-				ammoList[ index ] = nil
+				boxSize[ index ] = 1
 			end
 		end
 
@@ -67,19 +73,23 @@ function onItemUse( object )
 			-- There is an off-by-one error in the unloading code
 			-- that affects full magazines. We get one less bullet back,
 			-- so use one less to load
-			remagNum = remagNum - 1
+			--remagNum = remagNum - 1
 
 			-- Give the player their mag back. Remove later
 			tkgp_utils.giveActor( objSection , 1 )
 
-			level.start_stop_menu( remag_ui( get_hud() ), true )
+			level.start_stop_menu( remag_ui( get_hud() ) , true )
 		end
 	end
 end
 
+-------------------------------------------------------------------------------
+
+local remagStrings = { "btn_first" , "btn_second" , "btn_third" , "btn_fourth" }
+
 class "remag_ui" (CUIScriptWnd)
 
-function remag_ui:__init(owner) super()
+function remag_ui:__init( owner ) super()
 	self.owner = owner
 	self:InitControls()
 	self:InitCallBacks()
@@ -89,25 +99,26 @@ function remag_ui:__finalize()
 end
 
 function remag_ui:InitControls()
-	self:Init( 0, 0, 1024, 768 )
+	self:Init( 0 , 0 , 1024 , 768 )
 	local xml = CScriptXmlInit()
 	xml:ParseFile( "ui_zoa_rebox.xml" )
-	xml:InitStatic( "background", self )
-	local caption = xml:InitStatic( "instruction_caption", self )
-	local cancelBtn = xml:Init3tButton( "btn_cancel", self )
-	self:Register( cancelBtn, "btn_cancel" )
+	xml:InitStatic( "background" , self )
+	local caption = xml:InitStatic( "instruction_caption" , self )
+	local cancelBtn = xml:Init3tButton( "btn_cancel" , self )
+	self:Register( cancelBtn , "btn_cancel" )
 
-	local btnStrings = { "btn_first" , "btn_second" , "btn_third" , "btn_fourth" }
 	local notFail = false
 
-	-- add ammo buttons
-	for index = 1,4 do
+	-- Make ammo buttons
+	for index = 1 , #ammoList do
 		local ammo = ammoList[ index ]
-		if ammo ~= nil and ( boxCount * tkgp_utils.countItems( ammo ) ) >= remagNum then
-			notFail = true
-			local btn = xml:Init3tButton( btnStrings[ index ] , self )
-			self:Register( btn , btnStrings[ index ] )
+		local size = boxSize[ index ]
+
+		if ammo ~= nil and ( size * tkgp_utils.countItems( ammo ) ) >= remagNum then
+			local btn = xml:Init3tButton( remagStrings[ index ] , self )
+			self:Register( btn , remagStrings[ index ] )
 			btn:SetText( game.translate_string( tkgp_utils.getLtxValue( ammo , "inv_name_short" , "string" ) ) )
+			notFail = true
 		end
 	end
 
@@ -118,41 +129,11 @@ function remag_ui:InitControls()
 end
 
 function remag_ui:InitCallBacks()
-	self:AddCallback( "btn_cancel", ui_events.BUTTON_CLICKED, self.onCancel, self )
-	self:AddCallback( "btn_first", ui_events.BUTTON_CLICKED, self.onFirst, self )
-	self:AddCallback( "btn_second", ui_events.BUTTON_CLICKED, self.onSecond, self )
-	self:AddCallback( "btn_third", ui_events.BUTTON_CLICKED, self.onThird, self )
-	self:AddCallback( "btn_fourth", ui_events.BUTTON_CLICKED, self.onFourth, self )
-end
-
-function remag_ui:onCancel()
-	self:GetHolder():start_stop_menu( self , true )
-end
-
-function remag_ui:magFill( removeType, resultField )
-	--trying to do this as a for loop with db.actor:object doesn't work because it hits the same item more than once
-	local amount = 0
-	local takeMag = false
-
-	--tkgp_utils.giveNews( removeType , "debug" )
-	--tkgp_utils.giveNews( resultField , "debug" )
-
-	-- remove mag and amount of ammo from inv
-	db.actor:inventory_for_each(
-		function ( object )
-			if amount < remagNum and object:section() == removeType then
-				alife():release( alife():object( object:id() ) )
-				amount = amount + 1
-			elseif not takeMag and object:section() == objSection then
-				alife():release( alife():object( object:id() ) )
-				takeMag = true
-			end
-		end
-	)
-
-	-- give the player a full clip
-	ammo_manager.give_loaded( tkgp_utils.getLtxValue( wmSection , resultField , "string" ) )
-	self:GetHolder():start_stop_menu( self , true )
+	self:AddCallback( "btn_cancel" , ui_events.BUTTON_CLICKED , self.onCancel , self )
+	self:AddCallback( "btn_first" , ui_events.BUTTON_CLICKED , self.onFirst , self )
+	self:AddCallback( "btn_second" , ui_events.BUTTON_CLICKED , self.onSecond , self )
+	self:AddCallback( "btn_third" , ui_events.BUTTON_CLICKED , self.onThird , self )
+	self:AddCallback( "btn_fourth" , ui_events.BUTTON_CLICKED , self.onFourth , self )
 end
 
 function remag_ui:onFirst()
@@ -171,6 +152,37 @@ function remag_ui:onFourth()
 	self:magFill( ammoList[ 4 ] , "charged3" )
 end
 
+function remag_ui:onCancel()
+	self:GetHolder():start_stop_menu( self , true )
+end
+
+function remag_ui:magFill( removeType , resultField )
+	-- Trying to do this as a for loop with db.actor:object doesn't work
+	-- because it hits the same item more than once
+	local amount = 0
+	local takeMag = false
+
+	--tkgp_utils.giveNews( removeType , "debug" )
+	--tkgp_utils.giveNews( resultField , "debug" )
+
+	-- Remove mag and amount of ammo from inv
+	db.actor:inventory_for_each(
+		function ( object )
+			if amount < remagNum and object:section() == removeType then
+				alife():release( alife():object( object:id() ) )
+				amount = amount + 1
+			elseif not takeMag and object:section() == objSection then
+				alife():release( alife():object( object:id() ) )
+				takeMag = true
+			end
+		end
+	)
+
+	-- Give the player a full mag
+	ammo_manager.give_loaded( tkgp_utils.getLtxValue( wmSection , resultField , "string" ) )
+	self:GetHolder():start_stop_menu( self , true )
+end
+
 -------------------------------------------------------------------------------
 
 local magmaStrings = { "btn_9x18" , "btn_9x19" , "btn_9x39" , "btn_12cal" , "btn_57x28" , "btn_86x70" , "btn_357" , "btn_545x39" , "btn_556x45" , "btn_762x25" , "btn_762x39" , "btn_762x51" , "btn_762x54" , "btn_792x57" , "btn_1143x23" , "btn_1270x99" , "btn_1270x108" , "btn_all" , "btn_partial" , "btn_cancel" }
@@ -180,12 +192,12 @@ function magManagerInit()
 
 	-- Give the box back
 	tkgp_utils.giveActor( objSection , 1 )
-	level.start_stop_menu( magmanager_ui( get_hud() ), true )
+	level.start_stop_menu( magmanager_ui( get_hud() ) , true )
 end
 
 class "magmanager_ui" (CUIScriptWnd)
 
-function magmanager_ui:__init(owner) super()
+function magmanager_ui:__init( owner ) super()
 	self.owner = owner
 	self:InitControls()
 	self:InitCallBacks()
@@ -195,46 +207,46 @@ function magmanager_ui:__finalize()
 end
 
 function magmanager_ui:InitControls()
-	self:Init( 0, 0, 1024, 768 )
+	self:Init( 0 , 0 , 1024 , 768 )
 	local xml = CScriptXmlInit()
 	xml:ParseFile( "ui_zoa_magma.xml" )
-	xml:InitStatic( "background", self )
-	local caption = xml:InitStatic( "instruction_caption", self )
-	local cancelBtn = xml:Init3tButton( "btn_cancel", self )
-	self:Register( cancelBtn, "btn_cancel" )
+	xml:InitStatic( "background" , self )
+	local caption = xml:InitStatic( "instruction_caption" , self )
+	local cancelBtn = xml:Init3tButton( "btn_cancel" , self )
+	self:Register( cancelBtn , "btn_cancel" )
 
-	-- add ammo buttons
-	for index = 1,#magmaStrings do
+	-- Make ammo buttons
+	for index = 1 , #magmaStrings do
 		local btn = xml:Init3tButton( magmaStrings[ index ] , self )
 		self:Register( btn , magmaStrings[ index ] )
 	end
 end
 
 function magmanager_ui:InitCallBacks()
-	self:AddCallback( "btn_9x18" , ui_events.BUTTON_CLICKED, self.on_9x18, self )
-	self:AddCallback( "btn_9x19" , ui_events.BUTTON_CLICKED, self.on_9x19, self )
-	self:AddCallback( "btn_9x39" , ui_events.BUTTON_CLICKED, self.on_9x39, self )
-	self:AddCallback( "btn_12cal" , ui_events.BUTTON_CLICKED, self.on_12cal, self )
+	self:AddCallback( "btn_9x18" , ui_events.BUTTON_CLICKED , self.on_9x18 , self )
+	self:AddCallback( "btn_9x19" , ui_events.BUTTON_CLICKED , self.on_9x19 , self )
+	self:AddCallback( "btn_9x39" , ui_events.BUTTON_CLICKED , self.on_9x39 , self )
+	self:AddCallback( "btn_12cal" , ui_events.BUTTON_CLICKED , self.on_12cal , self )
 
-	self:AddCallback( "btn_57x28" , ui_events.BUTTON_CLICKED, self.on_57x28, self )
-	self:AddCallback( "btn_86x70" , ui_events.BUTTON_CLICKED, self.on_86x70, self )
-	self:AddCallback( "btn_357" , ui_events.BUTTON_CLICKED, self.on_357, self )
-	self:AddCallback( "btn_545x39" , ui_events.BUTTON_CLICKED, self.on_545x39, self )
+	self:AddCallback( "btn_57x28" , ui_events.BUTTON_CLICKED , self.on_57x28 , self )
+	self:AddCallback( "btn_86x70" , ui_events.BUTTON_CLICKED , self.on_86x70 , self )
+	self:AddCallback( "btn_357" , ui_events.BUTTON_CLICKED , self.on_357 , self )
+	self:AddCallback( "btn_545x39" , ui_events.BUTTON_CLICKED , self.on_545x39 , self )
 
-	self:AddCallback( "btn_556x45" , ui_events.BUTTON_CLICKED, self.on_556x45, self )
-	self:AddCallback( "btn_762x25" , ui_events.BUTTON_CLICKED, self.on_762x25, self )
-	self:AddCallback( "btn_762x39" , ui_events.BUTTON_CLICKED, self.on_762x39, self )
-	self:AddCallback( "btn_762x51" , ui_events.BUTTON_CLICKED, self.on_762x51, self )
+	self:AddCallback( "btn_556x45" , ui_events.BUTTON_CLICKED , self.on_556x45 , self )
+	self:AddCallback( "btn_762x25" , ui_events.BUTTON_CLICKED , self.on_762x25 , self )
+	self:AddCallback( "btn_762x39" , ui_events.BUTTON_CLICKED , self.on_762x39 , self )
+	self:AddCallback( "btn_762x51" , ui_events.BUTTON_CLICKED , self.on_762x51 , self )
 
-	self:AddCallback( "btn_762x54" , ui_events.BUTTON_CLICKED, self.on_762x54, self )
-	self:AddCallback( "btn_792x57" , ui_events.BUTTON_CLICKED, self.on_792x57, self )
-	self:AddCallback( "btn_1143x23" , ui_events.BUTTON_CLICKED, self.on_1143x23, self )
-	self:AddCallback( "btn_1270x99" , ui_events.BUTTON_CLICKED, self.on_1270x99, self )
+	self:AddCallback( "btn_762x54" , ui_events.BUTTON_CLICKED , self.on_762x54 , self )
+	self:AddCallback( "btn_792x57" , ui_events.BUTTON_CLICKED , self.on_792x57 , self )
+	self:AddCallback( "btn_1143x23" , ui_events.BUTTON_CLICKED , self.on_1143x23 , self )
+	self:AddCallback( "btn_1270x99" , ui_events.BUTTON_CLICKED , self.on_1270x99 , self )
 
-	self:AddCallback( "btn_1270x108" , ui_events.BUTTON_CLICKED, self.on_1270x108, self )
-	self:AddCallback( "btn_all" , ui_events.BUTTON_CLICKED, self.onAll, self )
-	self:AddCallback( "btn_partial" , ui_events.BUTTON_CLICKED, self.onPartial, self )
-	self:AddCallback( "btn_cancel" , ui_events.BUTTON_CLICKED, self.onCancel, self )
+	self:AddCallback( "btn_1270x108" , ui_events.BUTTON_CLICKED , self.on_1270x108 , self )
+	self:AddCallback( "btn_all" , ui_events.BUTTON_CLICKED , self.onAll , self )
+	self:AddCallback( "btn_partial" , ui_events.BUTTON_CLICKED , self.onPartial , self )
+	self:AddCallback( "btn_cancel" , ui_events.BUTTON_CLICKED , self.onCancel , self )
 end
 
 function magmanager_ui:on_9x18()
@@ -318,41 +330,318 @@ function magmanager_ui:onCancel()
 end
 
 function magmanager_ui:unloadType( type )
-	qqq( "type: "..type )
+	--qqq( "type: "..type )
 
-	--
-	local magCount = 0
 	db.actor:inventory_for_each(
 		function( object )
 			local section = object:section()
-			local capacity = 0
+			local condition = 0.0
+			local capacity = 0.0
+			local boxSize = 0
 			local wmSection = ""
 			local ammoClasses = ""
 			local ammoCount = ""
 			local ammoType = ""
 
-			if not string.ends( section , "_e" ) and ( "mag_" == section:sub( 1 , 4 ) or "belt_" == section:sub( 1 , 5 ) or "clip_" == section:sub( 1 , 5 ) ) and ( type == "partial" or type == "all" or section:find( type ) ~= nil ) then
-				if type == "all" or object:condition() < 0.995 then
-					capacity = tkgp_utils.getLtxValue( section , "mag_size" , "float" )
-					wmSection = tkgp_utils.getLtxValue( section , "wm_section" , "string" )
-					ammoClasses = mysplit( tkgp_utils.getLtxValue( wmSection , "ammo_class" , "string" ) , "," )
+			-- Check for a non-empty mag that matches the section chosen,
+			-- or anything that is either full or non-empty. This sounds
+			-- redundant, but are three different things
+			if not string.ends( section , "_e" ) then
+				if ( "mag_" == section:sub( 1 , 4 ) or "belt_" == section:sub( 1 , 5 ) or "clip_" == section:sub( 1 , 5 ) ) and ( type == "partial" or type == "all" or section:find( type ) ~= nil ) then
+					condition = object:condition()
 
-					ammoCount = math.ceil( object:condition() * capacity )
-					ammoType = ammoClasses[ 1 ]
+					if type == "all" or condition < 0.995 then
+						capacity = tkgp_utils.getLtxValue( section , "mag_size" , "float" )
 
-					--qqq( "est ammo: "..ammoCount )
-					--qqq( "ammo type: "..ammoType )
+						-- Refer to the off-by-one error explanation earlier
+						-- in this file
+-- 						if not condition < 0.995 then
+-- 							capacity = capacity - 1
+-- 						end
 
-					-- Give the player the ammo, empty mag, and take the partial
-					tkgp_utils.giveActor( ammoType , ammoCount )
-					tkgp_utils.giveActor( section.."_e" , 1 )
-					alife():release( alife():object( object:id() ) )
+						wmSection = tkgp_utils.getLtxValue( section , "wm_section" , "string" )
+						ammoClasses = mysplit( tkgp_utils.getLtxValue( wmSection , "ammo_class" , "string" ) , "," )
+
+						-- Get the ammo type and do some math
+						ammoType = ammoClasses[ 1 ]
+
+						-- boxSize acts like a multiplier. Divide here to get
+						-- the correct result
+						boxSize = tkgp_utils.getLtxValue( ammoType , "box_size" , "float" )
+						ammoCount = math.ceil( condition * capacity ) / boxSize
+
+						qqq( "section: "..section )
+						--qqq( "ammo type: "..ammoType )
+						qqq( "capacity: "..capacity )
+						qqq( "boxSize: "..boxSize )
+						qqq( "est ammo: "..ammoCount )
+
+						-- Exchange the magazine with an empty and bullets
+						tkgp_utils.giveActor( ammoType , ammoCount )
+						tkgp_utils.giveActor( section.."_e" , 1 )
+						alife():release( alife():object( object:id() ) )
+					end
 				end
 			end
 		end
 	)
 
--- 	object:set_condition( newCondition < 1 and newCondition or 1 )
-
 	self:GetHolder():start_stop_menu( self , true )
+end
+
+-------------------------------------------------------------------------------
+
+-- Test case to check all names and etc.
+
+function g()
+	tkgp_utils.giveActor( "ammo_helper" )
+
+	-- Belts
+
+-- 	ammo_manager.give_loaded( "belt_100_5.56x45_ap" )
+-- 	ammo_manager.give_loaded( "belt_100_5.56x45_ss190" )
+--
+-- 	ammo_manager.give_loaded( "belt_100_7.62x51_ap" )
+-- 	ammo_manager.give_loaded( "belt_100_7.62x51_fmj" )
+--
+-- 	ammo_manager.give_loaded( "belt_100_7.62x54_7h1" )
+-- 	ammo_manager.give_loaded( "belt_100_7.62x54_7h14" )
+-- 	ammo_manager.give_loaded( "belt_100_7.62x54_7t2" )
+-- 	ammo_manager.give_loaded( "belt_100_7.62x54_ap" )
+--
+-- 	ammo_manager.give_loaded( "belt_50_7.62x51_ap" )
+-- 	ammo_manager.give_loaded( "belt_50_7.62x51_fmj" )
+-- 	ammo_manager.give_loaded( "belt_50_7.62x51_m993" )
+-- 	ammo_manager.give_loaded( "belt_50_7.62x51_mk316" )
+--
+-- 	ammo_manager.give_loaded( "belt_50_7.92x57_ap" )
+-- 	ammo_manager.give_loaded( "belt_50_7.92x57_fmj" )
+
+	-- Clips
+
+-- 	ammo_manager.give_loaded( "clip_12_9x18_57n181s" )
+-- 	ammo_manager.give_loaded( "clip_12_9x18_fmj" )
+-- 	ammo_manager.give_loaded( "clip_12_9x18_pmm" )
+-- 	ammo_manager.give_loaded( "clip_12_9x18_rg028" )
+--
+-- 	ammo_manager.give_loaded( "clip_13_9x19_7n21" )
+-- 	ammo_manager.give_loaded( "clip_13_9x19_fmj" )
+-- 	ammo_manager.give_loaded( "clip_13_9x19_jhp" )
+-- 	ammo_manager.give_loaded( "clip_13_9x19_pbp" )
+--
+-- 	ammo_manager.give_loaded( "clip_15_9x19_7n21" )
+-- 	ammo_manager.give_loaded( "clip_15_9x19_fmj" )
+-- 	ammo_manager.give_loaded( "clip_15_9x19_jhp" )
+-- 	ammo_manager.give_loaded( "clip_15_9x19_pbp" )
+--
+-- 	ammo_manager.give_loaded( "clip_16_9x19_7n21" )
+-- 	ammo_manager.give_loaded( "clip_16_9x19_fmj" )
+-- 	ammo_manager.give_loaded( "clip_16_9x19_jhp" )
+-- 	ammo_manager.give_loaded( "clip_16_9x19_pbp" )
+--
+-- 	ammo_manager.give_loaded( "clip_17_9x19_fmj" )
+-- 	ammo_manager.give_loaded( "clip_17_9x19_pbp" )
+--
+-- 	ammo_manager.give_loaded( "clip_18_9x19_7n21" )
+-- 	ammo_manager.give_loaded( "clip_18_9x19_fmj" )
+-- 	ammo_manager.give_loaded( "clip_18_9x19_jhp" )
+-- 	ammo_manager.give_loaded( "clip_18_9x19_pbp" )
+--
+-- 	ammo_manager.give_loaded( "clip_20_5.7x28_ap" )
+-- 	ammo_manager.give_loaded( "clip_20_5.7x28_fmj" )
+--
+-- 	ammo_manager.give_loaded( "clip_20_9x18_57n181s" )
+-- 	ammo_manager.give_loaded( "clip_20_9x18_fmj" )
+-- 	ammo_manager.give_loaded( "clip_20_9x18_pmm" )
+-- 	ammo_manager.give_loaded( "clip_20_9x18_rg028" )
+--
+-- 	ammo_manager.give_loaded( "clip_27_9x18_fmj" )
+-- 	ammo_manager.give_loaded( "clip_27_9x18_pmm" )
+--
+-- 	ammo_manager.give_loaded( "clip_31_9x19_fmj" )
+-- 	ammo_manager.give_loaded( "clip_31_9x19_pbp" )
+--
+-- 	ammo_manager.give_loaded( "clip_6_357_jfp" )
+-- 	ammo_manager.give_loaded( "clip_6_357_jhp" )
+--
+-- 	ammo_manager.give_loaded( "clip_7_11.43x23_fmj" )
+-- 	ammo_manager.give_loaded( "clip_7_11.43x23_frng" )
+-- 	ammo_manager.give_loaded( "clip_7_11.43x23_hydro" )
+--
+-- 	ammo_manager.give_loaded( "clip_8_11.43x23_fmj" )
+-- 	ammo_manager.give_loaded( "clip_8_11.43x23_frng" )
+-- 	ammo_manager.give_loaded( "clip_8_11.43x23_hydro" )
+--
+-- 	ammo_manager.give_loaded( "clip_8_357_jfp" )
+-- 	ammo_manager.give_loaded( "clip_8_357_jhp" )
+--
+-- 	ammo_manager.give_loaded( "clip_8_7.62x25_p" )
+-- 	ammo_manager.give_loaded( "clip_8_7.62x25_p41" )
+-- 	ammo_manager.give_loaded( "clip_8_7.62x25_ppu" )
+-- 	ammo_manager.give_loaded( "clip_8_7.62x25_ps" )
+--
+-- 	ammo_manager.give_loaded( "clip_8_9x18_57n181s" )
+-- 	ammo_manager.give_loaded( "clip_8_9x18_fmj" )
+-- 	ammo_manager.give_loaded( "clip_8_9x18_pmm" )
+-- 	ammo_manager.give_loaded( "clip_8_9x18_rg028" )
+--
+-- 	ammo_manager.give_loaded( "clip_8_9x19_fmj" )
+-- 	ammo_manager.give_loaded( "clip_8_9x19_pbp" )
+--
+-- 	ammo_manager.give_loaded( "clip_8s_11.43x23_fmj" )
+-- 	ammo_manager.give_loaded( "clip_8s_11.43x23_frng" )
+-- 	ammo_manager.give_loaded( "clip_8s_11.43x23_hydro" )
+
+	-- Mags
+
+-- 	ammo_manager.give_loaded( "mag_100_5.56x45_75gr" )
+-- 	ammo_manager.give_loaded( "mag_100_5.56x45_77gr" )
+-- 	ammo_manager.give_loaded( "mag_100_5.56x45_ap" )
+-- 	ammo_manager.give_loaded( "mag_100_5.56x45_ss190" )
+--
+-- 	ammo_manager.give_loaded( "mag_10_12.7x99_ap" )
+--
+-- 	ammo_manager.give_loaded( "mag_10_7.62x39_ap" )
+-- 	ammo_manager.give_loaded( "mag_10_7.62x39_fmj" )
+--
+-- 	ammo_manager.give_loaded( "mag_10_7.62x51_ap" )
+-- 	ammo_manager.give_loaded( "mag_10_7.62x51_fmj" )
+-- 	ammo_manager.give_loaded( "mag_10_7.62x51_m993" )
+-- 	ammo_manager.give_loaded( "mag_10_7.62x51_mk316" )
+--
+-- 	ammo_manager.give_loaded( "mag_10_7.62x54_7h1" )
+-- 	ammo_manager.give_loaded( "mag_10_7.62x54_7h14" )
+-- 	ammo_manager.give_loaded( "mag_10_7.62x54_7t2" )
+-- 	ammo_manager.give_loaded( "mag_10_7.62x54_ap" )
+
+	ammo_manager.give_loaded( "mag_10_7.92x57_ap" )
+	ammo_manager.give_loaded( "mag_10_7.92x57_fmj" )
+
+-- 	ammo_manager.give_loaded( "mag_10_8.6x70_300gr" )
+-- 	ammo_manager.give_loaded( "mag_10_8.6x70_api" )
+-- 	ammo_manager.give_loaded( "mag_10_8.6x70_fmj" )
+-- 	ammo_manager.give_loaded( "mag_10_8.6x70_n508" )
+--
+-- 	ammo_manager.give_loaded( "mag_10_9x39_ap" )
+-- 	ammo_manager.give_loaded( "mag_10_9x39_pab9" )
+-- 	ammo_manager.give_loaded( "mag_10_9x39_sp5" )
+-- 	ammo_manager.give_loaded( "mag_10_9x39_spp" )
+--
+-- 	ammo_manager.give_loaded( "mag_20_7.62x25_p" )
+-- 	ammo_manager.give_loaded( "mag_20_7.62x25_ps" )
+--
+-- 	ammo_manager.give_loaded( "mag_20_7.62x51_ap" )
+-- 	ammo_manager.give_loaded( "mag_20_7.62x51_fmj" )
+-- 	ammo_manager.give_loaded( "mag_20_7.62x51_m993" )
+-- 	ammo_manager.give_loaded( "mag_20_7.62x51_mk316" )
+
+	ammo_manager.give_loaded( "mag_20_9x18_57n181s" )
+	ammo_manager.give_loaded( "mag_20_9x18_fmj" )
+	ammo_manager.give_loaded( "mag_20_9x18_pmm" )
+	ammo_manager.give_loaded( "mag_20_9x18_rg028" )
+
+-- 	ammo_manager.give_loaded( "mag_20_9x19_7n21" )
+-- 	ammo_manager.give_loaded( "mag_20_9x19_fmj" )
+-- 	ammo_manager.give_loaded( "mag_20_9x19_jhp" )
+-- 	ammo_manager.give_loaded( "mag_20_9x19_pbp" )
+--
+-- 	ammo_manager.give_loaded( "mag_20_9x39_ap" )
+-- 	ammo_manager.give_loaded( "mag_20_9x39_pab9" )
+-- 	ammo_manager.give_loaded( "mag_20_9x39_sp5" )
+-- 	ammo_manager.give_loaded( "mag_20_9x39_spp" )
+--
+-- 	ammo_manager.give_loaded( "mag_30_11.43x23_fmj" )
+-- 	ammo_manager.give_loaded( "mag_30_11.43x23_hydro" )
+--
+-- 	ammo_manager.give_loaded( "mag_30_5.45x39_7n24" )
+-- 	ammo_manager.give_loaded( "mag_30_5.45x39_7t3" )
+-- 	ammo_manager.give_loaded( "mag_30_5.45x39_ap" )
+-- 	ammo_manager.give_loaded( "mag_30_5.45x39_fmj" )
+--
+-- 	ammo_manager.give_loaded( "mag_30_5.56x45_75gr" )
+-- 	ammo_manager.give_loaded( "mag_30_5.56x45_77gr" )
+-- 	ammo_manager.give_loaded( "mag_30_5.56x45_ap" )
+-- 	ammo_manager.give_loaded( "mag_30_5.56x45_ss190" )
+--
+-- 	ammo_manager.give_loaded( "mag_30_7.62x39_ap" )
+-- 	ammo_manager.give_loaded( "mag_30_7.62x39_fmj" )
+-- 	ammo_manager.give_loaded( "mag_30_7.62x39_hp" )
+-- 	ammo_manager.give_loaded( "mag_30_7.62x39_m67" )
+-- 	ammo_manager.give_loaded( "mag_30_7.62x39_sp_p" )
+-- 	ammo_manager.give_loaded( "mag_30_7.62x39_fmj_p" )
+-- 	ammo_manager.give_loaded( "mag_30_7.62x39_hp_p" )
+-- 	ammo_manager.give_loaded( "mag_30_7.62x39_m67_p" )
+--
+-- 	ammo_manager.give_loaded( "mag_30_9x19_7n21" )
+-- 	ammo_manager.give_loaded( "mag_30_9x19_fmj" )
+-- 	ammo_manager.give_loaded( "mag_30_9x19_jhp" )
+-- 	ammo_manager.give_loaded( "mag_30_9x19_pbp" )
+--
+-- 	ammo_manager.give_loaded( "mag_32_9x19_fmj" )
+-- 	ammo_manager.give_loaded( "mag_32_9x19_pbp" )
+--
+-- 	ammo_manager.give_loaded( "mag_44_9x19_7n21" )
+-- 	ammo_manager.give_loaded( "mag_44_9x19_fmj" )
+-- 	ammo_manager.give_loaded( "mag_44_9x19_jhp" )
+-- 	ammo_manager.give_loaded( "mag_44_9x19_pbp" )
+--
+-- 	ammo_manager.give_loaded( "mag_45_5.45x39_7n24" )
+-- 	ammo_manager.give_loaded( "mag_45_5.45x39_7t3" )
+-- 	ammo_manager.give_loaded( "mag_45_5.45x39_ap" )
+-- 	ammo_manager.give_loaded( "mag_45_5.45x39_fmj" )
+--
+-- 	ammo_manager.give_loaded( "mag_47_7.62x54_7h1" )
+-- 	ammo_manager.give_loaded( "mag_47_7.62x54_7h14" )
+-- 	ammo_manager.give_loaded( "mag_47_7.62x54_ap" )
+--
+-- 	ammo_manager.give_loaded( "mag_50_5.7x28-b_ap" )
+-- 	ammo_manager.give_loaded( "mag_50_5.7x28-b_fmj" )
+-- 	ammo_manager.give_loaded( "mag_50_5.7x28_ap" )
+-- 	ammo_manager.give_loaded( "mag_50_5.7x28_fmj" )
+--
+-- 	ammo_manager.give_loaded( "mag_5_12.7x108_ap" )
+-- 	ammo_manager.give_loaded( "mag_5_12.7x99_ap" )
+--
+-- 	ammo_manager.give_loaded( "mag_5_7.62x51_ap" )
+-- 	ammo_manager.give_loaded( "mag_5_7.62x51_fmj" )
+-- 	ammo_manager.give_loaded( "mag_5_7.62x51_m993" )
+-- 	ammo_manager.give_loaded( "mag_5_7.62x51_mk316" )
+--
+-- 	ammo_manager.give_loaded( "mag_5_8.6x70_300gr" )
+-- 	ammo_manager.give_loaded( "mag_5_8.6x70_api" )
+-- 	ammo_manager.give_loaded( "mag_5_8.6x70_fmj" )
+-- 	ammo_manager.give_loaded( "mag_5_8.6x70_n508" )
+--
+-- 	ammo_manager.give_loaded( "mag_64_7.62x25_p" )
+-- 	ammo_manager.give_loaded( "mag_64_7.62x25_ps" )
+--
+-- 	ammo_manager.give_loaded( "mag_64_9x18_57n181s" )
+-- 	ammo_manager.give_loaded( "mag_64_9x18_fmj" )
+-- 	ammo_manager.give_loaded( "mag_64_9x18_pmm" )
+-- 	ammo_manager.give_loaded( "mag_64_9x18_rg028" )
+--
+-- 	ammo_manager.give_loaded( "mag_71_7.62x25_p" )
+-- 	ammo_manager.give_loaded( "mag_71_7.62x25_p41" )
+-- 	ammo_manager.give_loaded( "mag_71_7.62x25_ppu" )
+-- 	ammo_manager.give_loaded( "mag_71_7.62x25_ps" )
+--
+-- 	ammo_manager.give_loaded( "mag_75_5.45x39_7n24" )
+-- 	ammo_manager.give_loaded( "mag_75_5.45x39_7t3" )
+-- 	ammo_manager.give_loaded( "mag_75_5.45x39_ap" )
+-- 	ammo_manager.give_loaded( "mag_75_5.45x39_fmj" )
+--
+-- 	ammo_manager.give_loaded( "mag_75_7.62x39_ap" )
+-- 	ammo_manager.give_loaded( "mag_75_7.62x39_fmj" )
+-- 	ammo_manager.give_loaded( "mag_75_7.62x39_hp" )
+-- 	ammo_manager.give_loaded( "mag_75_7.62x39_m67" )
+--
+-- 	ammo_manager.give_loaded( "mag_8_12x76_buck" )
+-- 	ammo_manager.give_loaded( "mag_8_12x76_dart" )
+-- 	--ammo_manager.give_loaded( "mag_8_12x76_drag" )
+-- 	ammo_manager.give_loaded( "mag_8_12x76_zhekan" )
+--
+-- 	ammo_manager.give_loaded( "mag_8_7.62x51_ap" )
+-- 	ammo_manager.give_loaded( "mag_8_7.62x51_fmj" )
+-- 	ammo_manager.give_loaded( "mag_8_7.62x51_m993" )
+-- 	ammo_manager.give_loaded( "mag_8_7.62x51_mk316" )
 end
